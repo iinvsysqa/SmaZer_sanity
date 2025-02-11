@@ -1,0 +1,1 @@
+No adb device is connected
