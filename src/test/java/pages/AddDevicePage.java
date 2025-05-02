@@ -112,8 +112,6 @@ public class AddDevicePage extends GenericWrappers {
 	@FindBy(xpath = "//*[@resource-id='UserConfig_Skip_ButtonText']")
 	private WebElement deviceSettingSkipButton;
 
-	@FindBy(xpath = "//android.widget.Button[@resource-id=\"android:id/button1\"]")
-	private WebElement connectbuttonWifipage;
 
 	@FindBy(xpath = "//android.widget.TextView[@resource-id=\"com.oplus.wirelesssettings:id/menu_save\"]")
 	private WebElement savebuttonWifipage;
@@ -279,7 +277,7 @@ public class AddDevicePage extends GenericWrappers {
 	@FindBy(xpath = "//android.widget.TextView[@text=\"⚠️ Unregistered Device Detected\"]")
 	private WebElement unregisteredpopup;
 
-	@FindBy(xpath = "//android.widget.TextView[@text=\"\"]")
+	@FindBy(xpath = "//*[@resource-id='menu_bar']")
 	private WebElement menuBarButton;
 	@FindBy(xpath = "//*[@resource-id='PairedGeyser_Img_svg_ble_0_blue']")
 	private WebElement bleConnectivity;
@@ -701,14 +699,15 @@ public class AddDevicePage extends GenericWrappers {
           
 //				Verifying  SmaZer...
 //				Please Don't lock or put your mobile in the background while pairing
+				Thread.sleep(5000);
 				clickWifiCancelButton();
-				
 				verifyTextContainsByXpath(timeLeftBottomLine, loadProp("whilePairingContent"), "Pairing time left page");
 				verifyTextContainsByXpath(verifyingSmazer, "Verifying  SmaZer...", "verifying smazer");
 //				verifyTextContainsByXpath(verifyingSmazerContent, loadProp("Note2"), "verifying smazer  page content ");
 				Thread.sleep(30000);
 				
 				if(!isElementDisplayedCheck(sZephyrInfoNextButton)) {
+					blepermissionokpopup();
 				retrypagecheck(mode);
 				unregistereddevicepopup();
 				verificationFailed();
@@ -725,6 +724,7 @@ public class AddDevicePage extends GenericWrappers {
 				readwrite.write("factory_reset\r");
 				blepermissionokpopup();
 				enterWiFiPassword(wifiPassword);
+				Thread.sleep(5000);
 				clickEnterButton();
 				
 				verifyTextContainsByXpath(timeLeftBottomLine, loadProp("whilePairingContent"), "Pairing time left page");
@@ -733,6 +733,7 @@ public class AddDevicePage extends GenericWrappers {
 
 				Thread.sleep(30000);
 				if(!isElementDisplayedCheck(sZephyrInfoNextButton))  {
+					blepermissionokpopup();
 				retrypagecheck(mode);
 				unregistereddevicepopup();
 				}
@@ -740,7 +741,6 @@ public class AddDevicePage extends GenericWrappers {
 				
 			case 3:
 				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
-				readwrite.write("reboot\r");
 				turnOffBT();
 				startPairingButton();
 				blepermissioncancelpopup();
@@ -750,6 +750,7 @@ public class AddDevicePage extends GenericWrappers {
 				readwrite.write("factory_reset\r");
 				blepermissionokpopup();
 				enterWiFiPassword(wifiPassword);
+				Thread.sleep(5000);
 				clickEnterButton();
 				
 				
@@ -766,24 +767,24 @@ public class AddDevicePage extends GenericWrappers {
 					retrypagecheck(mode);
 					unregistereddevicepopup();
 				}
+				blepermissionokpopup();
 				break;
 				
 			case 4:
 				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
 				turnOffBT();
-				startPairingButton();
 				readwrite.write("factory_reset\r");
+				startPairingButton();
 				blepermissioncancelpopup();
 //				Thread.sleep(3000);
 //				locationPopUpPermission();
 //				nearByPermission();
 
-				Thread.sleep(1000 * 10 * 1);
-				blepermissionokpopup();
 
-				Thread.sleep(30000);
+				Thread.sleep(3*10*1000);
 
 				enterWiFiPassword(loadProp("WIFIPASSWORD"));
+				Thread.sleep(10*1000);
 				clickEnterButton();
 
 				verifyTextContainsByXpath(timeLeftBottomLine, loadProp("whilePairingContent"), "Pairing time left page");
@@ -794,16 +795,18 @@ public class AddDevicePage extends GenericWrappers {
 					unregistereddevicepopup();
 				}
 				connectwithmobilewifipage();
-				verifyTextContainsByXpath(verifyingSmazer, "Verifying  SmaZer...", "verifying smazer");
-//				verifyTextContainsByXpath(verifyingSmazerContent, loadProp("Note2"), "verifying smazer  page content ");
+				verifyTextContainsByXpath(verifyingSmazerContent, loadProp("whilePairingContent"), "verifying smazer  page content ");
 
 				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
+				
+				verifyTextContainsByXpath(verifyingSmazer, "Verifying  SmaZer...", "verifying smazer");
 				
 				Runtime.getRuntime().exec("adb shell am force-stop com.android.settings");
 				if(isElementDisplayedCheck(devicewifipop_upOK))  {
 					
 					clickbyXpath(devicewifipop_upOK, "Cliked on not connected with router pop-up");
 				}
+				blepermissionokpopup();
 				
 				break;
 
@@ -838,6 +841,7 @@ public class AddDevicePage extends GenericWrappers {
 					retrypagecheck(mode);
 					unregistereddevicepopup();
 				}
+				blepermissionokpopup();
 				connectwithmobilewifipage();
 				
 				Runtime.getRuntime().exec("adb shell am force-stop com.android.settings");
@@ -889,12 +893,12 @@ public class AddDevicePage extends GenericWrappers {
 	}
 
 	
-	private void connectwithmobilewifipage() throws Exception {
+	public void connectwithmobilewifipage() throws Exception {
 		if (isElementDisplayedCheck(devicewifipop_upOK)) {
 			clickbyXpath(devicewifipop_upOK, "click on Device wifi OK popup");
 			
 			Runtime.getRuntime().exec("adb shell am force-stop com.android.settings");
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 			Runtime.getRuntime().exec("adb shell am start -a android.settings.WIFI_SETTINGS");
 
 			Thread.sleep(3000);
@@ -904,37 +908,59 @@ public class AddDevicePage extends GenericWrappers {
 //			wait.until(ExpectedConditions.visibilityOf(element));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 			element.click();
-			if (isElementDisplayedCheck(enterpasswordwifipge)) {
-				entervaluebyXpath(enterpasswordwifipge, "wifipage password", "mypassword");
-				hidekeyboard();
+			try {
+				if (isElementDisplayedCheck(enterpasswordwifipge)) {
+					// Enter the WiFi password
+					enterValueByXpathwifipage(enterpasswordwifipge, "Wi-Fi password", wifiPassword);
 
-				clickbyXpath(connectbuttonWifipage, "connect button");
-			} else if (isElementDisplayedCheck(enterpasswordwifipgehighversion
-					)) {
+					// Click on the connect button
+					WebElement connectButton = driver.findElement(MobileBy.xpath("//android.widget.Button[@text='Connect']")); 
+					// Replace with the actual XPath
+					if (isElementDisplayedCheck(connectButton)) {
+						
+						clickbyXpath(connectButton, "Connect button");
+						
+						Thread.sleep(3000);}
 
-				entervaluebyXpath(enterpasswordwifipge, "wifipage password", "mypassword");
-				hidekeyboard();
-
-				clickbyXpath(savebuttonWifipage, "save button");
-			} else {
-				System.out.println("Already password saved ");
+				}
+				
+//				else if (isElementDisplayedCheck(enterPasswordFieldOnePlus)) {
+//					enterValueByXpathwifipage(enterPasswordFieldOnePlus, "Wi-Fi password", wifiPassword);
+//					WebElement savebutton = driver.findElement(MobileBy.xpath("//android.widget.TextView[@resource-id=\"com.oplus.wirelesssettings:id/menu_save\"]")); 
+//				 if (isElementDisplayedCheck(savebutton)) {
+//					clickbyXpath(savebutton, "save button");
+//					
+//					Thread.sleep(3000);
+//				}
+//					
+//				} 
+				else {
+					System.out.println("Already connected or password is saved.");
+				
+				}
+			} catch (NoSuchElementException e) {
+			    System.out.println("WIFI Password is Already Provided, continuing to the next step.");
 			}
-
+			
+			
+			
 			if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
 				driver.activateApp(packages); // Bring it back
 				// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 			}
-			if (isElementDisplayedCheck(Blepopup_afterpairing)) {
-
-				clickbyXpath(Blepopup_afterpairing, "oK button of Ble alert pop-up");
-			}
+//			if (isElementDisplayedCheck(Blepopup_afterpairing)) {
+//
+//				clickbyXpath(Blepopup_afterpairing, "oK button of Ble alert pop-up");
+//			}
 
 			// Now click the OK button once it is visible and clickable
 
 		} else {
 			System.out.println("unable to connect with device hotspot");
 		}
+
+		
 		
 	}
 	private void unregistereddevicepopup() {

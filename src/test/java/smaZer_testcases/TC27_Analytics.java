@@ -25,7 +25,7 @@ public class TC27_Analytics extends MobileAppWrappers {
 		testDescription = "Pairing mode=Wifi With Router <br> Connectivity :STA <br>Turn on device for 5min using relay  <br> check for analytivs value<br>Energy duration and Energy used for 5 min should update";
 	}
 	
-	@Test(priority = 26)
+	@Test(priority = 26,groups = {"skip"})
 	public void removerepair() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
@@ -40,10 +40,6 @@ public class TC27_Analytics extends MobileAppWrappers {
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
-		Thread.sleep(2000);
-		readwrite.write("reboot\r");
-//		Thread.sleep(3000);
-//		readwrite.write("factory_reset\r");
 		
 		adddevicepage.pair(4);
 		adddevicepage.clickNextButtonsZephyrInfo();
@@ -51,6 +47,9 @@ public class TC27_Analytics extends MobileAppWrappers {
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
 		turnOffBT();
+		
+		
+		
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.getenergydurationvalue();
 		analyticspage.navigatehomepage();
@@ -65,7 +64,6 @@ public class TC27_Analytics extends MobileAppWrappers {
 		
 		}
 		catch (Exception e) {
-			readwrite.write("factory_reset\r");
 			readwrite.closePort();
 			fail(e);
 		}

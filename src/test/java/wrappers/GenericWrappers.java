@@ -39,6 +39,7 @@ import com.aventstack.extentreports.model.Log;
 import com.google.common.collect.ImmutableMap;
 import org.testng.Assert;
 
+import utils.ADBconnections;
 import utils.Reporter;
 import utils.logReadandWrite;
 
@@ -80,7 +81,12 @@ public class GenericWrappers {
 			caps.setCapability("appium:automationName", "uiautomator2");
 			caps.setCapability("appium:ignoreHiddenApiPolicyError", "true");
 			caps.setCapability("newCommandTimeout", 999999);
+			caps.setCapability("appium:relaxedSecurityEnabled", true);
 //			caps.setCapability("appium:autoGrantPermissions", true);
+			
+			
+//			 caps.setCapability(prop.getProperty("APP_PACKAGE"), "com.android.settings");
+//		        caps.setCapability("appActivity", ".wifi.WifiSettings");
 			
 
 			//			keepSessionAlive(driver);
@@ -342,7 +348,7 @@ public class GenericWrappers {
 	public static void expWait(WebElement xpath) {
 		try {
 
-			WebDriverWait wait = new WebDriverWait(driver,20);
+			WebDriverWait wait = new WebDriverWait(driver,30);
 			wait.until(ExpectedConditions.elementToBeClickable(xpath));
 //			wait.until(ExpectedConditions.visibilityOf(xpath));
 		} catch (Exception e) {
@@ -356,9 +362,9 @@ public class GenericWrappers {
 	public static void expshortWait(WebElement xpath) {
 		try {
 			
-			WebDriverWait wait = new WebDriverWait(driver,2);
+			WebDriverWait wait = new WebDriverWait(driver,10);
 			wait.until(ExpectedConditions.elementToBeClickable(xpath));
-
+			
 //			wait.until(ExpectedConditions.visibilityOf(xpath));
 		} catch (Exception e) {
 			System.out.println(e);
@@ -385,7 +391,7 @@ public class GenericWrappers {
 
 	public void expWaitforPairing(WebElement xpath) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver,10);
+			WebDriverWait wait = new WebDriverWait(driver,30);
 //			wait.until(ExpectedConditions.visibilityOf(xpath));
 			wait.until(ExpectedConditions.elementToBeClickable(xpath));
 		} catch (Exception e) {
@@ -583,7 +589,7 @@ public class GenericWrappers {
 			Runtime.getRuntime().exec("adb shell svc wifi enable");
 			Runtime.getRuntime().exec("adb shell am start -a android.settings.WIFI_SETTINGS");
 			// Wait for the WiFi settings to open
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 
 			// Scroll to the WiFi network by name
 			WebElement wifiElement = driver.findElement(MobileBy.AndroidUIAutomator(
@@ -605,7 +611,7 @@ public class GenericWrappers {
 					enterValueByXpathwifipage(enterPasswordField, "Wi-Fi password", wifiPassword);
 
 					// Click on the connect button
-					WebElement connectButton = driver.findElement(MobileBy.xpath("//android.widget.Button[@resource-id='android:id/button1']")); 
+					WebElement connectButton = driver.findElement(MobileBy.xpath("//android.widget.Button[@text='Connect']")); 
 					// Replace with the actual XPath
 					if (isElementDisplayedCheck(connectButton)) {
 						
@@ -997,5 +1003,43 @@ public class GenericWrappers {
     		return false;
     	}
     }
+    public void ABDconnection() {
+		try {
+         if (!ADBconnections.isDeviceConnected()) {
+        	 String errorMsg = "No ADB devices connected. Test execution stopped.";
+             System.out.println(errorMsg);
+             if (test != null) {
+                Reporter.reportStep("No ADB devices connected. Test execution stopped.", "WARNING");
+                Reporter.endResult();
+            } 
+         	throw new RuntimeException(errorMsg);
+         } else {
+             List<String> devices = ADBconnections.getConnectedDevices();
+             System.out.println(devices);
+             if (test != null) {
+                 Reporter.reportStep("Connected devices: " + String.join(", ", devices), "INFO");
+             } 
+         }
+     } catch (Exception e) {
+    	 if (test != null) {
+             Reporter.reportStep(e.getMessage(), "WARNING");
+             Reporter.endResult();
+         } 
+         throw new RuntimeException("ADB device check failed", e);
+         
+     }
+ }
+    public static int extractMinutes(String timeText) {
+	    // Regular expression to find digits followed by 'm'
+	    java.util.regex.Matcher matcher = java.util.regex.Pattern.compile("(\\d+)m").matcher(timeText);
+	    
+	    if (matcher.find()) {
+	        // group(1) is the captured number before 'm'
+	        return Integer.parseInt(matcher.group(1));
+	    } else {
+	        // If 'm' not found, you can decide what to return (0 or -1)
+	        return 0;
+	    }
+	}
 
 }

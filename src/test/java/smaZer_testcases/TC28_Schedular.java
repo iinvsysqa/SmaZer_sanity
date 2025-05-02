@@ -55,6 +55,7 @@ public class TC28_Schedular extends MobileAppWrappers {
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		
+		
 		analytics.navigateAnalyticsPage();
 		analytics.getenergydurationvalue();
 		schedulepage.backToHomepage();
@@ -81,7 +82,6 @@ public class TC28_Schedular extends MobileAppWrappers {
 		readwrite.closePort();
 		}
 		catch (Exception e) {
-			readwrite.write("factory_reset\r");
 			readwrite.closePort();
 			fail(e);
 		}

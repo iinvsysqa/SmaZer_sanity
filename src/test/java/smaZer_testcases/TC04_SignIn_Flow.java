@@ -55,7 +55,6 @@ public class TC04_SignIn_Flow extends MobileAppWrappers {
 		readwrite.closePort();
 		}
 		catch (Exception e) {
-			readwrite.write("factory_reset\r");		
 			readwrite.closePort();
 			fail(e);
 		}

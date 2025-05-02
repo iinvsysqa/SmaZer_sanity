@@ -68,9 +68,6 @@ public class  TC35_OTA_TC_01_BLE extends MobileAppWrappers {
 		logReadandWrite readwrite = logReadandWrite.getInstance("COM4");
 		try {
 		readwrite.openPort();
-//		readwrite.read();
-//		Thread.sleep(2000);
-//		readwrite.write("factory_reset\r");
 		
 		adddevicepage.clickAddDeviceButton();
 		adddevicepage.checkBoxPairing();
@@ -105,11 +102,6 @@ public class  TC35_OTA_TC_01_BLE extends MobileAppWrappers {
 	    readwrite.closePort();
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			readwrite.write("factory_reset\r");
-			killAndReopenApp();
-			Thread.sleep(3000);
-			adddevicepage.removingDevice();			
 			readwrite.closePort();
 			fail(e);
 		}

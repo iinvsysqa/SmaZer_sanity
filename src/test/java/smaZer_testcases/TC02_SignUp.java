@@ -42,14 +42,6 @@ public class TC02_SignUp extends MobileAppWrappers {
 		landingpage = new LandingPage(driver);
 		otppage = new OtpPage(driver);
 		signuppage =new SignUpPage(driver);
-//		GetAppLog applog= new GetAppLog();
-//		applog.startLogProcess();
-		
-
-		/*
-		 * logReadandWrite readwrite=new logReadandWrite("COM4"); readwrite.openPort();
-		 * readwrite.read(); Thread.sleep(2000); readwrite.write("button_press\r");
-		 */
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
@@ -64,7 +56,6 @@ public class TC02_SignUp extends MobileAppWrappers {
 		signuppage.enterEmailId(loadProp("EMAILID"));
 		signuppage.clickSignUpTCCheckBox();
 		signuppage.clickSignUpButton();
-		//readwrite.write("button_press\r");
 		signuppage.checkUserNameExistToast("Username and Email ID both are already exists");
 		readwrite.closePort();
 		}

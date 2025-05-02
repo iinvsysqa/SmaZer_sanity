@@ -48,21 +48,19 @@ public class TC31_Schedular extends MobileAppWrappers {
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
-		Thread.sleep(2000);
-		readwrite.write("reboot\r");
-//		Thread.sleep(3000);
-//		readwrite.write("factory_reset\r");
 
 		
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		
+	
+		
 		analytics.navigateAnalyticsPage();
 		analytics.getenergydurationvalue();
 		schedulepage.backToHomepage();
 		schedulepage.clickSchedulebtn();
-		schedulepage.createSchedules(5, 3, 2);//mention the time to start ,how many schedules need to keep,interval between next schedule
+		schedulepage.createSchedules(5, 3, 1);//mention the time to start ,how many schedules need to keep,interval between next schedule
 		schedulepage.backToHomepage();
 		
 		Thread.sleep(9*60*1000);//set thread values based on schedule duration kept .
@@ -82,7 +80,6 @@ public class TC31_Schedular extends MobileAppWrappers {
 		readwrite.closePort();
 		}
 		catch (Exception e) {
-			readwrite.write("factory_reset\r");
 			readwrite.closePort();
 			fail(e);
 		}

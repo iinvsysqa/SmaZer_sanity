@@ -17,7 +17,7 @@ public class HomePage extends GenericWrappers{
 	@FindBy(xpath="//*[@resource-id='home_main_on_off_swch']")
 			private WebElement deviceONOFFButton;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"\"]")
+	@FindBy(xpath = "//*[@resource-id='menu_bar']")
 	private WebElement menuBarButton;
 	
 	@FindBy(xpath = "//*[@resource-id='menu_icon_accounts']")
@@ -49,9 +49,14 @@ public class HomePage extends GenericWrappers{
 	@FindBy(xpath = "//*[@resource-id='PairedGeyser_Img_svg_ble_0_blue']")
 	private WebElement bleSymbol;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"smazer007_1\"]")
-	private WebElement userName;
+//	@FindBy(xpath = "//android.widget.TextView[@text=\"smazer007_1\"]")
+//	private WebElement userName;
+	private WebElement userName(String username) {
+		return driver.findElement(By.xpath("//android.widget.TextView[@text='"+username+"']"));
+		
+	}
 	
+	public String userName = loadProp("USERNAME");
 	
 	public HomePage(AndroidDriver driver) {
 		this.driver = driver;
@@ -60,8 +65,8 @@ public class HomePage extends GenericWrappers{
 	
 	public void HomepageDevicenameCheck() {
 		
-		expshortWaittwenty(userName);
-		verifyTextContainsByXpath(userName, loadProp("USERNAMEINAPP"), "Home page device name");
+		expshortWaittwenty(userName(userName));
+		verifyTextContainsByXpath(userName(userName), userName, "Home page device name");
 
 	}
 	public void clickONOFFButton() {

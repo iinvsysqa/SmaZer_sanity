@@ -3,18 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="smaZer_testcases.TC08_Pairing_BlewithoutRouter">
+      <class name="smaZer_testcases.TC26_Analytics">
         <methods>
+          <include name="startTestCase"/>
           <include name="afterMethod"/>
           <include name="afterTest"/>
+          <include name="removerepair"/>
           <include name="afterSuite"/>
-          <include name="startTestCase"/>
           <include name="beforeTest"/>
           <include name="beforeMethod"/>
-          <include name="removerepair"/>
           <include name="beforeSuite"/>
         </methods>
-      </class> <!-- smaZer_testcases.TC08_Pairing_BlewithoutRouter -->
+      </class> <!-- smaZer_testcases.TC26_Analytics -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

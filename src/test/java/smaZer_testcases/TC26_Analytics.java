@@ -40,8 +40,6 @@ public class TC26_Analytics  extends MobileAppWrappers {
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
-		Thread.sleep(2000);
-		readwrite.write("reboot\r");
 		
 		adddevicepage.pair(3);
 		adddevicepage.clickNextButtonsZephyrInfo();
@@ -52,6 +50,8 @@ public class TC26_Analytics  extends MobileAppWrappers {
 		turnOffBT();
 		homepage.WifiSwitch(loadProp("REMOTEWIFINAME"),loadProp("REMOTEWIFIPASSWORD"));
 		adddevicepage.remoteConnectivityCheck();
+		
+		
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.getenergydurationvalue();
 		closeApp();
@@ -59,6 +59,7 @@ public class TC26_Analytics  extends MobileAppWrappers {
 		Thread.sleep(1*60*1000);
 		readwrite.write("button_press\r");
 		openapp();
+		adddevicepage.ClickOkButtonBLEpopUP();
 		homepage.HomepageDevicenameCheck();
 		turnOffBT();
 		
@@ -70,7 +71,6 @@ public class TC26_Analytics  extends MobileAppWrappers {
 		
 		}
 		catch (Exception e) {
-//			readwrite.write("factory_reset\r");
 			readwrite.closePort();
 			fail(e);
 		}

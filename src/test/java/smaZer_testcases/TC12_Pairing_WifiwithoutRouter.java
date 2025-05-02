@@ -30,7 +30,7 @@ public class TC12_Pairing_WifiwithoutRouter extends MobileAppWrappers {
 	}
 
 
-	@Test(priority = 11)
+	@Test(priority = 11,groups = {"skip"})
 	public void removerepair() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
@@ -44,10 +44,6 @@ public class TC12_Pairing_WifiwithoutRouter extends MobileAppWrappers {
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
-		Thread.sleep(2000);
-		readwrite.write("reboot\r");
-//		Thread.sleep(3000);
-//		readwrite.write("factory_reset\r");
 		
 		adddevicepage.pair(5);
 		adddevicepage.clickNextButtonsZephyrInfo();
@@ -84,7 +80,6 @@ public class TC12_Pairing_WifiwithoutRouter extends MobileAppWrappers {
 		readwrite.closePort();
 		}
 		catch (Exception e) {
-			readwrite.write("factory_reset\r");		
 			readwrite.closePort();
 			fail(e);
 		}

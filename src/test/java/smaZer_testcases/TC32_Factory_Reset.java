@@ -47,10 +47,6 @@ public class TC32_Factory_Reset extends MobileAppWrappers {
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
-		Thread.sleep(2000);
-		readwrite.write("reboot\r");
-//		Thread.sleep(3000);
-//		readwrite.write("factory_reset\r");
 
 		adddevicepage.pair(3);
 		adddevicepage.clickNextButtonsZephyrInfo();
@@ -73,7 +69,6 @@ public class TC32_Factory_Reset extends MobileAppWrappers {
 		 readwrite.closePort();
 		}
 		catch (Exception e) {
-			readwrite.write("factory_reset\r");
 			readwrite.closePort();
 			fail(e);
 		}

@@ -59,11 +59,6 @@ public class  TC13_BlewithoutRouter extends MobileAppWrappers {
 			
 		
 		readwrite.openPort();
-		Thread.sleep(3000);
-		readwrite.write("reboot\r");
-//		readwrite.read();
-//		Thread.sleep(3000);
-//		readwrite.write("factory_reset\r");
 		
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
@@ -138,7 +133,6 @@ public class  TC13_BlewithoutRouter extends MobileAppWrappers {
 		 readwrite.closePort();
 		}
 		catch (Exception e) {
-			readwrite.write("factory_reset\r");		
 			readwrite.closePort();
 			fail(e);
 		}

@@ -47,10 +47,6 @@ public void pairBlewithoutRouter() throws Exception {
 	logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 	try {
 	readwrite.openPort();
-	Thread.sleep(2000);
-	readwrite.write("reboot\r");
-//	Thread.sleep(3000);
-//	readwrite.write("factory_reset\r");
 	
 	adddevicepage.pair(1);
 	adddevicepage.clickNextButtonsZephyrInfo();
@@ -74,7 +70,6 @@ public void pairBlewithoutRouter() throws Exception {
 	 readwrite.closePort();
 	}
 	catch (Exception e) {
-		readwrite.write("factory_reset\r");
 		readwrite.closePort();
 		fail(e);
 	}

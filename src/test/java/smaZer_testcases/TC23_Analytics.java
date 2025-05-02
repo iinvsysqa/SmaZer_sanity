@@ -42,16 +42,14 @@ public class TC23_Analytics  extends MobileAppWrappers {
 
 		try {
 		readwrite.openPort();
-		Thread.sleep(2000);
-		readwrite.write("reboot\r");
-//		Thread.sleep(3000);
-//		readwrite.write("factory_reset\r");
 		
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
+		
+		
 		
 		analyticspage.navigateAnalyticsPage();
 		analyticspage.getenergydurationvalue();
@@ -68,7 +66,6 @@ public class TC23_Analytics  extends MobileAppWrappers {
 				
 		}
 		catch (Exception e) {
-			readwrite.write("factory_reset\r");
 			readwrite.closePort();
 			fail(e);
 		}

@@ -1,0 +1,163 @@
+undefined undefined
+
+[D: 2/5/2025 T: 21:7:55:286 PM ]  [Tc:  ] "app state retrieve data55============>""680d1c83274058014ca23f71"{"verified":true,"pushNotifyToken":null,"_id":"680d1c83274058014ca23f71","UserName":"smazer007","EmailId":"smazer007@gmail.com","MobileNumber":null,"__v":0,"firmwareAutoUpload":false,"firmwareAutoDownload":false,"svr_ota":false,"currentOTAIndex":0,"curCacheBuildNum":0,"latest_Bin_File_Length":null,"latest_firmware_vrs":null,"age":"","gender":""} 
+
+[D: 2/5/2025 T: 21:7:55:345 PM ]  [Tc:  ] "INFO""GENERAL_INFO""267" Data: FCM-TOKEN Created cHQsh8GhSbusVHAU7IBv4N:APA91bE-3_f0-xM7A6AYNbjX5lCkamgYeilLntu06MwBiCXJKsVVE73_U_rY-4Kvl41ehXx6yhWf3IIJg0f_M_kUm4E85EamEng4WGOJSuuA5HiciQsgSjs
+
+[D: 2/5/2025 T: 21:7:55:346 PM ]  [Tc:  ] "INFO""GENERAL_INFO""268" Data: FCM-TOKEN Type string
+
+[D: 2/5/2025 T: 21:7:55:346 PM ]  [Tc:  ] "INFO""GENERAL_INFO""269" Data: Stored FCM-TOKEN Locally Success cHQsh8GhSbusVHAU7IBv4N:APA91bE-3_f0-xM7A6AYNbjX5lCkamgYeilLntu06MwBiCXJKsVVE73_U_rY-4Kvl41ehXx6yhWf3IIJg0f_M_kUm4E85EamEng4WGOJSuuA5HiciQsgSjs
+
+[D: 2/5/2025 T: 21:7:55:401 PM ]  [Tc:  ] "INFO""COMMUNICATION""111" establish communication triggered []
+
+[D: 2/5/2025 T: 21:7:55:465 PM ]  [Tc:  ] "Home.js LoginState ==>"{"isLoading":false,"userDetails":{"verified":true,"pushNotifyToken":null,"_id":"680d1c83274058014ca23f71","UserName":"smazer007","EmailId":"smazer007@gmail.com","MobileNumber":null,"__v":0,"firmwareAutoUpload":false,"firmwareAutoDownload":false,"svr_ota":false,"currentOTAIndex":0,"curCacheBuildNum":0,"latest_Bin_File_Length":null,"latest_firmware_vrs":null,"age":"","gender":""},"guestDetails":null,"userToken":"680d1c83274058014ca23f71","deviceOnOffStatus":true,"deviceConnnectedStatus":false,"associative_devices":[],"language":"English","guestAssociativeDevices":[]}undefined undefined
+
+[D: 2/5/2025 T: 21:7:55:465 PM ]  [Tc:  ] [][]"######" undefined
+
+[D: 2/5/2025 T: 21:7:58:911 PM ]  [Tc:  ] "deep linking =====================>"""undefined undefined
+
+[D: 2/5/2025 T: 21:7:58:911 PM ]  [Tc:  ] "addEventListener""background"undefined undefined
+
+[D: 2/5/2025 T: 21:7:58:911 PM ]  [Tc:  ] null"analytics_Session_data==============>"undefined undefined
+
+[D: 2/5/2025 T: 21:7:58:911 PM ]  [Tc:  ] null"analytics_Session_data==============>"undefined undefined
+
+[D: 2/5/2025 T: 21:14:15:640 PM ]  [Tc:  ] "app state retrieve data55============>""680d1c83274058014ca23f71"{"verified":true,"pushNotifyToken":null,"_id":"680d1c83274058014ca23f71","UserName":"smazer007","EmailId":"smazer007@gmail.com","MobileNumber":null,"__v":0,"firmwareAutoUpload":false,"firmwareAutoDownload":false,"svr_ota":false,"currentOTAIndex":0,"curCacheBuildNum":0,"latest_Bin_File_Length":null,"latest_firmware_vrs":null,"age":"","gender":""} 
+
+[D: 2/5/2025 T: 21:14:15:751 PM ]  [Tc:  ] "INFO""COMMUNICATION""111" establish communication triggered []
+
+[D: 2/5/2025 T: 21:14:15:795 PM ]  [Tc:  ] "Home.js LoginState ==>"{"isLoading":false,"userDetails":{"verified":true,"pushNotifyToken":null,"_id":"680d1c83274058014ca23f71","UserName":"smazer007","EmailId":"smazer007@gmail.com","MobileNumber":null,"__v":0,"firmwareAutoUpload":false,"firmwareAutoDownload":false,"svr_ota":false,"currentOTAIndex":0,"curCacheBuildNum":0,"latest_Bin_File_Length":null,"latest_firmware_vrs":null,"age":"","gender":""},"guestDetails":null,"userToken":"680d1c83274058014ca23f71","deviceOnOffStatus":true,"deviceConnnectedStatus":false,"associative_devices":[],"language":"English","guestAssociativeDevices":[]}undefined undefined
+
+[D: 2/5/2025 T: 21:14:15:796 PM ]  [Tc:  ] [][]"######" undefined
+
+[D: 2/5/2025 T: 21:14:17:34 PM ]  [Tc:  ] "addEventListener""background"undefined undefined
+
+[D: 2/5/2025 T: 21:14:17:35 PM ]  [Tc:  ] "deep linking =====================>"""undefined undefined
+
+[D: 2/5/2025 T: 21:14:17:35 PM ]  [Tc:  ] null"analytics_Session_data==============>"undefined undefined
+
+[D: 2/5/2025 T: 21:14:17:35 PM ]  [Tc:  ] null"analytics_Session_data==============>"undefined undefined
+
+[D: 2/5/2025 T: 21:18:3:137 PM ]  [Tc:  ] "app state retrieve data55============>""680d1c83274058014ca23f71"{"verified":true,"pushNotifyToken":null,"_id":"680d1c83274058014ca23f71","UserName":"smazer007","EmailId":"smazer007@gmail.com","MobileNumber":null,"__v":0,"firmwareAutoUpload":false,"firmwareAutoDownload":false,"svr_ota":false,"currentOTAIndex":0,"curCacheBuildNum":0,"latest_Bin_File_Length":null,"latest_firmware_vrs":null,"age":"","gender":""} [object Object]
+
+[D: 2/5/2025 T: 21:18:3:256 PM ]  [Tc:  ] "INFO""COMMUNICATION""111" establish communication triggered [{"serial_no":"SMZ00020250429BA","name":"smazer007_1","is_admin":true,"router_ssid":"","router_mac":"","heating_dur_usg_limit":20,"inverse_schedule_dur":20,"infinityOn_Toggle":true,"brand_name":"Select Brand","model_name":"","capacity":"8","room_size":"","auto_onoff_enable":false,"sch_ovr_auto_onoff":false,"dev_led_quiet_mode":false,"high_temp_thrs":28,"low_temp_thrs":24,"latitude":11.9392776,"longitude":79.8083619,"cur_firm_vrs":"2.0","hw_vrs":"0.3","product_type":"1","svr_ota":false,"max_alaram_supported":16,"device_OTA_State":0,"update_Status":"NotUpdated","BLE_mac":"D4:D4:DA:52:9A:72","app_id":1,"token_key":10,"build_number":67,"IP_add":"","energy_config_mode":0,"low_volt_thrs":160,"high_volt_thrsh":275,"enable_low_volt":false,"enable_high_volt":false,"onOffStatus":false,"current":"","voltage":"","power":"","is_appid_exist":true,"temp":"","temp_connect_status":false,"loading":false,"auth_status":2,"temperQueryStatus":false,"eleTempQueryStatus":false,"device_Id":"6810bb0d9242e0013b2dd68d","srv_vrs":0,"cert_vrs":2,"srv_typ":1,"latest_cert_vrs":2,"cert_expiry":"2125-05-02T18:30:00.000Z","htr_stg_capty":8,"localConnection":false,"serverConnection":false,"connection":false}]
+
+[D: 2/5/2025 T: 21:18:3:256 PM ]  [Tc:  ] "INFO""HARDWARE_INFO""SOCKET.IO" Pre condition : Server connection demolished true
+
+[D: 2/5/2025 T: 21:18:3:257 PM ]  [Tc:  ] "INFO""HARDWARE_INFO""SOCKET.IO" Create a socket.io for serial number: SMZ00020250429BA
+
+[D: 2/5/2025 T: 21:18:3:258 PM ]  [Tc:  ] "INFO""COMMUNICATION""11126" serial number to router mapping: {"SMZ00020250429BA":""}
+
+[D: 2/5/2025 T: 21:18:3:258 PM ]  [Tc:  ] "INFO""COMMUNICATION""11127" serial number to IP address mapping: {"SMZ00020250429BA":""}
+
+[D: 2/5/2025 T: 21:18:3:258 PM ]  [Tc:  ] "INFO""COMMUNICATION""11128" all routers to verify for communication: []
+
+[D: 2/5/2025 T: 21:18:3:258 PM ]  [Tc:  ] "INFO""COMMUNICATION""112" communication Setup step-1 Checking permission
+
+[D: 2/5/2025 T: 21:18:3:378 PM ]  [Tc:  ] "Home.js LoginState ==>"{"isLoading":false,"userDetails":{"verified":true,"pushNotifyToken":null,"_id":"680d1c83274058014ca23f71","UserName":"smazer007","EmailId":"smazer007@gmail.com","MobileNumber":null,"__v":0,"firmwareAutoUpload":false,"firmwareAutoDownload":false,"svr_ota":false,"currentOTAIndex":0,"curCacheBuildNum":0,"latest_Bin_File_Length":null,"latest_firmware_vrs":null,"age":"","gender":""},"guestDetails":null,"userToken":"680d1c83274058014ca23f71","deviceOnOffStatus":true,"deviceConnnectedStatus":false,"associative_devices":[{"serial_no":"SMZ00020250429BA","name":"smazer007_1","is_admin":true,"router_ssid":"","router_mac":"","heating_dur_usg_limit":20,"inverse_schedule_dur":20,"infinityOn_Toggle":true,"brand_name":"Select Brand","model_name":"","capacity":"8","room_size":"","auto_onoff_enable":false,"sch_ovr_auto_onoff":false,"dev_led_quiet_mode":false,"high_temp_thrs":28,"low_temp_thrs":24,"latitude":11.9392776,"longitude":79.8083619,"cur_firm_vrs":"2.0","hw_vrs":"0.3","product_type":"1","svr_ota":false,"max_alaram_supported":16,"device_OTA_State":0,"update_Status":"NotUpdated","BLE_mac":"D4:D4:DA:52:9A:72","app_id":1,"token_key":10,"build_number":67,"IP_add":"","energy_config_mode":0,"low_volt_thrs":160,"high_volt_thrsh":275,"enable_low_volt":false,"enable_high_volt":false,"onOffStatus":false,"current":"","voltage":"","power":"","is_appid_exist":true,"temp":"","temp_connect_status":false,"loading":false,"auth_status":2,"temperQueryStatus":false,"eleTempQueryStatus":false,"device_Id":"6810bb0d9242e0013b2dd68d","srv_vrs":0,"cert_vrs":2,"srv_typ":1,"latest_cert_vrs":2,"cert_expiry":"2125-05-02T18:30:00.000Z","htr_stg_capty":8,"localConnection":false,"serverConnection":false,"connection":false}],"language":"English","guestAssociativeDevices":[{"serial_no":"SMZ00020250429BA","name":"smazer007_1","is_admin":true,"router_ssid":"","router_mac":"","heating_dur_usg_limit":20,"inverse_schedule_dur":20,"infinityOn_Toggle":true,"brand_name":"Select Brand","model_name":"","capacity":"8","room_size":"","auto_onoff_enable":false,"sch_ovr_auto_onoff":false,"dev_led_quiet_mode":false,"high_temp_thrs":28,"low_temp_thrs":24,"latitude":11.9392776,"longitude":79.8083619,"cur_firm_vrs":"2.0","hw_vrs":"0.3","product_type":"1","svr_ota":false,"max_alaram_supported":16,"device_OTA_State":0,"update_Status":"NotUpdated","BLE_mac":"D4:D4:DA:52:9A:72","app_id":1,"token_key":10,"build_number":67,"IP_add":"","energy_config_mode":0,"low_volt_thrs":160,"high_volt_thrsh":275,"enable_low_volt":false,"enable_high_volt":false,"onOffStatus":false,"current":"","voltage":"","power":"","is_appid_exist":true,"temp":"","temp_connect_status":false,"loading":false,"auth_status":2,"temperQueryStatus":false,"eleTempQueryStatus":false,"device_Id":"6810bb0d9242e0013b2dd68d","srv_vrs":0,"cert_vrs":2,"srv_typ":1,"latest_cert_vrs":2,"cert_expiry":"2125-05-02T18:30:00.000Z","htr_stg_capty":8,"localConnection":false,"serverConnection":false,"connection":false}]}undefined undefined
+
+[D: 2/5/2025 T: 21:18:3:380 PM ]  [Tc:  ] [{"serial_no":"SMZ00020250429BA","name":"smazer007_1","is_admin":true,"router_ssid":"","router_mac":"","heating_dur_usg_limit":20,"inverse_schedule_dur":20,"infinityOn_Toggle":true,"brand_name":"Select Brand","model_name":"","capacity":"8","room_size":"","auto_onoff_enable":false,"sch_ovr_auto_onoff":false,"dev_led_quiet_mode":false,"high_temp_thrs":28,"low_temp_thrs":24,"latitude":11.9392776,"longitude":79.8083619,"cur_firm_vrs":"2.0","hw_vrs":"0.3","product_type":"1","svr_ota":false,"max_alaram_supported":16,"device_OTA_State":0,"update_Status":"NotUpdated","BLE_mac":"D4:D4:DA:52:9A:72","app_id":1,"token_key":10,"build_number":67,"IP_add":"","energy_config_mode":0,"low_volt_thrs":160,"high_volt_thrsh":275,"enable_low_volt":false,"enable_high_volt":false,"onOffStatus":false,"current":"","voltage":"","power":"","is_appid_exist":true,"temp":"","temp_connect_status":false,"loading":false,"auth_status":2,"temperQueryStatus":false,"eleTempQueryStatus":false,"device_Id":"6810bb0d9242e0013b2dd68d","srv_vrs":0,"cert_vrs":2,"srv_typ":1,"latest_cert_vrs":2,"cert_expiry":"2125-05-02T18:30:00.000Z","htr_stg_capty":8,"localConnection":false,"serverConnection":false,"connection":false}][{"serial_no":"SMZ00020250429BA","name":"smazer007_1","is_admin":true,"router_ssid":"","router_mac":"","heating_dur_usg_limit":20,"inverse_schedule_dur":20,"infinityOn_Toggle":true,"brand_name":"Select Brand","model_name":"","capacity":"8","room_size":"","auto_onoff_enable":false,"sch_ovr_auto_onoff":false,"dev_led_quiet_mode":false,"high_temp_thrs":28,"low_temp_thrs":24,"latitude":11.9392776,"longitude":79.8083619,"cur_firm_vrs":"2.0","hw_vrs":"0.3","product_type":"1","svr_ota":false,"max_alaram_supported":16,"device_OTA_State":0,"update_Status":"NotUpdated","BLE_mac":"D4:D4:DA:52:9A:72","app_id":1,"token_key":10,"build_number":67,"IP_add":"","energy_config_mode":0,"low_volt_thrs":160,"high_volt_thrsh":275,"enable_low_volt":false,"enable_high_volt":false,"onOffStatus":false,"current":"","voltage":"","power":"","is_appid_exist":true,"temp":"","temp_connect_status":false,"loading":false,"auth_status":2,"temperQueryStatus":false,"eleTempQueryStatus":false,"device_Id":"6810bb0d9242e0013b2dd68d","srv_vrs":0,"cert_vrs":2,"srv_typ":1,"latest_cert_vrs":2,"cert_expiry":"2125-05-02T18:30:00.000Z","htr_stg_capty":8,"localConnection":false,"serverConnection":false,"connection":false}]"######" undefined
+
+[D: 2/5/2025 T: 21:18:3:385 PM ]  [Tc:  ] "INFO""PERMISSION""32" Verifying the current status of airplane mode false
+
+[D: 2/5/2025 T: 21:18:3:388 PM ]  [Tc:  ] "INFO""GENERAL_INFO""1617" Analytics step 19 : Filter the selected serial number from the application state for getting the respective device ID mappingSMZ00020250429BAIndex :0
+
+[D: 2/5/2025 T: 21:18:3:388 PM ]  [Tc:  ] "INFO""GENERAL_INFO""1618" Analytics step 21: Filtering the Un-synced data [{"energy_used":0,"skt_on_time":1746200787,"skt_on_off_dur":61,"synced":true,"start_temp":25500,"end_temp":25500,"user_id":"680d1c83274058014ca23f71","device_Id":"6810bb0d9242e0013b2dd68d"}] device_ID: 6810bb0d9242e0013b2dd68d
+
+[D: 2/5/2025 T: 21:18:3:388 PM ]  [Tc:  ] "INFO""GENERAL_INFO""1619" Analytics step 22 : Filtered the Un-synced data []
+
+[D: 2/5/2025 T: 21:18:3:389 PM ]  [Tc:  ] "INFO""GENERAL_INFO""1620" Analytics step 20 : Un-synced data not found from the application local storage 0
+
+[D: 2/5/2025 T: 21:18:3:445 PM ]  [Tc:  ] "file: home.js:1691 , onViewRef , viewableItems:"[{"index":0,"item":{"serial_no":"SMZ00020250429BA","name":"smazer007_1","is_admin":true,"router_ssid":"","router_mac":"","heating_dur_usg_limit":20,"inverse_schedule_dur":20,"infinityOn_Toggle":true,"brand_name":"Select Brand","model_name":"","capacity":"8","room_size":"","auto_onoff_enable":false,"sch_ovr_auto_onoff":false,"dev_led_quiet_mode":false,"high_temp_thrs":28,"low_temp_thrs":24,"latitude":11.9392776,"longitude":79.8083619,"cur_firm_vrs":"2.0","hw_vrs":"0.3","product_type":"1","svr_ota":false,"max_alaram_supported":16,"device_OTA_State":0,"update_Status":"NotUpdated","BLE_mac":"D4:D4:DA:52:9A:72","app_id":1,"token_key":10,"build_number":67,"IP_add":"","energy_config_mode":0,"low_volt_thrs":160,"high_volt_thrsh":275,"enable_low_volt":false,"enable_high_volt":false,"onOffStatus":false,"current":"","voltage":"","power":"","is_appid_exist":true,"temp":"","temp_connect_status":false,"loading":false,"auth_status":2,"temperQueryStatus":false,"eleTempQueryStatus":false,"device_Id":"6810bb0d9242e0013b2dd68d","srv_vrs":0,"cert_vrs":2,"srv_typ":1,"latest_cert_vrs":2,"cert_expiry":"2125-05-02T18:30:00.000Z","htr_stg_capty":8,"localConnection":false,"serverConnection":false,"connection":false},"key":"SMZ00020250429BA","isViewable":true}]undefined undefined
+
+[D: 2/5/2025 T: 21:18:3:528 PM ]  [Tc:  ] "INFO""PERMISSION""32" Verifying the current status of location : "already-enabled"
+
+[D: 2/5/2025 T: 21:18:3:593 PM ]  [Tc:  ] "INFO""PERMISSION""32" permission grant of the request: [true]
+
+[D: 2/5/2025 T: 21:18:3:593 PM ]  [Tc:  ] "INFO""PERMISSION""32" Permission resolved for connectivity
+
+[D: 2/5/2025 T: 21:18:3:593 PM ]  [Tc:  ] "INFO""COMMUNICATION""113" communication Setup step-2 trying to turn ON BLE
+
+[D: 2/5/2025 T: 21:18:3:603 PM ]  [Tc:  ] "WARN""HARDWARE_INFO""SOCKET.IO" room id emited to device server: SMZ00020250429BA
+
+[D: 2/5/2025 T: 21:18:3:604 PM ]  [Tc:  ] "INFO""COMMUNICATION""118" communication Setup step-3 trying to turn ON Necessary Listner
+
+[D: 2/5/2025 T: 21:18:3:605 PM ]  [Tc:  ] "INFO""COMMUNICATION""119" listners enable successfully [{},{},{}]
+
+[D: 2/5/2025 T: 21:18:3:605 PM ]  [Tc:  ] "INFO""COMMUNICATION""1110" communication Setup step-4 communication setup completed trying to proceed communication
+
+[D: 2/5/2025 T: 21:18:3:605 PM ]  [Tc:  ] "INFO""COMMUNICATION""1110" Proceed communication with BLE: undefined
+
+[D: 2/5/2025 T: 21:18:3:610 PM ]  [Tc:  ] "INFO""COMMUNICATION""1150" BLE POWER Status: PoweredOn
+
+[D: 2/5/2025 T: 21:18:3:610 PM ]  [Tc:  ] "INFO""COMMUNICATION""1151" BLE POWER ON triggering BLE communication PoweredOn
+
+[D: 2/5/2025 T: 21:18:3:611 PM ]  [Tc:  ] "INFO""COMMUNICATION""1111" proceed BLE Communication step-0 checking BLE permission  deviceMAC true
+
+[D: 2/5/2025 T: 21:18:3:612 PM ]  [Tc:  ] "INFO""PERMISSION""32" Verifying the current status of airplane mode false
+
+[D: 2/5/2025 T: 21:18:3:633 PM ]  [Tc:  ] "INFO""PERMISSION""32" Verifying the current status of location : "already-enabled"
+
+[D: 2/5/2025 T: 21:18:3:635 PM ]  [Tc:  ] "INFO""PERMISSION""32" permission grant of the request: [true]
+
+[D: 2/5/2025 T: 21:18:3:635 PM ]  [Tc:  ] "INFO""PERMISSION""32" Permission resolved for connectivity
+
+[D: 2/5/2025 T: 21:18:3:635 PM ]  [Tc:  ] "INFO""COMMUNICATION""1112" proceed BLE Communication step-1 auto connection
+
+[D: 2/5/2025 T: 21:18:3:635 PM ]  [Tc:  ] "INFO""COMMUNICATION""1113" avaliable BLE mac address {"SMZ00020250429BA":"D4:D4:DA:52:9A:72"} disconnected device ["SMZ00020250429BA"]
+
+[D: 2/5/2025 T: 21:18:3:635 PM ]  [Tc:  ] "INFO""COMMUNICATION""1114" auto connect {"mode":1,"address":"D4:D4:DA:52:9A:72","serial_no":"SMZ00020250429BA"}
+
+[D: 2/5/2025 T: 21:18:3:635 PM ]  [Tc:  ] "INFO""COMMUNICATION""1127" establish connection with device for data:  {"mode":1,"address":"D4:D4:DA:52:9A:72","serial_no":"SMZ00020250429BA"}
+
+[D: 2/5/2025 T: 21:18:3:636 PM ]  [Tc:  ] "INFO""COMMUNICATION""1128" all connection status: false
+
+[D: 2/5/2025 T: 21:18:3:636 PM ]  [Tc:  ] "INFO""COMMUNICATION""1129" all message sending status :  false
+
+[D: 2/5/2025 T: 21:18:3:636 PM ]  [Tc:  ] "INFO""COMMUNICATION""1131" proceed BLE Communication step-3 initiate the BLE connect for ID: D4:D4:DA:52:9A:72
+
+[D: 2/5/2025 T: 21:18:3:636 PM ]  [Tc:  ] "INFO""HARDWARE_INFO""BLE" Bluetooth connect function iniitated in Pairing for mac: D4:D4:DA:52:9A:72
+
+[D: 2/5/2025 T: 21:18:3:639 PM ]  [Tc:  ] "INFO""HARDWARE_INFO""BLE" Checking the BLE current state PoweredOn
+
+[D: 2/5/2025 T: 21:18:3:678 PM ]  [Tc:  ] "WARN""HARDWARE_INFO""SOCKET.IO" device connection data from server: {"data":false,"serial_no":"SMZ00020250429BA"}
+
+[D: 2/5/2025 T: 21:18:3:679 PM ]  [Tc:  ] "setconnectionFunc function called"{"data":false,"serial_no":"SMZ00020250429BA"}undefined undefined
+
+[D: 2/5/2025 T: 21:18:3:679 PM ]  [Tc:  ] "setconnectionFunc AllDeviceData===================>"[{"serial_no":"SMZ00020250429BA","name":"smazer007_1","is_admin":true,"router_ssid":"","router_mac":"","heating_dur_usg_limit":20,"inverse_schedule_dur":20,"infinityOn_Toggle":true,"brand_name":"Select Brand","model_name":"","capacity":"8","room_size":"","auto_onoff_enable":false,"sch_ovr_auto_onoff":false,"dev_led_quiet_mode":false,"high_temp_thrs":28,"low_temp_thrs":24,"latitude":11.9392776,"longitude":79.8083619,"cur_firm_vrs":"2.0","hw_vrs":"0.3","product_type":"1","svr_ota":false,"max_alaram_supported":16,"device_OTA_State":0,"update_Status":"NotUpdated","BLE_mac":"D4:D4:DA:52:9A:72","app_id":1,"token_key":10,"build_number":67,"IP_add":"","energy_config_mode":0,"low_volt_thrs":160,"high_volt_thrsh":275,"enable_low_volt":false,"enable_high_volt":false,"onOffStatus":false,"current":"","voltage":"","power":"","is_appid_exist":true,"temp":"","temp_connect_status":false,"loading":false,"auth_status":2,"temperQueryStatus":false,"eleTempQueryStatus":false,"device_Id":"6810bb0d9242e0013b2dd68d","srv_vrs":0,"cert_vrs":2,"srv_typ":1,"latest_cert_vrs":2,"cert_expiry":"2125-05-02T18:30:00.000Z","htr_stg_capty":8,"localConnection":false,"serverConnection":false,"connection":false}]undefined undefined
+
+[D: 2/5/2025 T: 21:18:3:682 PM ]  [Tc:  ] "INFO""socketsetConnectionFunc"{"data":false,"serial_no":"SMZ00020250429BA"} undefined
+
+[D: 2/5/2025 T: 21:18:3:682 PM ]  [Tc:  ] "[warn] ""Home_helper.js""trying to update connection twice in server connection" 
+
+[D: 2/5/2025 T: 21:18:3:869 PM ]  [Tc:  ] "INFO""HARDWARE_INFO""BLE" BLE is connected to mac: D4:D4:DA:52:9A:72
+
+[D: 2/5/2025 T: 21:18:3:909 PM ]  [Tc:  ] "INFO""HARDWARE_INFO""BLE" Connected mac address: D4:D4:DA:52:9A:72 status: true
+
+[D: 2/5/2025 T: 21:18:4:416 PM ]  [Tc:  ] "INFO""HARDWARE_INFO""BLE" MTU size of Mobile: 512
+
+[D: 2/5/2025 T: 21:18:4:434 PM ]  [Tc:  ] "INFO""HARDWARE_INFO""BLE" MTU after, negotiation with device: 256
+
+[D: 2/5/2025 T: 21:18:5:126 PM ]  [Tc:  ] "INFO""GENERAL_INFO""1617" Analytics step 19 : Filter the selected serial number from the application state for getting the respective device ID mappingSMZ00020250429BAIndex :0
+
+[D: 2/5/2025 T: 21:18:5:126 PM ]  [Tc:  ] "INFO""GENERAL_INFO""1618" Analytics step 21: Filtering the Un-synced data [{"energy_used":0,"skt_on_time":1746200787,"skt_on_off_dur":61,"synced":true,"start_temp":25500,"end_temp":25500,"user_id":"680d1c83274058014ca23f71","device_Id":"6810bb0d9242e0013b2dd68d"}] device_ID: 6810bb0d9242e0013b2dd68d
+
+[D: 2/5/2025 T: 21:18:5:126 PM ]  [Tc:  ] "INFO""GENERAL_INFO""1619" Analytics step 22 : Filtered the Un-synced data []
+
+[D: 2/5/2025 T: 21:18:5:126 PM ]  [Tc:  ] "INFO""GENERAL_INFO""1620" Analytics step 20 : Un-synced data not found from the application local storage 0
+
+[D: 2/5/2025 T: 21:18:7:269 PM ]  [Tc:  ] "INFO""GENERAL_INFO""1617" Analytics step 19 : Filter the selected serial number from the application state for getting the respective device ID mappingSMZ00020250429BAIndex :0
+
+[D: 2/5/2025 T: 21:18:7:270 PM ]  [Tc:  ] "INFO""GENERAL_INFO""1618" Analytics step 21: Filtering the Un-synced data [{"energy_used":0,"skt_on_time":1746200787,"skt_on_off_dur":61,"synced":true,"start_temp":25500,"end_temp":25500,"user_id":"680d1c83274058014ca23f71","device_Id":"6810bb0d9242e0013b2dd68d"}] device_ID: 6810bb0d9242e0013b2dd68d
+
+[D: 2/5/2025 T: 21:18:7:270 PM ]  [Tc:  ] "INFO""GENERAL_INFO""1619" Analytics step 22 : Filtered the Un-synced data []
+
+[D: 2/5/2025 T: 21:18:7:270 PM ]  [Tc:  ] "INFO""GENERAL_INFO""1620" Analytics step 20 : Un-synced data not found from the application local storage 0
+
+[D: 2/5/2025 T: 21:18:7:318 PM ]  [Tc:  ] "deep linking =====================>"""undefined undefined
+
+[D: 2/5/2025 T: 21:18:7:319 PM ]  [Tc:  ] "addEventListener""background"undefined undefined
+
+[D: 2/5/2025 T: 21:18:7:320 PM ]  [Tc:  ] {"SMZ00020250429BA":[{"energy_used":0,"skt_on_time":1746200787,"skt_on_off_dur":61,"synced":true,"start_temp":25500,"end_temp":25500,"user_id":"680d1c83274058014ca23f71","device_Id":"6810bb0d9242e0013b2dd68d"}]}"analytics_Session_data==============>"undefined undefined
+
+[D: 2/5/2025 T: 21:18:7:322 PM ]  [Tc:  ] null"analytics_Session_data==============>"undefined undefined

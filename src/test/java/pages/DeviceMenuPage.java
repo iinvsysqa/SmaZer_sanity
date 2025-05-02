@@ -19,6 +19,7 @@ import wrappers.GenericWrappers;
 public class DeviceMenuPage extends GenericWrappers{
 
 	private AndroidDriver driver;
+	public String wifiPassword = loadProp("WIFIPASSWORD");
 
 	// Locate all elements on the page
 
@@ -499,20 +500,25 @@ public class DeviceMenuPage extends GenericWrappers{
 		public void removerouter() {
 
 			driver.findElement(MobileBy.AndroidUIAutomator(
-				    "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Router Details\"));"));
-//			if (isElementDisplayed(addRouterButton,"Add router button")) {
-//				clickbyXpath(addRouterButton, "Add router button ");
-//				enterWiFiPassword(loadProp("REMOTEWIFIPASSWORD"));
-////				clickAddRouterCheckBox();
-//				clickbyXpath(submitBtn, " Enter Button  ");
-//			}
-//			else 
-			if (isElementDisplayed(removeRouterButton,"Remove router  button")) {
+				    "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Router Details\"))"));
+			if (isElementDisplayedCheck(addRouterButton)) {
+				clickbyXpath(addRouterButton, "Add router button ");
+				enterWiFiPassword(wifiPassword);
+				clickAddRouterCheckBox();
+				clickbyXpath(submitBtn, " Enter Button  ");
+				scrollToText("Remove Router");
 				clickbyXpath(removeRouterButton, "Remove router button ");
 				clickRemoveRouterCancelButton();
 				clickbyXpath(removeRouterButton, "Remove router button ");
 				clickRemoveRouterRemoveButton();
-				checkrouterremovedsuccessfultoast();
+				
+				clickDevicesettingsbackButton();
+			}else if (isElementDisplayedCheck(removeRouterButton)) {
+				clickbyXpath(removeRouterButton, "Remove router button ");
+				clickRemoveRouterCancelButton();
+				clickbyXpath(removeRouterButton, "Remove router button ");
+				clickRemoveRouterRemoveButton();
+				
 				clickDevicesettingsbackButton();
 
 			}

@@ -47,7 +47,6 @@ public class TC10_Pairing_SmartConfig extends MobileAppWrappers {
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
-		Thread.sleep(2000);
 		adddevicepage.pair(3);
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.checkdevicedetailstoast();
@@ -86,8 +85,10 @@ public class TC10_Pairing_SmartConfig extends MobileAppWrappers {
 		otppage.enterOTPField3("3");
 		otppage.enterOTPField4("4");
 		otppage.submitButton();
+		
 		Thread.sleep(3000);
-
+		adddevicepage.clickBlePermissionOkbutton();
+		
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();
 		devicemenupage.clickRemoveDevicePopupYesButton();
@@ -96,7 +97,6 @@ public class TC10_Pairing_SmartConfig extends MobileAppWrappers {
 		readwrite.closePort();
 		}
 		catch (Exception e) {
-			readwrite.write("factory_reset\r");		
 			readwrite.closePort();
 			fail(e);
 		}

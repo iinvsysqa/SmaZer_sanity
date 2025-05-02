@@ -69,15 +69,17 @@ public class Analytics  extends GenericWrappers {
 
 		clickbyXpath(BackButton, "Back button");
 	}
+	
 	public boolean checkenrgyduration(int value) throws Exception {	
 		boolean bReturn = false;
 		expshortWaittwenty(enrgyDurationmin);
 //		clickbyXpath(enrgyDurationmin, "energy duration");
 		
-		int newvalue=extractintvalue(oldvalue)+value;
-		System.out.println(newvalue);
+		int newvalue=extractMinutes(oldvalue)+value;
+		System.out.println("new value :"+newvalue);
 		String text = enrgyDurationmin.getText();
-		if (extractintvalue( enrgyDurationmin.getText())==newvalue) {
+		System.out.println("after analytics :"+text);
+		if (extractMinutes( enrgyDurationmin.getText())==newvalue) {
 			
 			Reporter.reportStep("Analytics value updated after session : " + text, "PASS");
 			bReturn = true;

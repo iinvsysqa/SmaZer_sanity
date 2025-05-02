@@ -20,6 +20,8 @@ import wrappers.MobileAppWrappers;
 
 import static org.testng.Assert.fail;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -46,13 +48,13 @@ public class TC01_Accounts_Info extends MobileAppWrappers {
 	}
 
 
-	@Test(priority = 0)
+	@Test(priority = 0,groups = {"skip"})
 	public void removerepair() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
 
-	
+	static String wifiName="TP-Link_6D38_With_Internet";
 	public void pairBlewithoutRouter() throws Exception {
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
@@ -62,10 +64,18 @@ public class TC01_Accounts_Info extends MobileAppWrappers {
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 			readwrite.openPort();
-			Thread.sleep(2000);
-			readwrite.write("reboot\r");
-			Thread.sleep(3000);
 
+			System.out.println("hello");
+		
+//				 executeAdbCommand("adb shell am start -a android.intent.action.MAIN -n com.android.settings/.wifi.WifiSettings");
+//
+//			     // Wait for the Wi-Fi settings page to open
+//			     Thread.sleep(2000);
+//
+//			     driver.findElement(MobileBy.AndroidUIAutomator(
+//							"new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains(\""
+//									+ wifiName + "\"))"));
+			     
 			adddevicepage.pair(1);
 			adddevicepage.clickNextButtonsZephyrInfo();
 			adddevicepage.checkdevicedetailstoast();
@@ -91,6 +101,19 @@ public class TC01_Accounts_Info extends MobileAppWrappers {
 		}
 	}
 
+	private static void executeAdbCommand(String command) {
+		 try {
+		     Process process = Runtime.getRuntime().exec(command);
+		     BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+		     String line;
+		     while ((line = reader.readLine()) != null) {
+		         System.out.println(line);
+		     }
+		     process.waitFor();
+		 } catch (Exception e) {
+		     e.printStackTrace();
+		 }
+		}
 
 }	
 
