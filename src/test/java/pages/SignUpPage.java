@@ -197,17 +197,17 @@ public class SignUpPage extends GenericWrappers {
 			Runtime.getRuntime().exec("adb uninstall "+loadProp("APP_PACKAGE"));
 			driver.installApp(prop.getProperty("APP_PATH"));
 			driver.activateApp(packages);
-			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.szephyr android.permission.ACCESS_FINE_LOCATION"));
-			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.szephyr android.permission.BLUETOOTH_SCAN"));
-			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.szephyr android.permission.BLUETOOTH_CONNECT"));
+			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.ACCESS_FINE_LOCATION"));
+			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_SCAN"));
+			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_CONNECT"));
 			}
 			else {
 				
 				driver.installApp(prop.getProperty("APP_PATH"));
 				driver.activateApp(packages);
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.szephyr android.permission.ACCESS_FINE_LOCATION"));
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.szephyr android.permission.BLUETOOTH_SCAN"));
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.szephyr android.permission.BLUETOOTH_CONNECT"));
+				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.ACCESS_FINE_LOCATION"));
+				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_SCAN"));
+				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_CONNECT"));
 			}
 		}
 		

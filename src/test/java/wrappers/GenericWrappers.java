@@ -115,10 +115,16 @@ public class GenericWrappers {
 			if (driver.isAppInstalled(appPackage)) {
 				System.out.println("App is already installed. Launching the app...");
 				driver.activateApp(appPackage); // Open the app
+				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.ACCESS_FINE_LOCATION"));
+				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_SCAN"));
+				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_CONNECT"));
 			} else {
 				System.out.println("App is not installed. Installing and launching...");
 				driver.installApp(prop.getProperty("APP_PATH"));
 				driver.activateApp(appPackage); // Launch the app after installation
+				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.ACCESS_FINE_LOCATION"));
+				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_SCAN"));
+				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_CONNECT"));
 			}
 			
 			if (driver.isAppInstalled(appPackage)) {
@@ -129,9 +135,7 @@ public class GenericWrappers {
 				
 			}
 			Reporter.reportStep("App opened successfully", "INFO");
-			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.ACCESS_FINE_LOCATION"));
-			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_SCAN"));
-			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_CONNECT"));
+			
 			bReturn = true;
 
 		} catch (MalformedURLException e) {
