@@ -1,0 +1,1493 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/27</td>
+</tr><tr>
+<td>Started on:</td><td>Tue May 06 16:11:13 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>0 seconds (116 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td>skip </td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='smaZer_testcases.Longrun_voltvalue.beforeSuite()'><b>beforeSuite</b><br>Test class: smaZer_testcases.Longrun_voltvalue</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1713833639", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1713833639'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.Longrun_voltvalue@72ade7e3</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='smaZer_testcases.TC06_SignIn_SuccessFlow.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC06_SignIn_SuccessFlow</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC06_SignIn_SuccessFlow@352ff4da</td></tr>
+<tr>
+<td title='smaZer_testcases.TC19_DeviceSettings.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC19_DeviceSettings</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC19_DeviceSettings@651aed93</td></tr>
+<tr>
+<td title='smaZer_testcases.TC04_SignIn_Flow.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC04_SignIn_Flow</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC04_SignIn_Flow@f627d13</td></tr>
+<tr>
+<td title='smaZer_testcases.TC31_Schedular.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC31_Schedular</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC31_Schedular@1cb346ea</td></tr>
+<tr>
+<td title='smaZer_testcases.TC10_Pairing_SmartConfig.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC10_Pairing_SmartConfig</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC10_Pairing_SmartConfig@3e44f2a5</td></tr>
+<tr>
+<td title='smaZer_testcases.TC08_Pairing_BlewithoutRouter.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC08_Pairing_BlewithoutRouter</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC08_Pairing_BlewithoutRouter@2e32ccc5</td></tr>
+<tr>
+<td title='smaZer_testcases.TC09_Pairing_BlewithRouter.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC09_Pairing_BlewithRouter</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC09_Pairing_BlewithRouter@748741cb</td></tr>
+<tr>
+<td title='smaZer_testcases.TC31_Schedular.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC31_Schedular</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC31_Schedular@1cb346ea</td></tr>
+<tr>
+<td title='smaZer_testcases.TC02_SignUp.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC02_SignUp</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC02_SignUp@6ea2bc93</td></tr>
+<tr>
+<td title='smaZer_testcases.TC30_Schedular.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC30_Schedular</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC30_Schedular@50313382</td></tr>
+<tr>
+<td title='smaZer_testcases.TC03_SignUp.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC03_SignUp</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC03_SignUp@3116c353</td></tr>
+<tr>
+<td title='smaZer_testcases.TC33_Ble_Factory_Reset.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC33_Ble_Factory_Reset</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC33_Ble_Factory_Reset@14a50707</td></tr>
+<tr>
+<td title='smaZer_testcases.TC03_SignUp.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC03_SignUp</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC03_SignUp@3116c353</td></tr>
+<tr>
+<td title='smaZer_testcases.TC10_Pairing_SmartConfig.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC10_Pairing_SmartConfig</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC10_Pairing_SmartConfig@3e44f2a5</td></tr>
+<tr>
+<td title='smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@42b3b079</td></tr>
+<tr>
+<td title='smaZer_testcases.TC05_SignIn_Valid_User.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC05_SignIn_Valid_User</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC05_SignIn_Valid_User@4e928fbf</td></tr>
+<tr>
+<td title='smaZer_testcases.TC24_Analytics.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC24_Analytics</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC24_Analytics@1cd629b3</td></tr>
+<tr>
+<td title='smaZer_testcases.TC05_SignIn_Valid_User.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC05_SignIn_Valid_User</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC05_SignIn_Valid_User@4e928fbf</td></tr>
+<tr>
+<td title='smaZer_testcases.TC15_SmartConfig.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC15_SmartConfig</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC15_SmartConfig@895e367</td></tr>
+<tr>
+<td title='smaZer_testcases.TC20_DeviceSettings.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC20_DeviceSettings</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC20_DeviceSettings@4dd6fd0a</td></tr>
+<tr>
+<td title='smaZer_testcases.TC23_Analytics.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC23_Analytics</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC23_Analytics@6692b6c6</td></tr>
+<tr>
+<td title='smaZer_testcases.TC25_Analytics.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC25_Analytics</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC25_Analytics@589da3f3</td></tr>
+<tr>
+<td title='smaZer_testcases.TC31_Schedular.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC31_Schedular</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC31_Schedular@1cb346ea</td></tr>
+<tr>
+<td title='smaZer_testcases.TC26_Analytics.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC26_Analytics</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC26_Analytics@39d76cb5</td></tr>
+<tr>
+<td title='smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@42b3b079</td></tr>
+<tr>
+<td title='smaZer_testcases.TC23_Analytics.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC23_Analytics</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC23_Analytics@6692b6c6</td></tr>
+<tr>
+<td title='smaZer_testcases.TC33_Ble_Factory_Reset.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC33_Ble_Factory_Reset</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC33_Ble_Factory_Reset@14a50707</td></tr>
+<tr>
+<td title='smaZer_testcases.TC13_BlewithoutRouter.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC13_BlewithoutRouter</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC13_BlewithoutRouter@5f77d0f9</td></tr>
+<tr>
+<td title='smaZer_testcases.TC10_Pairing_SmartConfig.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC10_Pairing_SmartConfig</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC10_Pairing_SmartConfig@3e44f2a5</td></tr>
+<tr>
+<td title='smaZer_testcases.TC09_Pairing_BlewithRouter.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC09_Pairing_BlewithRouter</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC09_Pairing_BlewithRouter@748741cb</td></tr>
+<tr>
+<td title='smaZer_testcases.TC34_smaZer_Info.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC34_smaZer_Info</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC34_smaZer_Info@4d518b32</td></tr>
+<tr>
+<td title='smaZer_testcases.TC07_SignIn_Logout.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC07_SignIn_Logout</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC07_SignIn_Logout@3224a577</td></tr>
+<tr>
+<td title='smaZer_testcases.TC30_Schedular.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC30_Schedular</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC30_Schedular@50313382</td></tr>
+<tr>
+<td title='smaZer_testcases.TC34_smaZer_Info.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC34_smaZer_Info</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC34_smaZer_Info@4d518b32</td></tr>
+<tr>
+<td title='smaZer_testcases.TC30_Schedular.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC30_Schedular</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC30_Schedular@50313382</td></tr>
+<tr>
+<td title='smaZer_testcases.TC06_SignIn_SuccessFlow.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC06_SignIn_SuccessFlow</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC06_SignIn_SuccessFlow@352ff4da</td></tr>
+<tr>
+<td title='smaZer_testcases.TC34_smaZer_Info.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC34_smaZer_Info</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC34_smaZer_Info@4d518b32</td></tr>
+<tr>
+<td title='smaZer_testcases.TC02_SignUp.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC02_SignUp</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC02_SignUp@6ea2bc93</td></tr>
+<tr>
+<td title='smaZer_testcases.TC26_Analytics.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC26_Analytics</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC26_Analytics@39d76cb5</td></tr>
+<tr>
+<td title='smaZer_testcases.TC08_Pairing_BlewithoutRouter.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC08_Pairing_BlewithoutRouter</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC08_Pairing_BlewithoutRouter@2e32ccc5</td></tr>
+<tr>
+<td title='smaZer_testcases.TC06_SignIn_SuccessFlow.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC06_SignIn_SuccessFlow</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC06_SignIn_SuccessFlow@352ff4da</td></tr>
+<tr>
+<td title='smaZer_testcases.TC13_BlewithoutRouter.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC13_BlewithoutRouter</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC13_BlewithoutRouter@5f77d0f9</td></tr>
+<tr>
+<td title='smaZer_testcases.TC25_Analytics.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC25_Analytics</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC25_Analytics@589da3f3</td></tr>
+<tr>
+<td title='smaZer_testcases.TC14_BleWithRouter.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC14_BleWithRouter</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC14_BleWithRouter@463fd068</td></tr>
+<tr>
+<td title='smaZer_testcases.TC21_DeviceSettings.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC21_DeviceSettings</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC21_DeviceSettings@bb9e6dc</td></tr>
+<tr>
+<td title='smaZer_testcases.TC04_SignIn_Flow.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC04_SignIn_Flow</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC04_SignIn_Flow@f627d13</td></tr>
+<tr>
+<td title='smaZer_testcases.TC29_Schedular.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC29_Schedular</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC29_Schedular@52815fa3</td></tr>
+<tr>
+<td title='smaZer_testcases.Longrun_voltvalue.beforeTest()'><b>beforeTest</b><br>Test class: smaZer_testcases.Longrun_voltvalue</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.Longrun_voltvalue@72ade7e3</td></tr>
+<tr>
+<td title='smaZer_testcases.TC15_SmartConfig.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC15_SmartConfig</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC15_SmartConfig@895e367</td></tr>
+<tr>
+<td title='smaZer_testcases.TC28_Schedular.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC28_Schedular</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC28_Schedular@6736fa8d</td></tr>
+<tr>
+<td title='smaZer_testcases.TC28_Schedular.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC28_Schedular</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC28_Schedular@6736fa8d</td></tr>
+<tr>
+<td title='smaZer_testcases.TC32_Factory_Reset.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC32_Factory_Reset</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC32_Factory_Reset@4c012563</td></tr>
+<tr>
+<td title='smaZer_testcases.TC24_Analytics.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC24_Analytics</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC24_Analytics@1cd629b3</td></tr>
+<tr>
+<td title='smaZer_testcases.TC08_Pairing_BlewithoutRouter.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC08_Pairing_BlewithoutRouter</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC08_Pairing_BlewithoutRouter@2e32ccc5</td></tr>
+<tr>
+<td title='smaZer_testcases.TC28_Schedular.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC28_Schedular</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC28_Schedular@6736fa8d</td></tr>
+<tr>
+<td title='smaZer_testcases.TC02_SignUp.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC02_SignUp</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC02_SignUp@6ea2bc93</td></tr>
+<tr>
+<td title='smaZer_testcases.TC23_Analytics.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC23_Analytics</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC23_Analytics@6692b6c6</td></tr>
+<tr>
+<td title='smaZer_testcases.TC29_Schedular.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC29_Schedular</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC29_Schedular@52815fa3</td></tr>
+<tr>
+<td title='smaZer_testcases.TC21_DeviceSettings.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC21_DeviceSettings</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC21_DeviceSettings@bb9e6dc</td></tr>
+<tr>
+<td title='smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@42b3b079</td></tr>
+<tr>
+<td title='smaZer_testcases.TC09_Pairing_BlewithRouter.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC09_Pairing_BlewithRouter</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC09_Pairing_BlewithRouter@748741cb</td></tr>
+<tr>
+<td title='smaZer_testcases.TC26_Analytics.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC26_Analytics</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC26_Analytics@39d76cb5</td></tr>
+<tr>
+<td title='smaZer_testcases.TC05_SignIn_Valid_User.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC05_SignIn_Valid_User</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC05_SignIn_Valid_User@4e928fbf</td></tr>
+<tr>
+<td title='smaZer_testcases.TC32_Factory_Reset.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC32_Factory_Reset</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC32_Factory_Reset@4c012563</td></tr>
+<tr>
+<td title='smaZer_testcases.TC32_Factory_Reset.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC32_Factory_Reset</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC32_Factory_Reset@4c012563</td></tr>
+<tr>
+<td title='smaZer_testcases.TC20_DeviceSettings.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC20_DeviceSettings</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC20_DeviceSettings@4dd6fd0a</td></tr>
+<tr>
+<td title='smaZer_testcases.TC15_SmartConfig.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC15_SmartConfig</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC15_SmartConfig@895e367</td></tr>
+<tr>
+<td title='smaZer_testcases.TC19_DeviceSettings.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC19_DeviceSettings</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC19_DeviceSettings@651aed93</td></tr>
+<tr>
+<td title='smaZer_testcases.TC14_BleWithRouter.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC14_BleWithRouter</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC14_BleWithRouter@463fd068</td></tr>
+<tr>
+<td title='smaZer_testcases.TC07_SignIn_Logout.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC07_SignIn_Logout</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC07_SignIn_Logout@3224a577</td></tr>
+<tr>
+<td title='smaZer_testcases.TC14_BleWithRouter.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC14_BleWithRouter</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC14_BleWithRouter@463fd068</td></tr>
+<tr>
+<td title='smaZer_testcases.TC25_Analytics.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC25_Analytics</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC25_Analytics@589da3f3</td></tr>
+<tr>
+<td title='smaZer_testcases.TC07_SignIn_Logout.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC07_SignIn_Logout</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC07_SignIn_Logout@3224a577</td></tr>
+<tr>
+<td title='smaZer_testcases.TC19_DeviceSettings.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC19_DeviceSettings</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC19_DeviceSettings@651aed93</td></tr>
+<tr>
+<td title='smaZer_testcases.TC21_DeviceSettings.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC21_DeviceSettings</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC21_DeviceSettings@bb9e6dc</td></tr>
+<tr>
+<td title='smaZer_testcases.TC03_SignUp.afterMethod()'><b>afterMethod</b><br>Test class: smaZer_testcases.TC03_SignUp</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC03_SignUp@3116c353</td></tr>
+<tr>
+<td title='smaZer_testcases.TC20_DeviceSettings.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC20_DeviceSettings</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC20_DeviceSettings@4dd6fd0a</td></tr>
+<tr>
+<td title='smaZer_testcases.TC24_Analytics.beforeMethod()'><b>beforeMethod</b><br>Test class: smaZer_testcases.TC24_Analytics</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC24_Analytics@1cd629b3</td></tr>
+<tr>
+<td title='smaZer_testcases.TC13_BlewithoutRouter.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC13_BlewithoutRouter</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC13_BlewithoutRouter@5f77d0f9</td></tr>
+<tr>
+<td title='smaZer_testcases.TC29_Schedular.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC29_Schedular</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC29_Schedular@52815fa3</td></tr>
+<tr>
+<td title='smaZer_testcases.TC33_Ble_Factory_Reset.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC33_Ble_Factory_Reset</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC33_Ble_Factory_Reset@14a50707</td></tr>
+<tr>
+<td title='smaZer_testcases.Longrun_voltvalue.afterTest()'><b>afterTest</b><br>Test class: smaZer_testcases.Longrun_voltvalue</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.Longrun_voltvalue@72ade7e3</td></tr>
+<tr>
+<td title='smaZer_testcases.TC04_SignIn_Flow.startTestCase()'><b>startTestCase</b><br>Test class: smaZer_testcases.TC04_SignIn_Flow</td>
+<td></td>
+<td>0</td>
+<td>smaZer_testcases.TC04_SignIn_Flow@f627d13</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='smaZer_testcases.TC07_SignIn_Logout.login()'><b>login</b><br>Test class: smaZer_testcases.TC07_SignIn_Logout</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2017860548", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2017860548'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC07_SignIn_Logout@3224a577</td></tr>
+<tr>
+<td title='smaZer_testcases.TC30_Schedular.schedule()'><b>schedule</b><br>Test class: smaZer_testcases.TC30_Schedular</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace214320652", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace214320652'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC30_Schedular@50313382</td></tr>
+<tr>
+<td title='smaZer_testcases.TC08_Pairing_BlewithoutRouter.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC08_Pairing_BlewithoutRouter</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1029898472", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1029898472'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC08_Pairing_BlewithoutRouter@2e32ccc5</td></tr>
+<tr>
+<td title='smaZer_testcases.TC13_BlewithoutRouter.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC13_BlewithoutRouter</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace989126847", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace989126847'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC13_BlewithoutRouter@5f77d0f9</td></tr>
+<tr>
+<td title='smaZer_testcases.TC02_SignUp.signUp()'><b>signUp</b><br>Test class: smaZer_testcases.TC02_SignUp</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1972326147", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1972326147'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC02_SignUp@6ea2bc93</td></tr>
+<tr>
+<td title='smaZer_testcases.TC32_Factory_Reset.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC32_Factory_Reset</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1982958205", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1982958205'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC32_Factory_Reset@4c012563</td></tr>
+<tr>
+<td title='smaZer_testcases.TC14_BleWithRouter.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC14_BleWithRouter</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace773348567", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace773348567'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC14_BleWithRouter@463fd068</td></tr>
+<tr>
+<td title='smaZer_testcases.TC29_Schedular.schedule()'><b>schedule</b><br>Test class: smaZer_testcases.TC29_Schedular</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace502891368", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace502891368'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC29_Schedular@52815fa3</td></tr>
+<tr>
+<td title='smaZer_testcases.TC10_Pairing_SmartConfig.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC10_Pairing_SmartConfig</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1374982240", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1374982240'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC10_Pairing_SmartConfig@3e44f2a5</td></tr>
+<tr>
+<td title='smaZer_testcases.TC31_Schedular.schedule()'><b>schedule</b><br>Test class: smaZer_testcases.TC31_Schedular</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1589466857", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1589466857'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC31_Schedular@1cb346ea</td></tr>
+<tr>
+<td title='smaZer_testcases.TC20_DeviceSettings.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC20_DeviceSettings</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1752856108", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1752856108'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC20_DeviceSettings@4dd6fd0a</td></tr>
+<tr>
+<td title='smaZer_testcases.TC28_Schedular.schedule()'><b>schedule</b><br>Test class: smaZer_testcases.TC28_Schedular</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace345290829", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace345290829'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC28_Schedular@6736fa8d</td></tr>
+<tr>
+<td title='smaZer_testcases.TC33_Ble_Factory_Reset.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC33_Ble_Factory_Reset</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1263391254", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1263391254'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC33_Ble_Factory_Reset@14a50707</td></tr>
+<tr>
+<td title='smaZer_testcases.TC05_SignIn_Valid_User.login()'><b>login</b><br>Test class: smaZer_testcases.TC05_SignIn_Valid_User</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1504083002", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1504083002'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC05_SignIn_Valid_User@4e928fbf</td></tr>
+<tr>
+<td title='smaZer_testcases.TC34_smaZer_Info.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC34_smaZer_Info</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1644864746", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1644864746'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC34_smaZer_Info@4d518b32</td></tr>
+<tr>
+<td title='smaZer_testcases.TC23_Analytics.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC23_Analytics</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1113829504", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1113829504'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC23_Analytics@6692b6c6</td></tr>
+<tr>
+<td title='smaZer_testcases.TC24_Analytics.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC24_Analytics</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2022285740", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2022285740'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC24_Analytics@1cd629b3</td></tr>
+<tr>
+<td title='smaZer_testcases.TC25_Analytics.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC25_Analytics</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1494277749", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1494277749'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC25_Analytics@589da3f3</td></tr>
+<tr>
+<td title='smaZer_testcases.TC03_SignUp.signUp()'><b>signUp</b><br>Test class: smaZer_testcases.TC03_SignUp</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2014233765", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2014233765'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC03_SignUp@3116c353</td></tr>
+<tr>
+<td title='smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace280531669", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace280531669'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@42b3b079</td></tr>
+<tr>
+<td title='smaZer_testcases.TC26_Analytics.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC26_Analytics</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace669725336", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace669725336'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC26_Analytics@39d76cb5</td></tr>
+<tr>
+<td title='smaZer_testcases.TC15_SmartConfig.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC15_SmartConfig</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1187779195", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1187779195'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC15_SmartConfig@895e367</td></tr>
+<tr>
+<td title='smaZer_testcases.TC04_SignIn_Flow.signIn()'><b>signIn</b><br>Test class: smaZer_testcases.TC04_SignIn_Flow</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1925785585", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1925785585'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC04_SignIn_Flow@f627d13</td></tr>
+<tr>
+<td title='smaZer_testcases.TC09_Pairing_BlewithRouter.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC09_Pairing_BlewithRouter</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2032647583", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2032647583'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC09_Pairing_BlewithRouter@748741cb</td></tr>
+<tr>
+<td title='smaZer_testcases.TC06_SignIn_SuccessFlow.login()'><b>login</b><br>Test class: smaZer_testcases.TC06_SignIn_SuccessFlow</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace598325842", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace598325842'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC06_SignIn_SuccessFlow@352ff4da</td></tr>
+<tr>
+<td title='smaZer_testcases.TC21_DeviceSettings.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC21_DeviceSettings</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace463381475", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace463381475'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC21_DeviceSettings@bb9e6dc</td></tr>
+<tr>
+<td title='smaZer_testcases.TC19_DeviceSettings.removerepair()'><b>removerepair</b><br>Test class: smaZer_testcases.TC19_DeviceSettings</td>
+<td><div><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1160652496", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1160652496'><pre>java.lang.RuntimeException: ADB device check failed
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1028)
+	at wrappers.MobileAppWrappers.beforeSuite(MobileAppWrappers.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.lang.RuntimeException: No ADB devices connected. Test execution stopped.
+	at wrappers.GenericWrappers.ABDconnection(GenericWrappers.java:1015)
+	... 18 more
+</pre></div></td>
+<td>0</td>
+<td>smaZer_testcases.TC19_DeviceSettings@651aed93</td></tr>
+</table><p>
+</body>
+</html>
