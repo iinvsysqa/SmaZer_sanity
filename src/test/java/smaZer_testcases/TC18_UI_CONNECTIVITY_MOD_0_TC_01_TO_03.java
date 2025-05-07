@@ -112,7 +112,7 @@ public class  TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 extends MobileAppWrappers {
 	}
 	catch (Exception e) {
 		readwrite.closePort();
-		logpage.CollectLogOnFailure();
+		logpage.CollectLogOnFailure(testCaseName,testDescription);
 		fail(e);
 	}
 	}

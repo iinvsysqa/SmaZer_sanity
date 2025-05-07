@@ -76,7 +76,7 @@ public void pairBlewithoutRouter() throws Exception {
 	}
 	catch (Exception e) {
 		readwrite.closePort();
-		logpage.CollectLogOnFailure();
+		logpage.CollectLogOnFailure(testCaseName,testDescription);
 		fail(e);
 	}
 }
