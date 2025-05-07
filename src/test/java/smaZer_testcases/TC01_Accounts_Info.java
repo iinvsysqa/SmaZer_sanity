@@ -14,6 +14,7 @@ import pages.DeviceMenuPage;
 import pages.HomePage;
 import pages.LandingPage;
 import pages.SignInPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import pages.OtpPage;
 import wrappers.MobileAppWrappers;
@@ -35,9 +36,9 @@ public class TC01_Accounts_Info extends MobileAppWrappers {
 	AddDevicePage adddevicepage;
 	AccountsInfoPage accountinfopage;
 	DeviceMenuPage devicesettingpage;
-
-
-	@BeforeClass
+	StoreLogPage logpage; 
+	
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC_01_Account_Info_Changes";
 		//check login username and Accounts info username are same or not 
@@ -48,7 +49,7 @@ public class TC01_Accounts_Info extends MobileAppWrappers {
 	}
 
 
-	@Test(priority = 0,groups = {"skip"})
+	@Test(priority = 0)
 	public void removerepair() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
@@ -60,7 +61,8 @@ public class TC01_Accounts_Info extends MobileAppWrappers {
 		homepage = new HomePage(driver);
 		accountinfopage= new AccountsInfoPage(driver);
 		devicesettingpage= new DeviceMenuPage(driver);
-
+		logpage= new StoreLogPage(driver);
+		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 			readwrite.openPort();
@@ -97,6 +99,7 @@ public class TC01_Accounts_Info extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure();
 			fail(e);
 		}
 	}

@@ -11,6 +11,7 @@ import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
 import pages.SmaZer_info_Page;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -27,7 +28,9 @@ public class  TC35_OTA_TC_01_BLE extends MobileAppWrappers {
 	OTA_Status_monitor ota_Status_monitor;
 	SignUpPage signuppage;
 	
-	@BeforeClass
+	 StoreLogPage logpage;
+	 
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC35_OTA_Update_check_Ble";
 		testDescription = "Paired with device BLE without Router mode and do OTA update";
@@ -64,6 +67,7 @@ public class  TC35_OTA_TC_01_BLE extends MobileAppWrappers {
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		szephyrinfoPage= new SmaZer_info_Page(driver);
+		logpage= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance("COM4");
 		try {
@@ -103,6 +107,7 @@ public class  TC35_OTA_TC_01_BLE extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure();
 			fail(e);
 		}
 	

@@ -10,6 +10,7 @@ import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -23,7 +24,10 @@ public class TC34_smaZer_Info extends MobileAppWrappers {
 	DeviceMenuPage devicemenupage;
 	SignUpPage signuppage;
 
-	@BeforeClass
+	 StoreLogPage logpage;    
+	 
+	 
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC34_Szephyr Info check";
 		testDescription = " User should be allowed to edit and save the AC Info page values without any issue\r\n"
@@ -43,7 +47,7 @@ public class TC34_smaZer_Info extends MobileAppWrappers {
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
-
+		logpage= new StoreLogPage(driver);
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -85,6 +89,7 @@ public class TC34_smaZer_Info extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure();
 			fail(e);
 		}
 	}

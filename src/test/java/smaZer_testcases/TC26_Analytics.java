@@ -9,6 +9,7 @@ import pages.AddDevicePage;
 import pages.Analytics;
 import pages.DeviceMenuPage;
 import pages.HomePage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -19,7 +20,9 @@ public class TC26_Analytics  extends MobileAppWrappers {
 	DeviceMenuPage devicemenupage;
 	Analytics analyticspage;
 	
-	@BeforeClass
+	 StoreLogPage logpage;  
+	 
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC_26_Analytics_Smartconfig_App close";
 		testDescription = "Pairing mode=Smartconfig <br> Connectivity :Remote <br>After connectivity established close application<br>Turn on device for 5min using device button  <br> check for analytivs value<br>Energy duration and Energy used for 5 min should update";
@@ -36,6 +39,7 @@ public class TC26_Analytics  extends MobileAppWrappers {
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		analyticspage= new Analytics(driver);
+		logpage= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -72,6 +76,7 @@ public class TC26_Analytics  extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure();
 			fail(e);
 		}
 	}

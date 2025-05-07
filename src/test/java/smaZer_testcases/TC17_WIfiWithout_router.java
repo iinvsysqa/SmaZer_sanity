@@ -14,6 +14,7 @@ import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
 import pages.SmaZer_info_Page;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -29,8 +30,9 @@ public class TC17_WIfiWithout_router extends MobileAppWrappers {
 	SmaZer_info_Page szephyrinfoPage;
 	OTA_Status_monitor ota_Status_monitor;
 	SignUpPage signuppage;	
-
-	@BeforeClass
+	StoreLogPage logpage; 
+	 
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC17_WifiWithoutRouter_CONNECTIVITY";
 		testDescription = "App kill and re-open and check the connectivity";
@@ -54,7 +56,9 @@ public class TC17_WIfiWithout_router extends MobileAppWrappers {
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		szephyrinfoPage= new SmaZer_info_Page(driver);
-
+		logpage= new StoreLogPage(driver);
+		
+		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 			readwrite.openPort();
@@ -94,6 +98,7 @@ public class TC17_WIfiWithout_router extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure();
 			fail(e);
 		}
 	}

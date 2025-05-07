@@ -11,6 +11,7 @@ import pages.HomePage;
 import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -22,8 +23,10 @@ public class TC11_Pairing_WifiwithRouter extends MobileAppWrappers {
 	OtpPage otppage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
+	StoreLogPage logpage;    
+	
+	@BeforeClass   
 
-	@BeforeClass
 	public void startTestCase() {
 		testCaseName = "TC11 - Pairing in Wifi with router mode";
 		testDescription = "If already Signin skip signin and  Start Pairing Wifi with router mode else Signin and pair Wifi with router mode";
@@ -39,7 +42,7 @@ public class TC11_Pairing_WifiwithRouter extends MobileAppWrappers {
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
-
+		logpage= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -81,6 +84,7 @@ public class TC11_Pairing_WifiwithRouter extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure();
 			fail(e);
 		}
 

@@ -99,48 +99,6 @@ public class MobileAppWrappers extends GenericWrappers {
 	public void afterMethod() throws Exception, IOException, Exception{
 //		quitBrowser();
 		
-		LocalDateTime now = LocalDateTime.now();
-
-        // Format date and time
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-        // Convert to string and print
-        String formattedDateTime = now.format(formatter);
-        
-		StoreLogPage sl = new StoreLogPage(driver);
-		sl.takeAppLog();
-		try {
-		    
-			// FTP server credentials
-
-			// Local log files
-			String appLogPath = "./smaZerLOG.txt";
-			String deviceLogPath = "./device.log";
-
-			// FTP paths
-			String existingDirectory = "/Internal_Project/FULL_VALIDATION_PACKAGES_LOGS/LOGS/2024/Automation_Logs/";
-			String newSubDir = testCaseName+" Logs" +formattedDateTime ; // Subdirectory name
-			// Initialize FTP connection
-			FTPUploader(server, port, user, pass);
-
-			// Create new subdirectory inside the existing directory
-			createAndNavigateToSubdirectory(existingDirectory, newSubDir);
-
-			// Upload files to the new subdirectory
-			uploadFile(appLogPath, testCaseName + "  AppLog.txt");
-			uploadFile(deviceLogPath, testCaseName + "  DeviceLog.log");
-
-			String remotefilepath = existingDirectory + newSubDir;
-			String Filename = "/" + testCaseName + ".txt";
-			Reporter.reportStep(" FTP Path : " + remotefilepath + "<br>" + "Device Log File name:" + Filename, "INFO");
-
-			// Disconnect from FTP server
-			disconnect();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-
-		}
 		driver.terminateApp(packages);
 		driver.quit();
 		

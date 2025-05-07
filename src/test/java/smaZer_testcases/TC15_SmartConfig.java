@@ -14,6 +14,7 @@ import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
 import pages.SmaZer_info_Page;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -29,9 +30,9 @@ public class  TC15_SmartConfig extends MobileAppWrappers {
 	SmaZer_info_Page szephyrinfoPage;
 	OTA_Status_monitor ota_Status_monitor;
 	SignUpPage signinpage;
-		
-	
-	@BeforeClass
+	 StoreLogPage logpage;    
+	 
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC15_SmartConfig_CONNECTIVITY";
 		testDescription = "STA & Remote Connectivity check "+"<br>"+" Check the STA & Remote connectivity stablity after app kill and re-open "+"<br>"+"continusly 5 time turn the relay via app ON/OFF that time check the Connectivity";
@@ -49,7 +50,7 @@ public class  TC15_SmartConfig extends MobileAppWrappers {
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		szephyrinfoPage= new SmaZer_info_Page(driver);
-		
+		logpage= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -155,6 +156,7 @@ public class  TC15_SmartConfig extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure();
 			fail(e);
 		}
 	}

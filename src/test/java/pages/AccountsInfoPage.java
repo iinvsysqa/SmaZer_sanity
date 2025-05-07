@@ -34,7 +34,7 @@ public class AccountsInfoPage extends GenericWrappers{
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Tamil\"]")
 	private WebElement SelectLanguageTamilButton;
 
-	@FindBy(xpath = "//android.widget.TextView[@text=\"\"]")
+	@FindBy(xpath = "//*[@resource-id='select_language_dropdown']")
 	private WebElement SelectLanguageDropDownButton;
 
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"English\"]")

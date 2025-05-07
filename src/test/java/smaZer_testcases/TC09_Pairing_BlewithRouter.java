@@ -10,6 +10,7 @@ import pages.DeviceMenuPage;
 import pages.HomePage;
 import pages.LandingPage;
 import pages.SignInPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import pages.OtpPage;
 import wrappers.MobileAppWrappers;
@@ -23,8 +24,9 @@ public class TC09_Pairing_BlewithRouter extends MobileAppWrappers {
 	OtpPage otppage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
+	StoreLogPage logpage; 
 	
-	@BeforeClass
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC09 - Pairing BLE With Router";
 		testDescription = "After pairing check ";
@@ -45,6 +47,7 @@ public class TC09_Pairing_BlewithRouter extends MobileAppWrappers {
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
+		logpage= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -83,6 +86,7 @@ public class TC09_Pairing_BlewithRouter extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure();
 			fail(e);
 		}
 	}

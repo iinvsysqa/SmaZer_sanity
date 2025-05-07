@@ -13,6 +13,7 @@ import pages.HomePage;
 import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
+import pages.StoreLogPage;
 import utils.Retry_analyser;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
@@ -25,8 +26,8 @@ public class TC08_Pairing_BlewithoutRouter extends MobileAppWrappers {
 	OtpPage otppage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
-	
-	@BeforeClass
+	StoreLogPage logpage; 
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC08 - Pairing BLE Without Router";
 		testDescription = "TC-01-After Pairing check on/off remove device"+"<br>"+
@@ -45,7 +46,7 @@ public class TC08_Pairing_BlewithoutRouter extends MobileAppWrappers {
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
-		
+		logpage= new StoreLogPage(driver);
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -117,6 +118,7 @@ public class TC08_Pairing_BlewithoutRouter extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure();
 			fail(e);
 		}
 	}

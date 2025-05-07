@@ -13,6 +13,7 @@ import pages.HomePage;
 import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -24,8 +25,9 @@ public class TC10_Pairing_SmartConfig extends MobileAppWrappers {
 	OtpPage otppage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
-
-	@BeforeClass
+	StoreLogPage logpage; 
+	
+   @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC10 - Pairing in Smart Config Mode";
 		testDescription = "If already Signin skip signin and  Start Pairing Smartconfig mode, else Signin and pair Smartconfig mode";
@@ -42,7 +44,7 @@ public class TC10_Pairing_SmartConfig extends MobileAppWrappers {
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
-
+		logpage= new StoreLogPage(driver);
 	 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -98,6 +100,7 @@ public class TC10_Pairing_SmartConfig extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure();
 			fail(e);
 		}
 	}

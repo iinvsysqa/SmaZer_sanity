@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import pages.AddDevicePage;
 import pages.DeviceMenuPage;
 import pages.HomePage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -16,9 +17,9 @@ public class TC21_DeviceSettings extends MobileAppWrappers {
 	HomePage homepage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
-	
-	
-	@BeforeClass
+	StoreLogPage logpage; 
+	 
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC21_DeviceSettings_LED Quite Mode";
 		testDescription = "Enable The Quite LED Mode and Do Relay ON&OFF Check LED Working Or Not";
@@ -36,7 +37,8 @@ public class TC21_DeviceSettings extends MobileAppWrappers {
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
-		
+		logpage= new StoreLogPage(driver);
+
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -94,6 +96,7 @@ public class TC21_DeviceSettings extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure();
 			fail(e);
 		}
 

@@ -11,6 +11,7 @@ import pages.LandingPage;
 import pages.OtpPage;
 import pages.Schedularpage;
 import pages.SignInPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -27,7 +28,9 @@ public class TC31_Schedular extends MobileAppWrappers {
 	Schedularpage schedulepage;
 	Analytics analytics;
 	
-	@BeforeClass
+	 StoreLogPage logpage;   
+	 
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC31_Schedular_BLE Without Router_App close mode";
 		testDescription = "Pair in Ble without router mode <br> create 3 schedule and check schedule worked or not <br> check device in off state after schedule completion";
@@ -44,6 +47,8 @@ public class TC31_Schedular extends MobileAppWrappers {
 		devicemenupage = new DeviceMenuPage(driver);
 		schedulepage = new Schedularpage(driver);
 		analytics=new Analytics(driver);
+		logpage= new StoreLogPage(driver);
+		
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -81,6 +86,7 @@ public class TC31_Schedular extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure();
 			fail(e);
 		}
 	}
