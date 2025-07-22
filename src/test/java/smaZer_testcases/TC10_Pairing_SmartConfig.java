@@ -27,6 +27,7 @@ public class TC10_Pairing_SmartConfig extends MobileAppWrappers {
 	DeviceMenuPage devicemenupage;
 	StoreLogPage logpage;
 	@BeforeClass
+
 	public void startTestCase() {
 		testCaseName = "TC10 - Pairing in Smart Config Mode";
 		testDescription = "If already Signin skip signin and  Start Pairing Smartconfig mode, else Signin and pair Smartconfig mode";

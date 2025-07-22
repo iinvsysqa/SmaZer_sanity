@@ -25,8 +25,9 @@ public class TC09_Pairing_BlewithRouter extends MobileAppWrappers {
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
 	StoreLogPage logpage;
+
 	
-	@BeforeClass
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC09 - Pairing BLE With Router";
 		testDescription = "After pairing check ";

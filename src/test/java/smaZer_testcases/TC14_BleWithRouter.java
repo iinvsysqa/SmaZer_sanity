@@ -30,8 +30,9 @@ public class  TC14_BleWithRouter extends MobileAppWrappers {
 	OTA_Status_monitor ota_Status_monitor;
 	SignUpPage signUppage;	
 	StoreLogPage logpage;
+
 	
-	@BeforeClass
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC14_BlewithRouter_CONNECTIVITY";
 		testDescription = "CONNECTIVITY_MOD_2_TC_02-BLE connectivity establishment"+"<br>"+"CONNECTIVITY_MOD_2_TC_03-APP kill and re Open"+"<br>"+"CONNECTIVITY_MOD_1_TC_04-5 times App ON/OFF";
@@ -51,6 +52,7 @@ public class  TC14_BleWithRouter extends MobileAppWrappers {
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		logpage= new StoreLogPage(driver);
+
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {

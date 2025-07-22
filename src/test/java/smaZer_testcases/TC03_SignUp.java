@@ -14,6 +14,7 @@ import pages.LandingPage;
 import pages.SignInPage;
 import pages.OtpPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -26,9 +27,9 @@ public class TC03_SignUp extends MobileAppWrappers {
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
 	SignUpPage signuppage;
+	StoreLogPage logpage;    
 	
-
-	@BeforeClass
+	@BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC03_SignUp_Try to Sign Up with new username";
 		testDescription = "Try to Sign Up with new username";
@@ -42,6 +43,7 @@ public class TC03_SignUp extends MobileAppWrappers {
 		landingpage = new LandingPage(driver);
 		otppage = new OtpPage(driver);
 		signuppage =new SignUpPage(driver);
+		logpage= new StoreLogPage(driver);
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
@@ -65,6 +67,7 @@ public class TC03_SignUp extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure(testCaseName,testDescription);
 			fail(e);
 		}
 

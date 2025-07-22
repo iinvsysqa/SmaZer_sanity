@@ -12,6 +12,7 @@ import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -24,8 +25,9 @@ public class TC05_SignIn_Valid_User extends MobileAppWrappers {
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
 	SignUpPage signuppage;
-
-	@BeforeClass
+	StoreLogPage logpage;   
+	
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC05 - Try to Sign In into app with Valid user details but invalid OTP ";
 		testDescription = "Try to Sign In into app with Valid user details but invalid OTP ";
@@ -39,7 +41,8 @@ public class TC05_SignIn_Valid_User extends MobileAppWrappers {
 		landingpage = new LandingPage(driver);
 		otppage = new OtpPage(driver);
 		signuppage =new SignUpPage(driver);
-
+		logpage= new StoreLogPage(driver);
+		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));		
 		try {
 		readwrite.openPort();
@@ -62,6 +65,7 @@ public class TC05_SignIn_Valid_User extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure(testCaseName,testDescription);
 			fail(e);
 		}
 	}

@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import pages.AddDevicePage;
 import pages.DeviceMenuPage;
 import pages.HomePage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -16,9 +17,10 @@ public class TC20_DeviceSettings extends MobileAppWrappers {
 	HomePage homepage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
+	StoreLogPage logpage;
 	
 	
-	@BeforeClass
+	@BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC20_DeviceSettings_Remove Router";
 		testDescription = "Remove the Added Router Details Test Case";
@@ -35,7 +37,7 @@ public class TC20_DeviceSettings extends MobileAppWrappers {
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
-		
+		logpage= new StoreLogPage(driver);
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -85,6 +87,7 @@ public class TC20_DeviceSettings extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure(testCaseName,testDescription);
 			fail(e);
 		}
 	}

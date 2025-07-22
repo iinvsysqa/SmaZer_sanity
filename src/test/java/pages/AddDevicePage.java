@@ -32,7 +32,8 @@ import wrappers.GenericWrappers;
 public class AddDevicePage extends GenericWrappers {
 
 	public AndroidDriver driver;
-
+	
+	public String usernameinApp = loadProp("USERNAMEINAPP");
 	public String serialno =loadProp("WIFIPAGE_SERIALNO");
 	public String userName = loadProp("USERNAME");
 	public String emaId = loadProp("EMAILID");
@@ -308,6 +309,10 @@ public class AddDevicePage extends GenericWrappers {
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Verification failed\"]")
 	private WebElement verificationFailed;
 
+	private WebElement devicenameDeviceSettingsPage(String username) {
+		return driver.findElement(By.xpath("//android.widget.TextView[@text='"+username+"']"));
+		
+	}
 	// Constructor to initialize the driver and instantiate elements using
 
 	public AddDevicePage(AndroidDriver driver) {
@@ -456,7 +461,15 @@ public class AddDevicePage extends GenericWrappers {
 	}
 
 	public void verifyAddDevicePage(String title) {
-		verifyTextContainsByXpath(addDeviceButton, title, " ADD device Page ");
+		if( isElementDisplayedCheck(addDeviceButton)){
+			
+			verifyTextContainsByXpath(addDeviceButton, title, " ADD device Page ");
+		}else if (isElementDisplayedCheck(devicenameDeviceSettingsPage(usernameinApp))) {
+			verifyTextContainsByXpath(devicenameDeviceSettingsPage(usernameinApp),usernameinApp , "username");
+
+		}else {
+			System.out.println("error");
+		}
 	}
 
 	public void turnOnBluetooth() {

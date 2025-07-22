@@ -16,6 +16,8 @@ import pages.OTA_Status_monitor;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+
+import pages.SmaZer_info_Page;
 import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
@@ -33,7 +35,8 @@ public class  TC13_BlewithoutRouter extends MobileAppWrappers {
 	SignUpPage signuppage;	
 	StoreLogPage logpage;
 	
-	@BeforeClass
+	 
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC13_BlewithoutRouter_CONNECTIVITY";
 		testDescription = "CONNECTIVITY_MOD_1_TC_01-BLE connectivity establishment"+ "<br>"+"CONNECTIVITY_MOD_1_TC_02-APP kill and re Open "+ "<br>"+"CONNECTIVITY_MOD_1_TC_03-5 times App ON/OFF";
@@ -51,6 +54,7 @@ public class  TC13_BlewithoutRouter extends MobileAppWrappers {
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		logpage= new StoreLogPage(driver);
+
 		//CONNECTIVITY_MOD_1_TC_01//////////BLE connectivity establishment//////////////////////////////////////
 	
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));

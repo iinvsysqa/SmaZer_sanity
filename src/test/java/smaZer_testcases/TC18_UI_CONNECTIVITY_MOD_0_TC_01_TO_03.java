@@ -13,6 +13,7 @@ import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
 import pages.SmaZer_info_Page;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -29,8 +30,9 @@ public class  TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 extends MobileAppWrappers {
 	SmaZer_info_Page szephyrinfoPage;
 	OTA_Status_monitor ota_Status_monitor;
 	SignUpPage signuppage;	
+	StoreLogPage logpage;  
 	
-	@BeforeClass
+	@BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC18_UI Check_Check sZephyr Info values";
 		testDescription = "In Ble without router mode ,change sZephyr info values ,click on submit button and check for same in Szephyr info page";
@@ -49,6 +51,7 @@ public class  TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 extends MobileAppWrappers {
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		szephyrinfoPage= new SmaZer_info_Page(driver);
+		logpage= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -112,6 +115,7 @@ public class  TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 extends MobileAppWrappers {
 	}
 	catch (Exception e) {
 		readwrite.closePort();
+		logpage.CollectLogOnFailure(testCaseName,testDescription);
 		fail(e);
 	}
 	}

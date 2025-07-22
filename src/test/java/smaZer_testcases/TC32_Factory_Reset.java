@@ -10,6 +10,7 @@ import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -23,7 +24,9 @@ public class TC32_Factory_Reset extends MobileAppWrappers {
 	DeviceMenuPage devicemenupage;
 	SignUpPage signuppage;
 
-	@BeforeClass
+	 StoreLogPage logpage;  
+	 
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC32_FactoryReset check";
 		testDescription = "After paired with device Try to do factory reset using via app";
@@ -43,7 +46,9 @@ public class TC32_Factory_Reset extends MobileAppWrappers {
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
-
+		logpage= new StoreLogPage(driver);
+		
+		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
@@ -70,6 +75,7 @@ public class TC32_Factory_Reset extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure(testCaseName,testDescription);
 			fail(e);
 		}
 	}

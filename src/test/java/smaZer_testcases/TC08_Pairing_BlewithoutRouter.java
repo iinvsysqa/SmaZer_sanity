@@ -29,6 +29,7 @@ public class TC08_Pairing_BlewithoutRouter extends MobileAppWrappers {
 	StoreLogPage logpage;
 	
 	@BeforeClass
+
 	public void startTestCase() {
 		testCaseName = "TC08 - Pairing BLE Without Router";
 		testDescription = "TC-01-After Pairing check on/off remove device"+"<br>"+
@@ -48,7 +49,7 @@ public class TC08_Pairing_BlewithoutRouter extends MobileAppWrappers {
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		logpage= new StoreLogPage(driver);
-		
+
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {

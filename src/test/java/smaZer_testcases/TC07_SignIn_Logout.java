@@ -16,6 +16,7 @@ import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -28,13 +29,14 @@ public class TC07_SignIn_Logout extends MobileAppWrappers {
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
 	SignUpPage signuppage;
+	StoreLogPage logpage;   
 	
-	@BeforeClass
+	@BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC07_Logout_After Login, Pair with device and logout from device is working";
 		testDescription = "After Login, Pair with device and logout from device is working";
 	}
-	
+
 	@Test(priority = 6)
 	public void  TC07_SignIn_Logout_Check() throws Exception {
 		initAndriodDriver();
@@ -45,8 +47,8 @@ public class TC07_SignIn_Logout extends MobileAppWrappers {
 		devicemenupage= new DeviceMenuPage(driver);
 		homepage=new HomePage(driver);
 		signuppage =new SignUpPage(driver);
-		
-		
+		logpage= new StoreLogPage(driver);
+
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -78,23 +80,25 @@ public class TC07_SignIn_Logout extends MobileAppWrappers {
 		for(int i=0;i<2;i++) {
 			homepage.clickONOFFButton();
 			Thread.sleep(1000);
+
 			}
-		
-		homepage.clickMenuBarButton();
-		devicemenupage.clickDeviceSettingsButton();
-		devicemenupage.clickResetDeviceButton();
-		devicemenupage.clickResetConfirmationYesButton();
-		homepage.clickMenuBarButton();
-		devicemenupage.clickLogoutButtonAfterReset();
-		devicemenupage.clickLogoutConfirmationButton();
-		landingpage.clickSignUpLink();
-		readwrite.closePort();
+
+			homepage.clickMenuBarButton();
+			devicemenupage.clickDeviceSettingsButton();
+			devicemenupage.clickResetDeviceButton();
+			devicemenupage.clickResetConfirmationYesButton();
+			homepage.clickMenuBarButton();
+			devicemenupage.clickLogoutButtonAfterReset();
+			devicemenupage.clickLogoutConfirmationButton();
+			landingpage.clickSignUpLink();
+			readwrite.closePort();
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure(testCaseName,testDescription);
 			fail(e);
 		}
 	}
-		
-	
+
+
 }

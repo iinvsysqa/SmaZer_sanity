@@ -32,6 +32,7 @@ public class  TC15_SmartConfig extends MobileAppWrappers {
 	StoreLogPage logpage;
 	
 	@BeforeClass
+
 	public void startTestCase() {
 		testCaseName = "TC15_SmartConfig_CONNECTIVITY";
 		testDescription = "STA & Remote Connectivity check "+"<br>"+" Check the STA & Remote connectivity stablity after app kill and re-open "+"<br>"+"continusly 5 time turn the relay via app ON/OFF that time check the Connectivity";
@@ -48,6 +49,7 @@ public class  TC15_SmartConfig extends MobileAppWrappers {
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
+
 		logpage= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));

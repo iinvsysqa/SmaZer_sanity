@@ -14,6 +14,7 @@ import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
 import pages.SmaZer_info_Page;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -28,9 +29,11 @@ public class  TC16_WifiWithRouter extends MobileAppWrappers {
 	DeviceMenuPage devicemenupage;
 	SmaZer_info_Page szephyrinfoPage;
 	OTA_Status_monitor ota_Status_monitor;
-		SignUpPage signpupage;
+	SignUpPage signpupage;
+	StoreLogPage logpage;   
 	
-	@BeforeClass
+	
+	@BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC16_WifiWithRouter_CONNECTIVITY";
 		testDescription = "App kill and re-open and check the STA connectivity ";
@@ -52,7 +55,7 @@ public class  TC16_WifiWithRouter extends MobileAppWrappers {
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		szephyrinfoPage= new SmaZer_info_Page(driver);
-	
+		logpage= new StoreLogPage(driver);
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -92,6 +95,7 @@ public class  TC16_WifiWithRouter extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure(testCaseName,testDescription);
 			fail(e);
 		}
 	}

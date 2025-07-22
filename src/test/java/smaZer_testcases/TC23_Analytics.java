@@ -9,6 +9,7 @@ import pages.AddDevicePage;
 import pages.Analytics;
 import pages.DeviceMenuPage;
 import pages.HomePage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
@@ -18,8 +19,9 @@ public class TC23_Analytics  extends MobileAppWrappers {
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
 	Analytics analyticspage;
-	
-	@BeforeClass
+	StoreLogPage logpage; 
+	 
+	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC_23_Analytics_BLE withoutRouter_App Open";
 		testDescription = "Pairing mode=Ble without router <br> Connectivity :BLE <br>Turn on device for 5min using relay  <br> check for analytivs value<br>Energy duration and Energy used for 5 min should update";
@@ -37,6 +39,7 @@ public class TC23_Analytics  extends MobileAppWrappers {
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		analyticspage= new Analytics(driver);
+		logpage= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 
@@ -67,6 +70,7 @@ public class TC23_Analytics  extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure(testCaseName,testDescription);
 			fail(e);
 		}
 	}
