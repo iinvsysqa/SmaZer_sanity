@@ -1,13 +1,7 @@
 package smaZer_testcases;
 
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import io.appium.java_client.MobileBy;
 import pages.AccountsInfoPage;
 import pages.AddDevicePage;
 import pages.DeviceMenuPage;
@@ -18,13 +12,7 @@ import utils.logReadandWrite;
 import pages.OtpPage;
 import wrappers.MobileAppWrappers;
 
-import static org.testng.Assert.fail;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.List;
-
-import org.openqa.selenium.JavascriptExecutor;
 
 public class TC01_Accounts_Info extends MobileAppWrappers {
 
@@ -49,7 +37,7 @@ public class TC01_Accounts_Info extends MobileAppWrappers {
 
 
 	@Test(priority = 0)
-	public void removerepair() throws Exception {
+	public void TC01_Accounts_Info_Check() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -64,21 +52,11 @@ public class TC01_Accounts_Info extends MobileAppWrappers {
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 			readwrite.openPort();
-
-			System.out.println("hello");
-		
-//				 executeAdbCommand("adb shell am start -a android.intent.action.MAIN -n com.android.settings/.wifi.WifiSettings");
-//
-//			     // Wait for the Wi-Fi settings page to open
-//			     Thread.sleep(2000);
-//
-//			     driver.findElement(MobileBy.AndroidUIAutomator(
-//							"new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains(\""
-//									+ wifiName + "\"))"));
 			     
 			adddevicepage.pair(1);
 			adddevicepage.clickNextButtonsZephyrInfo();
-			adddevicepage.checkdevicedetailstoast();
+//			adddevicepage.checkdevicedetailstoast();
+			adddevicepage.clickBleokbutton();
 			adddevicepage.clickSubmitButtonDeviceSetting();
 			adddevicepage.checkdevicesettingstoast();
 
@@ -100,20 +78,6 @@ public class TC01_Accounts_Info extends MobileAppWrappers {
 			fail(e);
 		}
 	}
-
-	private static void executeAdbCommand(String command) {
-		 try {
-		     Process process = Runtime.getRuntime().exec(command);
-		     BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-		     String line;
-		     while ((line = reader.readLine()) != null) {
-		         System.out.println(line);
-		     }
-		     process.waitFor();
-		 } catch (Exception e) {
-		     e.printStackTrace();
-		 }
-		}
 
 }	
 

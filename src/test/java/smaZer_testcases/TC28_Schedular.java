@@ -36,7 +36,7 @@ public class TC28_Schedular extends MobileAppWrappers {
 	}
 	
 	@Test(priority = 27)
-	public void schedule() throws Exception {
+	public void TC28_Schedular_SmartConfig_Mode() throws Exception {
 		initAndriodDriver();
 
 		homepage=new HomePage(driver);
@@ -53,6 +53,8 @@ public class TC28_Schedular extends MobileAppWrappers {
 		readwrite.openPort();
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		
 		

@@ -11,52 +11,44 @@ import utils.PassSTComment;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 
-
 public class TC19_DeviceSettings extends MobileAppWrappers {
 
 	HomePage homepage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
-	
-	
+
 	@BeforeClass
 	public void startTestCase() {
 		testCaseName = "TC19_DeviceSettings_Add_Router";
 		testDescription = "Added Router to device ,disbale BLe and check STA connectivity";
 	}
-	
 
 	@Test(priority = 18)
-	public void removerepair() throws Exception {
+	public void TC19_DeviceSettings_Add_Router() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
 
-
-	
 	public void pairBlewithoutRouter() throws Exception {
 
-		
-		adddevicepage= new AddDevicePage(driver);
+		adddevicepage = new AddDevicePage(driver);
 		homepage = new HomePage(driver);
-		devicemenupage= new DeviceMenuPage(driver);
-		
+		devicemenupage = new DeviceMenuPage(driver);
+
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
-		readwrite.openPort();
-		
-		adddevicepage.pair(1);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
-		
-		
-		
+			readwrite.openPort();
+
+			adddevicepage.pair(1);
+			adddevicepage.clickNextButtonsZephyrInfo();
+			adddevicepage.clickBleokbutton();
+//			adddevicepage.checkdevicedetailstoast();
+			adddevicepage.clickSubmitButtonDeviceSetting();
+			adddevicepage.checkdevicesettingstoast();
 
 			homepage.clickMenuBarButton();
 			devicemenupage.clickDeviceSettingsButton();
-	//Add Router Test Case		
+			// Add Router Test Case
 			devicemenupage.ClickaddrouterButton();
 			adddevicepage.enterWiFiPassword(adddevicepage.wifiPassword);
 			devicemenupage.clickAddRouterCheckBox();
@@ -69,29 +61,28 @@ public class TC19_DeviceSettings extends MobileAppWrappers {
 //			homepage.getCurrentvalue();
 //			homepage.getVoltvalue();
 //			homepage.getPowervalue();
-			
-			for(int i=0;i<2;i++) {
+
+			for (int i = 0; i < 2; i++) {
 				homepage.clickONOFFButton();
 				Thread.sleep(1000);
-				}
-			
+			}
+
 			disableWiFi();
 			turnOnBT();
 			Thread.sleep(10000);
-			
+
 			adddevicepage.bleConnectivityCheck();
 //			homepage.getCurrentvalue();
 //			homepage.getVoltvalue();
 //			homepage.getPowervalue();
-			
-			 homepage.clickMenuBarButton();
-				devicemenupage.clickMenuBarRemoveDevice();
-				devicemenupage.clickRemoveDevicePopupYesButton();
-				adddevicepage.checkdeviceremovedtoast();
-				devicemenupage.AddDevicePagedisplayed();
-			 readwrite.closePort();
-		}
-		catch (Exception e) {
+
+			homepage.clickMenuBarButton();
+			devicemenupage.clickMenuBarRemoveDevice();
+			devicemenupage.clickRemoveDevicePopupYesButton();
+			adddevicepage.checkdeviceremovedtoast();
+			devicemenupage.AddDevicePagedisplayed();
+			readwrite.closePort();
+		} catch (Exception e) {
 			readwrite.closePort();
 			fail(e);
 		}

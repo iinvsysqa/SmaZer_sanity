@@ -166,10 +166,10 @@ public class DeviceMenuPage extends GenericWrappers{
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Add Router\"]")
 	private WebElement addRouterButton;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"Remove router\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"Remove Router\"]")
 	private WebElement removeRouterButton;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"Cancel\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"CANCEL\"]")
 	private WebElement removeRouterCancelButton;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Remove\"]")
@@ -217,7 +217,7 @@ public class DeviceMenuPage extends GenericWrappers{
 //	private WebElement removeDevice;
 	
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"Cancel\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"CANCEL\"]")
 	private WebElement removeDevicePopupNoButton;
 	
 	
@@ -497,28 +497,16 @@ public class DeviceMenuPage extends GenericWrappers{
 			verifyTextContainsByXpath(routerremovedsuccessfullytoast, loadProp("RouterRemovedSuccessfully"),
 					" RouterAddedSuccessfully toast");
 		}
-		public void removerouter() {
+		public void removerouter() throws InterruptedException {
 
 			driver.findElement(MobileBy.AndroidUIAutomator(
-				    "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Router Details\"))"));
-			if (isElementDisplayedCheck(addRouterButton)) {
-				clickbyXpath(addRouterButton, "Add router button ");
-				enterWiFiPassword(wifiPassword);
-				clickAddRouterCheckBox();
-				clickbyXpath(submitBtn, " Enter Button  ");
-				scrollToText("Remove Router");
+				    "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Remove Router\"))"));
+			if (isElementDisplayed(removeRouterButton,"Remove router  button")) {
 				clickbyXpath(removeRouterButton, "Remove router button ");
 				clickRemoveRouterCancelButton();
 				clickbyXpath(removeRouterButton, "Remove router button ");
 				clickRemoveRouterRemoveButton();
-				
-				clickDevicesettingsbackButton();
-			}else if (isElementDisplayedCheck(removeRouterButton)) {
-				clickbyXpath(removeRouterButton, "Remove router button ");
-				clickRemoveRouterCancelButton();
-				clickbyXpath(removeRouterButton, "Remove router button ");
-				clickRemoveRouterRemoveButton();
-				
+				Thread.sleep(3000);
 				clickDevicesettingsbackButton();
 
 			}

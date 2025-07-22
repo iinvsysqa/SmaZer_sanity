@@ -10,6 +10,7 @@ import pages.DeviceMenuPage;
 import pages.HomePage;
 import pages.LandingPage;
 import pages.SignInPage;
+import pages.StoreLogPage;
 import utils.logReadandWrite;
 import pages.OtpPage;
 import wrappers.MobileAppWrappers;
@@ -23,6 +24,7 @@ public class TC09_Pairing_BlewithRouter extends MobileAppWrappers {
 	OtpPage otppage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
+	StoreLogPage logpage;
 	
 	@BeforeClass
 	public void startTestCase() {
@@ -32,7 +34,7 @@ public class TC09_Pairing_BlewithRouter extends MobileAppWrappers {
 	
 
 	@Test(priority = 8)
-	public void removerepair() throws Exception {
+	public void TC09_Pairing_BLE_With_Router() throws Exception {
 		initAndriodDriver();
 
 
@@ -45,34 +47,26 @@ public class TC09_Pairing_BlewithRouter extends MobileAppWrappers {
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
+		logpage= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
-			readwrite.openPort();
-		adddevicepage.pair(2);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
-		Thread.sleep(8000);
-		homepage.clickONOFFButton();
-		homepage.clickONOFFButton();
-		
-		
-		homepage.clickMenuBarButton();
-		devicemenupage.clickMenuBarRemoveDevice();
-		devicemenupage.clickRemoveDevicePopupYesButton();
-		adddevicepage.checkdeviceremovedtoast();
-		devicemenupage.AddDevicePagedisplayed();
+		readwrite.openPort();
 		
 		adddevicepage.pair(2);
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
-		Thread.sleep(8000);
+		Thread.sleep(5000);
 		homepage.clickONOFFButton();
+		Thread.sleep(2000);
+//		homepage.VerifyONdesc();
 		homepage.clickONOFFButton();
+//		homepage.VerifyOFFdesc();
+		
+		
 		
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();
@@ -83,6 +77,7 @@ public class TC09_Pairing_BlewithRouter extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure(testCaseName,testDescription);
 			fail(e);
 		}
 	}

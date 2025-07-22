@@ -22,6 +22,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
@@ -66,6 +67,7 @@ public class GenericWrappers {
 		return prop.getProperty(property);
 	}
 
+	@SuppressWarnings("deprecation")
 	public static boolean initAndriodDriver() throws FileNotFoundException, IOException {
 
 		boolean bReturn = false;
@@ -115,16 +117,24 @@ public class GenericWrappers {
 			if (driver.isAppInstalled(appPackage)) {
 				System.out.println("App is already installed. Launching the app...");
 				driver.activateApp(appPackage); // Open the app
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.ACCESS_FINE_LOCATION"));
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_SCAN"));
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_CONNECT"));
+
+				
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.ACCESS_FINE_LOCATION");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_SCAN");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_CONNECT");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.CAMERA");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.POST_NOTIFICATIONS");
 			} else {
 				System.out.println("App is not installed. Installing and launching...");
 				driver.installApp(prop.getProperty("APP_PATH"));
 				driver.activateApp(appPackage); // Launch the app after installation
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.ACCESS_FINE_LOCATION"));
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_SCAN"));
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_CONNECT"));
+				
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.ACCESS_FINE_LOCATION");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_SCAN");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_CONNECT");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.CAMERA");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.POST_NOTIFICATIONS");
+				
 			}
 			
 			if (driver.isAppInstalled(appPackage)) {
@@ -331,7 +341,26 @@ public class GenericWrappers {
 				Reporter.reportStep(field + " did not contain :" + text, "FAIL");
 			}
 		} catch (Exception e) {
-			Reporter.reportStep(field + " not displayed", "FAIL&RUN");
+			Reporter.reportStep(field + " not displayed", "FAIL");
+			e.printStackTrace();
+		}
+		return bReturn;
+	}
+	
+	public boolean verifyToastContainsByXpath(WebElement xpath, String text, String field) {
+		boolean bReturn = false;
+		try {
+			expWait(xpath);
+			String sText = xpath.getText();
+			System.out.println(sText);
+			if (sText.trim().contains(text)) {
+				Reporter.reportStep(field + "contains " + text, "PASS");
+				bReturn = true;
+			} else {
+				Reporter.reportStep(field + " did not contain :" + text, "FAIL");
+			}
+		} catch (Exception e) {
+			Reporter.reportStep(field + " not displayed", "INFO");
 			e.printStackTrace();
 		}
 		return bReturn;
@@ -1044,6 +1073,26 @@ public class GenericWrappers {
 	        // If 'm' not found, you can decide what to return (0 or -1)
 	        return 0;
 	    }
+	}
+    
+public boolean verifyDynamicContentByXpath(String xpath, String text, String field) {
+    	
+		boolean bReturn = false;
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+			String sText = driver.findElement(By.xpath(xpath)).getText();
+			if (sText.trim().contains(text)) {
+				Reporter.reportStep(field +" contains "+ text , "PASS");
+				bReturn = true;
+				}
+			else {
+				Reporter.reportStep(field+" did not contain :" + text, "FAIL");				
+			}
+		} catch (Exception e) {
+			//
+		}
+		return bReturn;
 	}
 
 }

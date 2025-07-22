@@ -12,6 +12,7 @@ import pages.LandingPage;
 import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
+import pages.StoreLogPage;
 import utils.GetAppLog;
 import utils.PassSTComment;
 import utils.logReadandWrite;
@@ -26,6 +27,7 @@ public class TC02_SignUp extends MobileAppWrappers {
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
 	SignUpPage signuppage;
+	StoreLogPage logpage;
 
 	@BeforeClass
 	public void startTestCase() {
@@ -35,7 +37,7 @@ public class TC02_SignUp extends MobileAppWrappers {
 
 
 	@Test(priority = 1)
-	public void signUp() throws Exception {
+	public void TC02_SignUp_Check() throws Exception {
 
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
@@ -61,6 +63,7 @@ public class TC02_SignUp extends MobileAppWrappers {
 		}
 		catch (Exception e) {
 			readwrite.closePort();
+			logpage.CollectLogOnFailure(testCaseName,testDescription);
 			fail(e);
 		}
 

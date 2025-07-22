@@ -33,7 +33,7 @@ public class TC05_SignIn_Valid_User extends MobileAppWrappers {
 	
 
 	@Test(priority = 4)
-	public void login() throws Exception {
+	public void TC05_Login_Check_Valid_User() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);

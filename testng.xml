@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-
-
-<suite name="SmaZer_sanity" guice-stage="DEVELOPMENT">
+<suite name="Suite">
+<listeners>
+    <listener class-name="utils.RetryListener" />
+    <listener class-name="utils.ResultListener"/>
+</listeners>
   <test thread-count="5" name="Test">
-
-
-    <groups>
+  
+   <groups>
       <run>
         <exclude name="skip"/>
       </run>
     </groups>
-
+    
     <packages>
       <package name="smaZer_testcases"/>
+     
     </packages>
-
   </test> <!-- Test -->
 </suite> <!-- Suite -->

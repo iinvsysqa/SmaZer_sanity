@@ -26,7 +26,7 @@ public class TC22_DeviceSettings extends MobileAppWrappers {
 	
 
 	@Test(priority = 21,groups = {"skip"})
-	public void removerepair() throws Exception {
+	public void TC22_DeviceSettings_Pairing_Time_Settings_change() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -45,7 +45,8 @@ public class TC22_DeviceSettings extends MobileAppWrappers {
 		
 		adddevicepage.pair(5);
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		devicemenupage.clickPairingTimeQuietLEDEnable();
 		devicemenupage.clickInfinitePowerToggle();
 		devicemenupage.clickHoursPlusButton();
