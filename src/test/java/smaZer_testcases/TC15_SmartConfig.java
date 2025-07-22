@@ -27,12 +27,12 @@ public class  TC15_SmartConfig extends MobileAppWrappers {
 	OtpPage otppage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
-	SmaZer_info_Page szephyrinfoPage;
 	OTA_Status_monitor ota_Status_monitor;
 	SignUpPage signinpage;
-	 StoreLogPage logpage;    
-	 
-	 @BeforeClass   
+	StoreLogPage logpage;
+	
+	@BeforeClass
+
 	public void startTestCase() {
 		testCaseName = "TC15_SmartConfig_CONNECTIVITY";
 		testDescription = "STA & Remote Connectivity check "+"<br>"+" Check the STA & Remote connectivity stablity after app kill and re-open "+"<br>"+"continusly 5 time turn the relay via app ON/OFF that time check the Connectivity";
@@ -40,7 +40,7 @@ public class  TC15_SmartConfig extends MobileAppWrappers {
 	
 
 	@Test(priority = 14)
-	public void removerepair() throws Exception {
+	public void TC15_SmartConfig_CONNECTIVITY() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -49,23 +49,27 @@ public class  TC15_SmartConfig extends MobileAppWrappers {
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
-		szephyrinfoPage= new SmaZer_info_Page(driver);
+
 		logpage= new StoreLogPage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
 		
+		
 		///CONNECTIVITY_MOD_3_TC_1///   STA_connectivity establishment
-		adddevicepage.pair(3);	
+		adddevicepage.pair(3);
 		turnOffBT();
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
 		
 		Thread.sleep(10000);
 		adddevicepage.staConnectivityCheck();
+		Thread.sleep(2000);
+		homepage.clickONOFFButton();
 			
 		//CONNECTIVITY_MOD_3_TC_2///     STA_Kill and Open
 		homepage.getCurrentvalue();
@@ -74,13 +78,15 @@ public class  TC15_SmartConfig extends MobileAppWrappers {
 		
 		homepage.killandopen();
 		turnOffBT();
+//		adddevicepage.ClickCancelButtonBle();
 		adddevicepage.ClickOkButtonBLEpopUP();
 		Thread.sleep(10000);
 		adddevicepage.staConnectivityCheck();
+		Thread.sleep(3000);
 		homepage.clickONOFFButton();
 		//CONNECTIVITY_MOD_3_TC_3///     STA_Device_ON/OFF
 		
-		for(int i=0;i<11;i++) {
+		for(int i=1;i<10;i++) {
 			homepage.clickONOFFButton();
 			Thread.sleep(2000);
 			}
@@ -90,23 +96,24 @@ public class  TC15_SmartConfig extends MobileAppWrappers {
 		//CONNECTIVITY_MOD_3_TC_4// BLE Connectivity Establishment
 		homepage.enableBLE();
 		homepage.disableWIFI();
-		adddevicepage.bleConnectivityCheck();
+		
 		Thread.sleep(10000);
+		adddevicepage.bleConnectivityCheck();
 		homepage.clickONOFFButton();
 		 Thread.sleep(2000);
- ///Connectivity Confirmation description check//
+//	    homepage.VerifyONdesc(); ///Connectivity Confirmation description check//
 		///CONNECTIVITY_MOD_3_TC_5//BLE_Kill and Open
 	    
 	    homepage.getCurrentvalue();
 		homepage.getVoltvalue();
 		homepage.getPowervalue();
 		homepage.killandopen();
-		adddevicepage.ClickOkButtonBLEpopUP();
+		homepage.clickONOFFButton();
 		
 		//CONNECTIVITY_MOD_3_TC_6//BLE Device ON_OFF 
 		
 		Thread.sleep(10000);
-		for(int i=0;i<11;i++) {
+		for(int i=1;i<10;i++) {
 			homepage.clickONOFFButton();
 			Thread.sleep(2000);
 			}
@@ -120,6 +127,8 @@ public class  TC15_SmartConfig extends MobileAppWrappers {
 	
 		//homepage.VerifyONdesc();
 		homepage.WifiSwitch(loadProp("REMOTEWIFINAME"),loadProp("REMOTEWIFIPASSWORD"));
+//		disableWiFi();
+//		adddevicepage.Turnonmobiledata();
 		Thread.sleep(10000);
 		adddevicepage.remoteConnectivityCheck();
 		homepage.clickONOFFButton();
@@ -129,15 +138,15 @@ public class  TC15_SmartConfig extends MobileAppWrappers {
 	///CONNECTIVITY_MOD_3_TC_5//remote_Kill and Open
 		
 		homepage.killandopen();
+		Thread.sleep(5000);
 		turnOffBT();
 		adddevicepage.ClickOkButtonBLEpopUP();
 		Thread.sleep(10000);
 		adddevicepage.remoteConnectivityCheck();
 		homepage.clickONOFFButton();
-		Thread.sleep(5000);
 		//CONNECTIVITY_MOD_3_TC_6//Remote Device ON_OFF 
 		
-		for(int i=0;i<11;i++) {
+		for(int i=1;i<10;i++) {
 			homepage.clickONOFFButton();
 			Thread.sleep(2000);
 			}

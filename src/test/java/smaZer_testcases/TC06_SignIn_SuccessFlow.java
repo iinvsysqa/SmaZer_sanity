@@ -34,7 +34,7 @@ public class TC06_SignIn_SuccessFlow extends MobileAppWrappers {
 	
 
 	@Test(priority = 5)
-	public void login() throws Exception {
+	public void TC06_SignIn_SuccessFlow_Check() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);

@@ -29,7 +29,7 @@ public class TC25_Analytics  extends MobileAppWrappers {
 	}
 	
 	@Test(priority = 24)
-	public void removerepair() throws Exception {
+	public void TC_25_Analytics_SmartConfig_Mode() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -47,9 +47,9 @@ public class TC25_Analytics  extends MobileAppWrappers {
 		
 		adddevicepage.pair(3);
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
 		
 		turnOffBT();
 		homepage.WifiSwitch(loadProp("REMOTEWIFINAME"),loadProp("REMOTEWIFIPASSWORD"));

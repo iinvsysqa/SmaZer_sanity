@@ -189,25 +189,30 @@ public class SignUpPage extends GenericWrappers {
 }
 		
 		
+		@SuppressWarnings("deprecation")
 		public void uninstall_reinstall() throws Exception {
 			Properties prop =new Properties();
 			prop.load(new FileInputStream(new File("./config.properties")));
 			
 			if (driver.isAppInstalled(packages)) {
-			Runtime.getRuntime().exec("adb uninstall "+loadProp("APP_PACKAGE"));
+			Runtime.getRuntime().exec("adb uninstall com.geezer");
 			driver.installApp(prop.getProperty("APP_PATH"));
 			driver.activateApp(packages);
-			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.ACCESS_FINE_LOCATION"));
-			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_SCAN"));
-			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_CONNECT"));
+			Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.ACCESS_FINE_LOCATION");
+			Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_SCAN");
+			Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_CONNECT");
+			Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.CAMERA");
+			Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.POST_NOTIFICATIONS");
 			}
 			else {
 				
 				driver.installApp(prop.getProperty("APP_PATH"));
 				driver.activateApp(packages);
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.ACCESS_FINE_LOCATION"));
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_SCAN"));
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_CONNECT"));
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.ACCESS_FINE_LOCATION");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_SCAN");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_CONNECT");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.CAMERA");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.POST_NOTIFICATIONS");
 			}
 		}
 		

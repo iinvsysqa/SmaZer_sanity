@@ -3,6 +3,8 @@ package pages;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintStream;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -68,9 +70,9 @@ public class StoreLogPage extends GenericWrappers{
 			@FindBy(xpath = "//*[@resource-id='com.android.permissioncontroller:id/permission_allow_button']")
 			private WebElement nearByPermisson;
 		
-		public void storeLogToDownloads() {
-			killAndReopenApp();
+		public void storeLogToDownloads() throws IOException {
 			turnOnBT();
+			killAndReopenApp();
 			if (isElementDisplayedCheck(menuBarButton)) {
 				
 				clickbyXpath(menuBarButton, " Menu Bar ");
@@ -88,9 +90,11 @@ public class StoreLogPage extends GenericWrappers{
 				entervaluebyXpath(otpField4, " OTP Box 4 " , "4");
 				clickbyXpath(submitBtn," Submit Button ");
 				
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.szephyr android.permission.ACCESS_FINE_LOCATION"));
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.szephyr android.permission.BLUETOOTH_SCAN"));
-				driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.iinvsys.szephyr android.permission.BLUETOOTH_CONNECT"));
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.szephyr android.permission.ACCESS_FINE_LOCATION");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.szephyr android.permission.BLUETOOTH_SCAN");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.szephyr android.permission.BLUETOOTH_CONNECT");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.szephyr android.permission.CAMERA");
+				Runtime.getRuntime().exec("adb shell pm grant com.iinvsys.szephyr android.permission.POST_NOTIFICATIONS");
 //				if (isElementDisplayedCheck(locationPopUp)) {
 //					clickbyXpath(locationPopUp, "Location pop-up");
 //				} else {
@@ -113,7 +117,7 @@ public class StoreLogPage extends GenericWrappers{
 			
 		}
 		public void takeAppLog() throws FileNotFoundException, IOException, Exception {
-			File f= new File(".//smaZerLOG.txt");
+			File f= new File(".//sZephyrLOG.txt");
 			if (f.exists()) {
 				f.delete();
 				}
@@ -122,7 +126,7 @@ public class StoreLogPage extends GenericWrappers{
 		    
 			String projectRoot = System.getProperty("user.dir");
 			Thread.sleep(5000);
-			String pullCommand = "adb pull /storage/emulated/0/Download/smaZerLOG.txt \"" + projectRoot + "\\smaZerLOG.txt\"";
+			String pullCommand = "adb pull /storage/emulated/0/Download/sZephyrLOG.txt \"" + projectRoot + "\\sZephyrLOG.txt\"";
 			Runtime.getRuntime().exec(pullCommand);
 
 //		    Runtime.getRuntime().exec("adb pull /storage/emulated/0/Download/sZephyrLOG.txt "+projectRoot+"/sZephyrLOG.txt");
@@ -191,4 +195,12 @@ public class StoreLogPage extends GenericWrappers{
 		}
 		}
 		
+		
+//		protected static String testCaseName;
+//		protected static String testDescription;
+  
+	    
+	    
+	    
+	   
 }

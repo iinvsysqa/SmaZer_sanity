@@ -27,7 +27,7 @@ public class TC21_DeviceSettings extends MobileAppWrappers {
 	
 
 	@Test(priority = 20)
-	public void removerepair() throws Exception {
+	public void TC21_DeviceSettings_LED_Quite_Mode() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -46,7 +46,8 @@ public class TC21_DeviceSettings extends MobileAppWrappers {
 		
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
 		

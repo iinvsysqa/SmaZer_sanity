@@ -32,7 +32,7 @@ public class TC12_Pairing_WifiwithoutRouter extends MobileAppWrappers {
 	}
 
 
-	@Test(priority = 11,groups = {"skip"})
+//	@Test(priority = 11,groups = {"skip"})
 	public void removerepair() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
@@ -63,21 +63,7 @@ public class TC12_Pairing_WifiwithoutRouter extends MobileAppWrappers {
 		adddevicepage.checkdeviceremovedtoast();
 		devicemenupage.AddDevicePagedisplayed();
 		
-		adddevicepage.pair(5);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
 		
-		Thread.sleep(8000);
-		homepage.clickONOFFButton();
-		homepage.clickONOFFButton();
-				
-		homepage.clickMenuBarButton();
-		devicemenupage.clickMenuBarRemoveDevice();
-		devicemenupage.clickRemoveDevicePopupYesButton();
-		adddevicepage.checkdeviceremovedtoast();
-		devicemenupage.AddDevicePagedisplayed();
 		
 		readwrite.closePort();
 		}

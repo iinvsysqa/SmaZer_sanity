@@ -37,7 +37,7 @@ public class TC03_SignUp extends MobileAppWrappers {
 
 
 	@Test(priority = 2)
-	public void signUp() throws Exception {
+	public void TC03_SignUp_Check() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);

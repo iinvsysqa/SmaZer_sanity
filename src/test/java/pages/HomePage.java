@@ -49,6 +49,12 @@ public class HomePage extends GenericWrappers{
 	@FindBy(xpath = "//*[@resource-id='PairedGeyser_Img_svg_ble_0_blue']")
 	private WebElement bleSymbol;
 	
+	@FindBy(xpath = "//*[@resource-id='menu_bar']")
+	private WebElement menuBarButtonafterpairing;
+	
+	@FindBy(xpath = "//*[@resource-id='menu_bar']")
+	private WebElement menuBarButtonafterpairing_withoutconnectivity;
+	
 //	@FindBy(xpath = "//android.widget.TextView[@text=\"smazer007_1\"]")
 //	private WebElement userName;
 	private WebElement userName(String username) {
@@ -56,7 +62,13 @@ public class HomePage extends GenericWrappers{
 		
 	}
 	
+	private WebElement devicenameDeviceSettingsPage(String username) {
+		return driver.findElement(By.xpath("//android.widget.TextView[@text='"+username+"']"));
+		
+	}
+	
 	public String userName = loadProp("USERNAME");
+	
 	
 	public HomePage(AndroidDriver driver) {
 		this.driver = driver;
@@ -65,8 +77,8 @@ public class HomePage extends GenericWrappers{
 	
 	public void HomepageDevicenameCheck() {
 		
-		expshortWaittwenty(userName(userName));
-		verifyTextContainsByXpath(userName(userName), userName, "Home page device name");
+		expshortWaittwenty(userName(loadProp("USERNAMEINAPP")));
+		verifyTextContainsByXpath(userName(loadProp("USERNAMEINAPP")), loadProp("USERNAMEINAPP"), "Home page device name");
 
 	}
 	public void clickONOFFButton() {
@@ -87,6 +99,10 @@ public class HomePage extends GenericWrappers{
 		expWaitforPairing(sharelog);
 		clickbyXpath(sharelog, " sharelog button ");
 	 }
+	 
+	 public void verifyusername() {
+		   verifyTextContainsByXpath(devicenameDeviceSettingsPage(loadProp("USERNAMEINAPP")), loadProp("USERNAMEINAPP"),"Username");
+	}
 	 
 	 public void VerifyONdesc()
 	 {
@@ -118,18 +134,24 @@ public class HomePage extends GenericWrappers{
 		   disableWiFi();
 	   }
 	   
-	   public void WifiSwitch(String Wifiname,String Wifipassword) throws Exception 
+	   @SuppressWarnings("deprecation")
+	public void WifiSwitch(String Wifiname,String Wifipassword) throws Exception 
 	   {
 		   
 		   connectToWiFi(Wifiname, Wifipassword);
 			Runtime.getRuntime().exec("adb shell am force-stop com.android.settings");
 		   if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
 				driver.activateApp(packages); 
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.ACCESS_FINE_LOCATION");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_SCAN");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_CONNECT");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.CAMERA");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.POST_NOTIFICATIONS");
 				// Bring it back
 //				Thread.sleep(3000);
 			}
 	   }
-
+	 
 	   
 	   public void getCurrentvalue() throws InterruptedException {
 		   
@@ -149,6 +171,17 @@ public class HomePage extends GenericWrappers{
 		   System.out.println(attribute);
 	   }
 	   
+		 public void clickMenuBarButtonafterpairing() throws Exception {
+				
+				if (isiconDisplayed(menuBarButtonafterpairing, "menu bar after pairing element displayed")) {
+					Thread.sleep(5000);
+					clickbyXpath(menuBarButtonafterpairing, " Menu Bar ");
+					}else if (isiconDisplayed(menuBarButtonafterpairing_withoutconnectivity, "without connectivity menu bar icon")) {
+						Thread.sleep(5000);
+						clickbyXpath(menuBarButtonafterpairing_withoutconnectivity, " Menu Bar ");
+						
+					}
+			}
 	   
 	   
 //	   String description[]={"Searching for sZephyr to establish connection","Please ensure sZephyr is switched ON prior to operating your AC remote","Your AC unit is either in standby or powered OFF at the moment","sZephyr and AC turned ON"};

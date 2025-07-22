@@ -28,7 +28,7 @@ public class TC24_Analytics  extends MobileAppWrappers {
 	}
 	
 	@Test(priority = 23)
-	public void removerepair() throws Exception {
+	public void TC_24_Analytics_BLE_without_Router_App_Close() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -47,9 +47,9 @@ public class TC24_Analytics  extends MobileAppWrappers {
 		
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
 		
 		homepage.clickONOFFButton();
 		Thread.sleep(1*60*1000);

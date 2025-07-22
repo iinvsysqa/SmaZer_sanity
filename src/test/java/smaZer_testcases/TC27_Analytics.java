@@ -27,8 +27,8 @@ public class TC27_Analytics extends MobileAppWrappers {
 		testDescription = "Pairing mode=Wifi With Router <br> Connectivity :STA <br>Turn on device for 5min using relay  <br> check for analytivs value<br>Energy duration and Energy used for 5 min should update";
 	}
 	
-	@Test(priority = 26,groups = {"skip"})
-	public void removerepair() throws Exception {
+//	@Test(priority = 26,groups = {"skip"})
+	public void TC_27_Analytics_Wifi_with_Router() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -47,7 +47,8 @@ public class TC27_Analytics extends MobileAppWrappers {
 		
 		adddevicepage.pair(4);
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
 		turnOffBT();

@@ -1,28 +1,34 @@
 package utils;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import jssc.SerialPort;
-import jssc.SerialPortException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
-
-
+import java.util.concurrent.atomic.AtomicBoolean;
+import jssc.SerialPort;
+import jssc.SerialPortException;
 
 public class logReadandWrite {
     private static logReadandWrite instance = null;
     private SerialPort serialPort;
-    private volatile boolean running = false;
-    private final Path logFilePath = Path.of("device.log");  // Changed to .log extension
-    private Thread logThread;
-    private final Object writeLock = new Object();
+    private final AtomicBoolean running = new AtomicBoolean(false);
+    private final Path logFilePath = Path.of("device.log");
+    
     private final Queue<String> logQueue = new ConcurrentLinkedQueue<>();
+    private final Queue<String> writeQueue = new ConcurrentLinkedQueue<>();
+    
+    private Thread logReaderThread;
+    private Thread logWriterThread;
+    private Thread logFlusherThread;
+    
+    private final Object serialWriteLock = new Object();
 
-    public logReadandWrite(String portName) {
-        serialPort = new SerialPort(portName);
+    private logReadandWrite(String portName) {
+        this.serialPort = new SerialPort(portName);
     }
 
     public static synchronized logReadandWrite getInstance(String portName) {
@@ -32,119 +38,155 @@ public class logReadandWrite {
         return instance;
     }
 
-    public synchronized void openPort() {
-        try {
-            if (!serialPort.isOpened()) {
-                serialPort.openPort();
-                serialPort.setParams(115200, 8, 1, 0);
-                running = true;
+    public synchronized void openPort() throws SerialPortException, IOException {
+        if (!serialPort.isOpened()) {
+            serialPort.openPort();
+            serialPort.setParams(115200, 8, 1, 0);
+            running.set(true);
 
-                // Clear the log file at the start
-                Files.writeString(logFilePath, "", java.nio.file.StandardOpenOption.TRUNCATE_EXISTING, java.nio.file.StandardOpenOption.CREATE);
+            // Clear existing log file
+            Files.writeString(logFilePath, "", 
+                java.nio.file.StandardOpenOption.TRUNCATE_EXISTING, 
+                java.nio.file.StandardOpenOption.CREATE);
 
-                System.out.println("Port opened successfully.");
-                startLogThread();
-                startLogFlusher(); // Ensure log flushing happens in the background
-            } else {
-                System.out.println("Port is already open.");
-            }
-        } catch (SerialPortException | IOException ex) {
-            System.out.println("Error opening port: " + ex.getMessage());
+            System.out.println("Port opened successfully.");
+            
+            // Start all worker threads
+            startLogReaderThread();
+            startLogWriterThread();
+            startLogFlusherThread();
+        } else {
+            System.out.println("Port is already open.");
         }
     }
 
-    private void startLogThread() {
-        if (logThread == null || !logThread.isAlive()) {
-            logThread = new Thread(() -> {
-                while (running) {
-                    try {
-                        if (serialPort.isOpened()) {
-                            int availableBytes = serialPort.getInputBufferBytesCount();
-                            if (availableBytes > 0) {
-                                byte[] buffer = serialPort.readBytes(availableBytes);
-                                if (buffer != null && buffer.length > 0) {
-                                    String received = new String(buffer).trim();
-                                    logQueue.add(received);
-                                }
-                            }
-                        } else {
-                            System.out.println("Error: Port is closed.");
-                            break;
-                        }
-                    } catch (SerialPortException ex) {
-                        System.out.println("Error reading from port: " + ex.getMessage());
-                    }
-
-                    try {
-                        Thread.sleep(10);
-                    } catch (InterruptedException e) {
-                        System.out.println("Log thread interrupted.");
-                        break;
-                    }
-                }
-            });
-            logThread.start();
-        }
-    }
-
-    public void write(String comment) {
-        new Thread(() -> {
-            synchronized (writeLock) {
+    private void startLogReaderThread() {
+        logReaderThread = new Thread(() -> {
+            byte[] buffer = new byte[1024];
+            while (running.get()) {
                 try {
                     if (serialPort.isOpened()) {
-                        serialPort.writeBytes(comment.getBytes());
-                        System.out.println("Comment sent: " + comment);
-                    } else {
-                        System.out.println("Error: Cannot write, port is not open.");
+                        int available = serialPort.getInputBufferBytesCount();
+                        if (available > 0) {
+                            int toRead = Math.min(available, buffer.length);
+                            byte[] readBytes = serialPort.readBytes(toRead);
+                            if (readBytes != null && readBytes.length > 0) {
+                                String received = new String(readBytes, StandardCharsets.UTF_8);
+                                logQueue.add(received);
+                            }
+                        }
                     }
-                } catch (SerialPortException ex) {
-                    System.out.println("Error writing to port: " + ex.getMessage());
-                }
-            }
-        }).start();
-    }
-
-    public synchronized void closePort() {
-        try {
-            if (serialPort.isOpened()) {
-                running = false;
-                if (logThread != null) {
-                    logThread.interrupt();
-                }
-                serialPort.closePort();
-                flushLogsToFile();  // Ensure any leftover logs are saved
-                System.out.println("Port closed successfully.");
-            } else {
-                System.out.println("Port is already closed.");
-            }
-        } catch (SerialPortException ex) {
-            System.out.println("Error closing port: " + ex.getMessage());
-        }
-    }
-
-    private void startLogFlusher() {
-        new Thread(() -> {
-            while (running) {
-                flushLogsToFile();
-                try {
-                    Thread.sleep(5000); // Flush logs every 5 seconds
-                } catch (InterruptedException e) {
-                    System.out.println("Log flusher interrupted.");
+                    Thread.sleep(1); // Short sleep to prevent CPU overload
+                } catch (SerialPortException | InterruptedException e) {
+                    if (running.get()) {
+                        System.out.println("Error in log reader: " + e.getMessage());
+                    }
                     break;
                 }
             }
-        }).start();
+        });
+        logReaderThread.setName("SerialPort-Reader");
+        logReaderThread.start();
+    }
+
+    private void startLogWriterThread() {
+        logWriterThread = new Thread(() -> {
+            while (running.get()) {
+                try {
+                    String message = writeQueue.poll();
+                    if (message != null) {
+                        synchronized (serialWriteLock) {
+                            if (serialPort.isOpened()) {
+                                // Ensure message ends with newline
+                                if (!message.endsWith("\n") && !message.endsWith("\r")) {
+                                    message += "\n";
+                                }
+                                serialPort.writeBytes(message.getBytes(StandardCharsets.UTF_8));
+                                System.out.println("Successfully wrote: " + message.trim());
+                            }
+                        }
+                    } else {
+                        Thread.sleep(1); // Short sleep when queue is empty
+                    }
+                } catch (SerialPortException e) {
+                    System.out.println("Serial port write error: " + e.getMessage());
+                } catch (InterruptedException e) {
+                    break;
+                }
+            }
+        });
+        logWriterThread.setName("SerialPort-Writer");
+        logWriterThread.start();
+    }
+
+    private void startLogFlusherThread() {
+        logFlusherThread = new Thread(() -> {
+            while (running.get()) {
+                flushLogsToFile();
+                try {
+                    Thread.sleep(100); // More frequent flushing (100ms)
+                } catch (InterruptedException e) {
+                    break;
+                }
+            }
+            // Final flush before exiting
+            flushLogsToFile();
+        });
+        logFlusherThread.setName("Log-Flusher");
+        logFlusherThread.start();
+    }
+
+    public void write(String message) {
+        if (message != null && !message.isEmpty()) {
+            writeQueue.add(message);
+            //System.out.println("Added to write queue: " + message);
+        }
     }
 
     public void flushLogsToFile() {
-        synchronized (writeLock) {
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(logFilePath.toFile(), true))) {
-                while (!logQueue.isEmpty()) {
-                    writer.write(logQueue.poll() + System.lineSeparator());
+        try (BufferedWriter writer = new BufferedWriter(
+                new FileWriter(logFilePath.toFile(), StandardCharsets.UTF_8, true))) {
+            String logEntry;
+            while ((logEntry = logQueue.poll()) != null) {
+                writer.write(logEntry);
+                // Only add newline if the entry doesn't already end with one
+                if (!logEntry.endsWith("\n") && !logEntry.endsWith("\r")) {
+                    writer.newLine();
                 }
-                writer.flush();
-            } catch (IOException e) {
-                System.out.println("Error writing to file: " + e.getMessage());
+            }
+            writer.flush();
+        } catch (IOException e) {
+            System.out.println("Error writing to log file: " + e.getMessage());
+        }
+    }
+
+    public synchronized void closePort() {
+        if (running.compareAndSet(true, false)) {
+            try {
+                // Interrupt and wait for threads to finish
+                if (logReaderThread != null) {
+                    logReaderThread.interrupt();
+                    logReaderThread.join(1000);
+                }
+                
+                if (logWriterThread != null) {
+                    logWriterThread.interrupt();
+                    logWriterThread.join(1000);
+                }
+                
+                if (logFlusherThread != null) {
+                    logFlusherThread.interrupt();
+                    logFlusherThread.join(1000);
+                }
+                
+                if (serialPort.isOpened()) {
+                    serialPort.closePort();
+                }
+                
+                System.out.println("Port closed successfully.");
+            } catch (SerialPortException | InterruptedException e) {
+                System.out.println("Error closing port: " + e.getMessage());
+                Thread.currentThread().interrupt();
             }
         }
     }

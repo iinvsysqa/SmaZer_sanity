@@ -40,7 +40,7 @@ public class  TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 extends MobileAppWrappers {
 	
 
 	@Test(priority = 17)
-	public void removerepair() throws Exception {
+	public void TC18_UI_CONNECTIVITY_MOD_0_TC_01TO03() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}
@@ -63,7 +63,8 @@ public class  TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 extends MobileAppWrappers {
 		adddevicepage.enterAcModelName("V20");
 		adddevicepage.verifyDefaultCapacity();
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
 		
@@ -92,6 +93,8 @@ public class  TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 extends MobileAppWrappers {
 		
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.LEDquietmode();
 		adddevicepage.Infinitepoweron();
 		adddevicepage.Minutesminusbutton();

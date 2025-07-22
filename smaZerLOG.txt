@@ -1,0 +1,47 @@
+[D: 22/7/2025 T: 11:44:25:777 AM ]  [Tc:  ] "INFO""GENERAL_INFO""267" Data: FCM-TOKEN Created c9LclpCdSBeKTzjrmrvmoM:APA91bF4Q_EkbPf4X8GRbCTftmDUUR36CM_UW14EC_dz1LtESUaE-MXDxNKg7P2oacCqX29jV9T5WTVQCADq1UKPmwOXs4Zr0204fZqRdQ6UxRFUNEeqmo0
+
+[D: 22/7/2025 T: 11:44:25:779 AM ]  [Tc:  ] "INFO""GENERAL_INFO""268" Data: FCM-TOKEN Type string
+
+[D: 22/7/2025 T: 11:44:25:779 AM ]  [Tc:  ] "INFO""GENERAL_INFO""269" Data: Stored FCM-TOKEN Locally Success c9LclpCdSBeKTzjrmrvmoM:APA91bF4Q_EkbPf4X8GRbCTftmDUUR36CM_UW14EC_dz1LtESUaE-MXDxNKg7P2oacCqX29jV9T5WTVQCADq1UKPmwOXs4Zr0204fZqRdQ6UxRFUNEeqmo0
+
+[D: 22/7/2025 T: 11:44:25:784 AM ]  [Tc:  ] "network state"true{"details":{"isConnectionExpensive":false,"subnet":"255.255.255.0","ipAddress":"192.168.1.114","frequency":2417,"strength":99,"bssid":"40:3f:8c:b7:6d:38","ssid":"TP-Link_6D38-with_Internet"},"isConnected":true,"type":"wifi","isInternetReachable":true,"isWifiEnabled":true} undefined
+
+[D: 22/7/2025 T: 11:44:25:789 AM ]  [Tc:  ] "Guest associative device data ====> "nullnull null
+
+[D: 22/7/2025 T: 11:44:25:790 AM ]  [Tc:  ] "app.js else block line 565, userToken != null"undefinedundefined undefined
+
+[D: 22/7/2025 T: 11:44:49:230 AM ]  [Tc:  ] "INFO""API""272" SEND API_ID: 202 Data: User login API Payload {"field":"UserName","value":"smazer007"}
+
+[D: 22/7/2025 T: 11:44:49:492 AM ]  [Tc:  ] "INFO""API""272" RECV API_ID: 202 Data: User login API response {"EmailId":"smazer007@gmail.com","MobileNumber":null,"_id":"687f27e9b9543e69303c590c","message":"found correct user","status":"success"}
+
+[D: 22/7/2025 T: 11:45:5:48 AM ]  [Tc:  ] "INFO""GENERAL_INFO""2612" Data: Retrieved FCM-TOKEN Locally Success c9LclpCdSBeKTzjrmrvmoM:APA91bF4Q_EkbPf4X8GRbCTftmDUUR36CM_UW14EC_dz1LtESUaE-MXDxNKg7P2oacCqX29jV9T5WTVQCADq1UKPmwOXs4Zr0204fZqRdQ6UxRFUNEeqmo0
+
+[D: 22/7/2025 T: 11:45:5:106 AM ]  [Tc:  ] "INFO""API""273" SEND API_ID: 203 Data: User otpVerify API payload {"otp1":"1234","_id":"687f27e9b9543e69303c590c","pushNotifyToken":"c9LclpCdSBeKTzjrmrvmoM:APA91bF4Q_EkbPf4X8GRbCTftmDUUR36CM_UW14EC_dz1LtESUaE-MXDxNKg7P2oacCqX29jV9T5WTVQCADq1UKPmwOXs4Zr0204fZqRdQ6UxRFUNEeqmo0"}
+
+[D: 22/7/2025 T: 11:45:5:142 AM ]  [Tc:  ] "INFO""API""273" RECV API_ID: 203 Data: User otpVerify API response {"user":{"verified":true,"pushNotifyToken":"c9LclpCdSBeKTzjrmrvmoM:APA91bF4Q_EkbPf4X8GRbCTftmDUUR36CM_UW14EC_dz1LtESUaE-MXDxNKg7P2oacCqX29jV9T5WTVQCADq1UKPmwOXs4Zr0204fZqRdQ6UxRFUNEeqmo0","_id":"687f27e9b9543e69303c590c","UserName":"smazer007","EmailId":"smazer007@gmail.com","MobileNumber":null,"otp":"8361","associative_devices":[],"createdAt":"2025-07-22T05:55:53.628Z","updatedAt":"2025-07-22T06:15:05.265Z","__v":0},"status":"success","message":"user login successfully"}
+
+[D: 22/7/2025 T: 11:45:5:144 AM ]  [Tc:  ] "INFO""API""274" SEND API_ID: 3 Data: User getAssociativeDevices API payload {"user_id":"687f27e9b9543e69303c590c"}
+
+[D: 22/7/2025 T: 11:45:5:192 AM ]  [Tc:  ] "INFO""API""274" RECV API_ID: 3 Data: User getAssociativeDevices API response {"status":"success","message":"combine user details","user":{"verified":true,"pushNotifyToken":"c9LclpCdSBeKTzjrmrvmoM:APA91bF4Q_EkbPf4X8GRbCTftmDUUR36CM_UW14EC_dz1LtESUaE-MXDxNKg7P2oacCqX29jV9T5WTVQCADq1UKPmwOXs4Zr0204fZqRdQ6UxRFUNEeqmo0","_id":"687f27e9b9543e69303c590c","UserName":"smazer007","EmailId":"smazer007@gmail.com","MobileNumber":null,"associative_devices":[],"__v":0}}
+
+[D: 22/7/2025 T: 11:45:5:197 AM ]  [Tc:  ] "[info] ""sign in data "{"status":"success","message":"combine user details","user":{"verified":true,"pushNotifyToken":"c9LclpCdSBeKTzjrmrvmoM:APA91bF4Q_EkbPf4X8GRbCTftmDUUR36CM_UW14EC_dz1LtESUaE-MXDxNKg7P2oacCqX29jV9T5WTVQCADq1UKPmwOXs4Zr0204fZqRdQ6UxRFUNEeqmo0","_id":"687f27e9b9543e69303c590c","UserName":"smazer007","EmailId":"smazer007@gmail.com","MobileNumber":null,"associative_devices":[],"__v":0}} 687f27e9b9543e69303c590c
+
+[D: 22/7/2025 T: 11:45:5:199 AM ]  [Tc:  ] "appStateHandler.js:lineNo login_Data_Handler "{"verified":true,"pushNotifyToken":"c9LclpCdSBeKTzjrmrvmoM:APA91bF4Q_EkbPf4X8GRbCTftmDUUR36CM_UW14EC_dz1LtESUaE-MXDxNKg7P2oacCqX29jV9T5WTVQCADq1UKPmwOXs4Zr0204fZqRdQ6UxRFUNEeqmo0","_id":"687f27e9b9543e69303c590c","UserName":"smazer007","EmailId":"smazer007@gmail.com","MobileNumber":null,"associative_devices":[],"__v":0}"687f27e9b9543e69303c590c" []
+
+[D: 22/7/2025 T: 11:45:5:226 AM ]  [Tc:  ] "INFO""COMMUNICATION""111" establish communication triggered []
+
+[D: 22/7/2025 T: 11:45:5:229 AM ]  [Tc:  ] "Sign details after modification, user_Details, associative_devices"{"verified":true,"pushNotifyToken":"c9LclpCdSBeKTzjrmrvmoM:APA91bF4Q_EkbPf4X8GRbCTftmDUUR36CM_UW14EC_dz1LtESUaE-MXDxNKg7P2oacCqX29jV9T5WTVQCADq1UKPmwOXs4Zr0204fZqRdQ6UxRFUNEeqmo0","_id":"687f27e9b9543e69303c590c","UserName":"smazer007","EmailId":"smazer007@gmail.com","MobileNumber":null,"__v":0,"firmwareAutoUpload":false,"firmwareAutoDownload":false,"svr_ota":false,"currentOTAIndex":0,"curCacheBuildNum":0,"latest_Bin_File_Length":null,"latest_firmware_vrs":null,"age":"","gender":""}[] undefined
+
+[D: 22/7/2025 T: 11:45:5:280 AM ]  [Tc:  ] "Home.js LoginState ==>"{"isLoading":false,"userDetails":{"verified":true,"pushNotifyToken":"c9LclpCdSBeKTzjrmrvmoM:APA91bF4Q_EkbPf4X8GRbCTftmDUUR36CM_UW14EC_dz1LtESUaE-MXDxNKg7P2oacCqX29jV9T5WTVQCADq1UKPmwOXs4Zr0204fZqRdQ6UxRFUNEeqmo0","_id":"687f27e9b9543e69303c590c","UserName":"smazer007","EmailId":"smazer007@gmail.com","MobileNumber":null,"__v":0,"firmwareAutoUpload":false,"firmwareAutoDownload":false,"svr_ota":false,"currentOTAIndex":0,"curCacheBuildNum":0,"latest_Bin_File_Length":null,"latest_firmware_vrs":null,"age":"","gender":""},"guestDetails":null,"userToken":"687f27e9b9543e69303c590c","deviceOnOffStatus":true,"deviceConnnectedStatus":false,"associative_devices":[],"language":"English","guestAssociativeDevices":null}undefined undefined
+
+[D: 22/7/2025 T: 11:45:5:281 AM ]  [Tc:  ] [][]"######" undefined
+
+[D: 22/7/2025 T: 11:45:12:88 AM ]  [Tc:  ] "deep linking =====================>"""undefined undefined
+
+[D: 22/7/2025 T: 11:45:12:88 AM ]  [Tc:  ] "addEventListener""background"undefined undefined
+
+[D: 22/7/2025 T: 11:45:12:88 AM ]  [Tc:  ] "GET getGeyserSocketTemp"nullundefined undefined
+
+[D: 22/7/2025 T: 11:45:12:88 AM ]  [Tc:  ] null"analytics_Session_data==============>"undefined undefined
+
+[D: 22/7/2025 T: 11:45:12:88 AM ]  [Tc:  ] null"analytics_Session_data==============>"undefined undefined

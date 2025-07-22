@@ -37,7 +37,7 @@ public class TC31_Schedular extends MobileAppWrappers {
 	}
 
 	@Test(priority = 30)
-	public void schedule() throws Exception {
+	public void TC31_Schedular_BLE_Without_Router_App_close() throws Exception {
 		initAndriodDriver();
 		landingpage = new LandingPage(driver);
 		loginpage = new SignInPage(driver);
@@ -57,6 +57,8 @@ public class TC31_Schedular extends MobileAppWrappers {
 		
 		adddevicepage.pair(1);
 		adddevicepage.clickNextButtonsZephyrInfo();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		
 	

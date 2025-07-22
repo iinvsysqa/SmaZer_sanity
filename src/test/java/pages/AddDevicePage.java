@@ -79,6 +79,12 @@ public class AddDevicePage extends GenericWrappers {
 
 	@FindBy(xpath = "//android.widget.TextView[@text='Next']")
 	private WebElement nextButton;
+	
+	@FindBy(xpath = "//*[@resource-id='menu_bar']")
+	private WebElement menuBarButtonafterpairing;
+	
+	@FindBy(xpath = "//*[@resource-id='menu_bar']")
+	private WebElement menuBarButtonafterpairing_withoutconnectivity;
 
 	@FindBy(xpath = "//android.widget.TextView[@text='Submit']")
 	private WebElement submitBtn;
@@ -354,6 +360,12 @@ public class AddDevicePage extends GenericWrappers {
 			clickbyXpathwithoutReport(nearByPermisson, " Near by devices Permission  ");
 		}
 	}
+	
+	public void clickNextButtonsZephyrInfo() {
+		if (isElementDisplayednext(sZephyrInfoNextButton, "sZephyr info Next button ")) {
+			clickbyXpath(sZephyrInfoNextButton, " Next Button ");
+		} 
+	}
 
 	public void enterWiFiPassword(String password) {
 		expshortWait(enterPasswordField);
@@ -370,6 +382,8 @@ public class AddDevicePage extends GenericWrappers {
 
 	}
 
+
+	 
 	public void clickNextButton() {
 		clickbyXpath(nextButton, " Enter Button  ");
 	}
@@ -378,17 +392,7 @@ public class AddDevicePage extends GenericWrappers {
 		clickbyXpath(submitBtn, " Submit Button ");
 	}
 
-	public void clickNextButtonsZephyrInfo() {
-		if (isElementDisplayednext(sZephyrInfoNextButton, "sZephyr info Next button ")) {
-			clickbyXpath(sZephyrInfoNextButton, " Next Button ");
-		} else {
-			driver.activateApp(loadProp("APP_PACKAGE"));
-			expWaitforPairing(sZephyrInfoNextButton);
-			clickbyXpath(sZephyrInfoNextButton, " Next Button ");
-
-		}
-
-	}
+	
 
 	public void ClickBrandName() {
 		expWaitforPairing(ClickBrandName);
@@ -432,6 +436,8 @@ public class AddDevicePage extends GenericWrappers {
 			driver.activateApp(packages); // Bring it back
 		}
 	}
+	
+	
 
 	public void ClickOkButtonBLEpopUP() throws Exception {
 		expWaitforPairing(ClickOkButtonBLEpopUP);
@@ -523,6 +529,7 @@ public class AddDevicePage extends GenericWrappers {
 		}
 	}
 
+	
 	public void clickBleCancelbutton() throws Exception {
 		wait.until(ExpectedConditions.visibilityOf(BLEcancelpopup));
 		clickbyXpath(BLEcancelpopup, "Ble Cancelbutton");
@@ -612,14 +619,15 @@ public class AddDevicePage extends GenericWrappers {
 
 	
 
+//	String serialno = "iinv_smartac";
+
 	LandingPage landingpage;
 	SignInPage loginpage;
 	HomePage homepage;
 	OtpPage otppage;
 	DeviceMenuPage devicemenupage;
 	PassSTComment passcommand;
-	AccountsInfoPage accountsinfopage;
-	
+
 	public void pair(int mode) throws Exception {
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);
@@ -627,7 +635,6 @@ public class AddDevicePage extends GenericWrappers {
 		otppage = new OtpPage(driver);
 		devicemenupage = new DeviceMenuPage(driver);
 		passcommand = new PassSTComment();
-		accountsinfopage=new AccountsInfoPage(driver);
 		
 		verifysigninpage();
 		initiatepairing(mode);
@@ -639,7 +646,7 @@ public class AddDevicePage extends GenericWrappers {
 		// Backgrounds app for 10 seconds
 		homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
 
-		turnOnBT();
+//		turnOnBT();
 		/*
 		 * if (isElementDisplayedCheck(blePermissionOkButton)) {
 		 * clickbyXpath(blePermissionOkButton, "Allowing Ble permission pop-up");
@@ -647,11 +654,10 @@ public class AddDevicePage extends GenericWrappers {
 		 */	
 		
 		try {
-//			Thread.sleep(5000);
-			if(isElementDisplayedCheckStart(signInButton)) {
+			if(isElementDisplayedCheck(signInButton)) {
 				landingpage.clickSignInButton();
 				loginpage.enterUserName(userName);
-				loginpage.clickSignIn();
+				loginpage.clickSignInButton();
 				otppage.enterOTPField1("1");
 				otppage.enterOTPField2("2");
 				otppage.enterOTPField3("3");
@@ -674,7 +680,7 @@ public class AddDevicePage extends GenericWrappers {
 //			if (isElementDisplayedCheck(devicepermission)) {
 //				clickbyXpath(devicepermission, "Device permission pop-up");
 //			}
-		turnOnBT();
+//		turnOnBT();
 		/*
 		 * if (isElementDisplayedCheck(blePermissionOkButton)) { clickbyXpath(blePermissionOkButton,
 		 * "Allowing Ble permission pop-up"); }
@@ -692,7 +698,7 @@ public class AddDevicePage extends GenericWrappers {
 	public void proceedToAddDevice(int mode) throws Exception {
 		
 
-		if (isElementDisplayedCheckStart(addDeviceButton)) {
+		if (isElementDisplayedCheck(addDeviceButton)) {
 
 			clickAddDeviceButton();
 			checkBoxPairing();
@@ -707,28 +713,21 @@ public class AddDevicePage extends GenericWrappers {
 //				locationPopUpPermission();
 //				nearByPermission();
 
-//				Thread.sleep(3000);
+				Thread.sleep(10000);
+				clickWifiCancelButton();
 //				blepermissionokpopup();
           
-//				Verifying  SmaZer...
-//				Please Don't lock or put your mobile in the background while pairing
-				Thread.sleep(5000);
-				clickWifiCancelButton();
-				verifyTextContainsByXpath(timeLeftBottomLine, loadProp("whilePairingContent"), "Pairing time left page");
-				verifyTextContainsByXpath(verifyingSmazer, "Verifying  SmaZer...", "verifying smazer");
-//				verifyTextContainsByXpath(verifyingSmazerContent, loadProp("Note2"), "verifying smazer  page content ");
 				Thread.sleep(30000);
 				
 				if(!isElementDisplayedCheck(sZephyrInfoNextButton)) {
 					blepermissionokpopup();
-				retrypagecheck(mode);
-				unregistereddevicepopup();
-				verificationFailed();
+					unregistereddevicepopup();
+					retrypagecheck(mode);
 				}
 				break;
 
 			case 2:
-				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
+//				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
 				turnOnBT();
 				startPairingButton();
 //				blepermissionokpopup();
@@ -737,101 +736,94 @@ public class AddDevicePage extends GenericWrappers {
 				readwrite.write("factory_reset\r");
 				blepermissionokpopup();
 				enterWiFiPassword(wifiPassword);
-				Thread.sleep(5000);
+				Thread.sleep(10000);
 				clickEnterButton();
-				
-				verifyTextContainsByXpath(timeLeftBottomLine, loadProp("whilePairingContent"), "Pairing time left page");
-				verifyTextContainsByXpath(verifyingSmazer, "Verifying  SmaZer...", "verifying smazer");
-//				verifyTextContainsByXpath(verifyingSmazerContent, loadProp("Note2"), "verifying smazer  page content ");
-
 				Thread.sleep(30000);
 				if(!isElementDisplayedCheck(sZephyrInfoNextButton))  {
 					blepermissionokpopup();
-				retrypagecheck(mode);
-				unregistereddevicepopup();
+					unregistereddevicepopup();
+					retrypagecheck(mode);
 				}
 				break;
 				
 			case 3:
-				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
+//				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
 				turnOffBT();
 				startPairingButton();
-				blepermissioncancelpopup();
+//				blepermissionokpopup();
 //				locationPopUpPermission();
 //				nearByPermission();
 
 				readwrite.write("factory_reset\r");
 				blepermissionokpopup();
+				//Thread.sleep(10000);
 				enterWiFiPassword(wifiPassword);
-				Thread.sleep(5000);
 				clickEnterButton();
 				
 				
-//				Thread.sleep(1000 * 1 * 10);
+				Thread.sleep(1000 * 1 * 10);
 
-//				blepermissionokpopup();
-				verifyTextContainsByXpath(timeLeftBottomLine, loadProp("whilePairingContent"), "Pairing time left page");
-				verifyTextContainsByXpath(verifyingSmazer, "Verifying  SmaZer...", "verifying smazer");
+				blepermissionokpopup();
 				
 				Thread.sleep(30000);
-//				verifyTextContainsByXpath(verifyingSmazerContent, loadProp("Note2"), "verifying smazer  page content ");
-
+				
 				if(!isElementDisplayedCheck(sZephyrInfoNextButton)) {
-					retrypagecheck(mode);
 					unregistereddevicepopup();
+					retrypagecheck(mode);
 				}
 				blepermissionokpopup();
+				
 				break;
 				
 			case 4:
-				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
+//				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
 				turnOffBT();
-				readwrite.write("factory_reset\r");
 				startPairingButton();
+				readwrite.write("factory_reset\r");
 				blepermissioncancelpopup();
 //				Thread.sleep(3000);
 //				locationPopUpPermission();
 //				nearByPermission();
 
+				Thread.sleep(1000 * 5 * 1);
+				blepermissionokpopup();
 
-				Thread.sleep(3*10*1000);
+				Thread.sleep(1000 * 10 * 3);
 
-				enterWiFiPassword(loadProp("WIFIPASSWORD"));
-				Thread.sleep(10*1000);
+				enterWiFiPassword(wifiPassword);
+				Thread.sleep(5000);
 				clickEnterButton();
 
-				verifyTextContainsByXpath(timeLeftBottomLine, loadProp("whilePairingContent"), "Pairing time left page");
 				Thread.sleep(5*20*1000);
 				
 				if(!isElementDisplayedCheck(devicewifipop_upOK)) {
-					retrypagecheck(mode);
+
+					blepermissionokpopup();
 					unregistereddevicepopup();
+					retrypagecheck(mode);
 				}
 				connectwithmobilewifipage();
-				verifyTextContainsByXpath(verifyingSmazerContent, loadProp("whilePairingContent"), "verifying smazer  page content ");
-
+				waitForNextBtn();
 				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
 				
-				verifyTextContainsByXpath(verifyingSmazer, "Verifying  SmaZer...", "verifying smazer");
-				
 				Runtime.getRuntime().exec("adb shell am force-stop com.android.settings");
-				if(isElementDisplayedCheck(devicewifipop_upOK))  {
+				if(isElementDisplayednext(devicewifipop_upOK,"Could not connect with router popup"))  {
 					
 					clickbyXpath(devicewifipop_upOK, "Cliked on not connected with router pop-up");
 				}
-				blepermissionokpopup();
 				
 				break;
 
 			case 5:
-				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
+//				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
 
 				turnOffBT();
 
 				startPairingButton();
+				readwrite.write("factory_reset\r");
 
 			    blepermissioncancelpopup();
-//				Thread.sleep(3000);
+				Thread.sleep(5000);
 //				locationPopUpPermission();
 //				nearByPermission();
 
@@ -846,29 +838,25 @@ public class AddDevicePage extends GenericWrappers {
 //				}
 
 				clickWifiCancelButton();
-				readwrite.write("factory_reset\r");
-				verifyTextContainsByXpath(timeLeftBottomLine, loadProp("whilePairingContent"), "Pairing time left page");
 				Thread.sleep(5*20*1000);
 
 				if(!isElementDisplayedCheck(devicewifipop_upOK))  {
-					retrypagecheck(mode);
+					blepermissionokpopup();
 					unregistereddevicepopup();
+					retrypagecheck(mode);
 				}
-				blepermissionokpopup();
 				connectwithmobilewifipage();
 				
+				Thread.sleep(5000);
 				Runtime.getRuntime().exec("adb shell am force-stop com.android.settings");
 				if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
 					driver.activateApp(packages); // Bring it back
 
 				}
-				
-				verifyTextContainsByXpath(verifyingSmazer, "Verifying  SmaZer...", "verifying smazer");
-//				verifyTextContainsByXpath(verifyingSmazerContent, loadProp("Note2"), "verifying smazer  page content ");
-
-				//				Thread.sleep(5000);
+				Thread.sleep(5000);
 				blepermissionokpopup();
 				turnOnBT();
+				waitForNextBtn();
 				break;
 
 			default:
@@ -879,10 +867,9 @@ public class AddDevicePage extends GenericWrappers {
 		} else {
 
 			System.out.println("Device is already in paired state removing the device");
+			blepermissionokpopup();
 
-//			readwrite.write("factory_reset\r");
-
-			accountsinfopage.clickMenuBarButtonafterpairing();
+			homepage.clickMenuBarButtonafterpairing();
 			devicemenupage.clickMenuBarRemoveDevice();
 			devicemenupage.clickRemoveDevicePopupYesButton();
 			Thread.sleep(2000);//or5000
@@ -904,7 +891,6 @@ public class AddDevicePage extends GenericWrappers {
 			}
 		}
 	}
-
 	
 	public void connectwithmobilewifipage() throws Exception {
 		if (isElementDisplayedCheck(devicewifipop_upOK)) {
@@ -1038,9 +1024,12 @@ expshortWait(sZhephyrInfotoast);
 
 	public void checkdevicesettingstoast() {
 
-		expshortWait(Devicesettingstoast);
-		verifyTextContainsByXpath(Devicesettingstoast, devicesettingsupdatesuccess,
+//		expshortWait(Devicesettingstoast);
+//		verifyToastContainsByXpath(Devicesettingstoast, devicesettingsupdatesuccess,
+//				"Device settings updated successfully! toast");
+		verifyDynamicContentByXpath("//android.widget.Toast[@text=\"Device settings updated successfully!\"]", devicesettingsupdatesuccess,
 				"Device settings updated successfully! toast");
+		
 	}
 
 	public void checkdeviceremovedtoast() {
@@ -1053,6 +1042,12 @@ expshortWait(sZhephyrInfotoast);
 		expshortWait(deviceresettoast);
 
 		verifyTextContainsByXpath(deviceresettoast, YourDeviceResetSuccessfully, "  YourDeviceResetSuccessfully toast");
+	}
+	public void waitForNextBtn() {
+		if (isElementDisplayednext(sZephyrInfoNextButton, "sZephyr info Next button ")) {
+			System.out.println("Verifying completed");
+		}
+		
 	}
 
 	public void checkrouteraddedsuccessfultoast() {

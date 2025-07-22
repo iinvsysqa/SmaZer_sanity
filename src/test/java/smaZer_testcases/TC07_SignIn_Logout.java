@@ -38,7 +38,7 @@ public class TC07_SignIn_Logout extends MobileAppWrappers {
 	}
 
 	@Test(priority = 6)
-	public void login() throws Exception {
+	public void  TC07_SignIn_Logout_Check() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);
@@ -52,31 +52,35 @@ public class TC07_SignIn_Logout extends MobileAppWrappers {
 
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
-			readwrite.openPort();
+		readwrite.openPort();
+		
+//		homepage.enableWIFI();
+//		homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
+		
+		signuppage.uninstall_reinstall();
+		Thread.sleep(5000);
+		landingpage.clickSignInButton();
+		
+		loginpage.enterUserName(loadProp("EMAILID"));
+		loginpage.clickSignIn();
+		otppage.verifyOTPVerificationTitle("OTP Verification");
+		otppage.enterOTPField1("1");
+		otppage.enterOTPField2("2");
+		otppage.enterOTPField3("3");
+		otppage.enterOTPField4("4");
+		otppage.submitButton();
+         
+		
+		adddevicepage.pair(1);
+		adddevicepage.clickNextButtonsZephyrInfo();
+//		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+		adddevicepage.clickSubmitButtonDeviceSetting();
+		
+		for(int i=0;i<2;i++) {
+			homepage.clickONOFFButton();
+			Thread.sleep(1000);
 
-			signuppage.uninstall_reinstall();
-			Thread.sleep(5000);
-			landingpage.clickSignInButton();
-			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.ACCESS_FINE_LOCATION"));
-			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_SCAN"));
-			driver.executeScript("mobile: shell", ImmutableMap.of("command", "pm grant com.geezer android.permission.BLUETOOTH_CONNECT"));
-			loginpage.enterUserName(loadProp("EMAILID"));
-			loginpage.clickSignIn();
-			otppage.verifyOTPVerificationTitle("OTP Verification");
-			otppage.enterOTPField1("1");
-			otppage.enterOTPField2("2");
-			otppage.enterOTPField3("3");
-			otppage.enterOTPField4("4");
-			otppage.submitButton();
-
-
-			adddevicepage.pair(1);
-			adddevicepage.clickNextButtonsZephyrInfo();
-			adddevicepage.clickSubmitButtonDeviceSetting();
-
-			for(int i=0;i<2;i++) {
-				homepage.clickONOFFButton();
-				Thread.sleep(1000);
 			}
 
 			homepage.clickMenuBarButton();

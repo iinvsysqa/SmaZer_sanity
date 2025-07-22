@@ -27,10 +27,10 @@ public class  TC14_BleWithRouter extends MobileAppWrappers {
 	OtpPage otppage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
-	SmaZer_info_Page szephyrinfoPage;
 	OTA_Status_monitor ota_Status_monitor;
 	SignUpPage signUppage;	
-	StoreLogPage logpage; 
+	StoreLogPage logpage;
+
 	
 	 @BeforeClass   
 	public void startTestCase() {
@@ -40,7 +40,7 @@ public class  TC14_BleWithRouter extends MobileAppWrappers {
 	
 	
 	@Test(priority = 13)
-	public void removerepair() throws Exception {
+	public void TC14_BlewithRouter_CONNECTIVITY() throws Exception {
 		initAndriodDriver();
 		pairBlewithRouter();
 	}
@@ -51,9 +51,8 @@ public class  TC14_BleWithRouter extends MobileAppWrappers {
 		adddevicepage= new AddDevicePage(driver);
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
-		szephyrinfoPage= new SmaZer_info_Page(driver);
 		logpage= new StoreLogPage(driver);
-		
+
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
@@ -61,9 +60,11 @@ public class  TC14_BleWithRouter extends MobileAppWrappers {
 		
 		adddevicepage.pair(2);
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
+		
 		adddevicepage.bleConnectivityCheck();
 		
 		for(int i=0;i<2;i++) {
@@ -82,25 +83,9 @@ public class  TC14_BleWithRouter extends MobileAppWrappers {
 		homepage.getVoltvalue();
 		homepage.getPowervalue();
 		
-		homepage.clickMenuBarButton();
-        devicemenupage.clickDeviceSettingsButton();
-		devicemenupage.clickResetDeviceButton();
-		devicemenupage.clickResetConfirmationYesButton();
-		adddevicepage.checkdeviceresettoast();
-		devicemenupage.AddDevicePagedisplayed();
 		
 		
-		///CONNECTIVITY_MOD_2_TC_2--Kill and Open///
-		
-		adddevicepage.pair(2);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
-		
-		adddevicepage.bleConnectivityCheck();
-		homepage.clickONOFFButton();
-		homepage.clickONOFFButton();
+		//////////////
 		homepage.disableBLE();
 		
 		Thread.sleep(5000);
@@ -110,37 +95,20 @@ public class  TC14_BleWithRouter extends MobileAppWrappers {
 		
 		homepage.killandopen();
 		adddevicepage.ClickOkButtonBLEpopUP();
+		homepage.verifyusername();
 		Thread.sleep(5000);
 		adddevicepage.staConnectivityCheck();
 		homepage.clickONOFFButton();
-		
 		homepage.clickONOFFButton();
-		
-		Thread.sleep(5000);
-		///CONNECTIVITY_MOD_2_TC_3--      5 Times ON/OFF ///
-		for(int i=0;i<5;i++) {
-			homepage.clickONOFFButton();
-			Thread.sleep(1000);
-			}
 		homepage.getCurrentvalue();
 		homepage.getVoltvalue();
 		homepage.getPowervalue();
 		
-		homepage.clickMenuBarButton();
-        devicemenupage.clickDeviceSettingsButton();
-		devicemenupage.clickResetDeviceButton();
-		devicemenupage.clickResetConfirmationYesButton();
-		adddevicepage.checkdeviceresettoast();
-		devicemenupage.AddDevicePagedisplayed();
 		
-		///CONNECTIVITY_MOD_2_TC_4--   Check BLE Connectivity//
+		/////////////////////
 		
-		adddevicepage.pair(2);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
-		
+		homepage.enableBLE();
+		Thread.sleep(5000);
 		adddevicepage.bleConnectivityCheck();
 		for(int i=0;i<2;i++) {
 			homepage.clickONOFFButton();
@@ -174,12 +142,18 @@ public class  TC14_BleWithRouter extends MobileAppWrappers {
 		 homepage.getCurrentvalue();
 			homepage.getVoltvalue();
 			homepage.getPowervalue();
-			
-		 homepage.clickMenuBarButton();
-			devicemenupage.clickMenuBarRemoveDevice();
-			devicemenupage.clickRemoveDevicePopupYesButton();
-			adddevicepage.checkdeviceremovedtoast();
-			devicemenupage.AddDevicePagedisplayed();
+			homepage.enableWiFi();
+		homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
+		
+		homepage.clickMenuBarButton();
+        devicemenupage.clickDeviceSettingsButton();
+		devicemenupage.clickResetDeviceButton();
+		devicemenupage.clickResetConfirmationYesButton();
+		adddevicepage.checkdeviceresettoast();
+		devicemenupage.AddDevicePagedisplayed();
+		
+		
+		
 			
 		 readwrite.closePort();
 		}

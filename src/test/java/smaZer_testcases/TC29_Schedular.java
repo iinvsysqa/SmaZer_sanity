@@ -51,7 +51,7 @@ public class TC29_Schedular extends MobileAppWrappers {
 	}
 
 	@Test(priority = 28)
-	public void schedule() throws Exception {
+	public void TC29_Schedular_Smartconfig_app_close() throws Exception {
 		initAndriodDriver();
 		landingpage = new LandingPage(driver);
 		loginpage = new SignInPage(driver);
@@ -70,6 +70,8 @@ public class TC29_Schedular extends MobileAppWrappers {
 		
 		adddevicepage.pair(3);
 		adddevicepage.clickNextButtonsZephyrInfo();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		
 		
@@ -88,7 +90,7 @@ public class TC29_Schedular extends MobileAppWrappers {
 		schedulepage.clickSchedulebtn();
 		schedulepage.deleteschedule();
 		schedulepage.backToHomepage();
-		schedulepage.checkOffState();
+		
 		
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();

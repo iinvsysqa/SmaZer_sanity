@@ -8,7 +8,7 @@
           <include name="startTestCase"/>
           <include name="afterMethod"/>
           <include name="afterTest"/>
-          <include name="removerepair"/>
+          <include name="TC_26_Analytics_Smartconfig_App_close"/>
           <include name="afterSuite"/>
           <include name="beforeTest"/>
           <include name="beforeMethod"/>

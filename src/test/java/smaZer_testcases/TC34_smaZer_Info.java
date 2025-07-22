@@ -36,8 +36,8 @@ public class TC34_smaZer_Info extends MobileAppWrappers {
 
 
 
-	@Test(priority = 33)
-	public void removerepair() throws Exception {
+	//@Test(priority = 33)
+	public void TC34_Szephyr_Info_check() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
 	}

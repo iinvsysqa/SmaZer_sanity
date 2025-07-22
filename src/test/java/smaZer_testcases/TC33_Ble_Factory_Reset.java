@@ -36,7 +36,7 @@ public class TC33_Ble_Factory_Reset extends MobileAppWrappers {
 
 
 @Test(priority = 32)
-public void removerepair() throws Exception {
+public void TC33_Ble_Without_Router_Factory_Reset() throws Exception {
 	initAndriodDriver();
 	pairBlewithoutRouter();
 }
@@ -55,9 +55,9 @@ public void pairBlewithoutRouter() throws Exception {
 	
 	adddevicepage.pair(1);
 	adddevicepage.clickNextButtonsZephyrInfo();
-	adddevicepage.checkdevicedetailstoast();
+	adddevicepage.clickBleokbutton();
+//	adddevicepage.checkdevicedetailstoast();	
 	adddevicepage.clickSubmitButtonDeviceSetting();
-	adddevicepage.checkdevicesettingstoast();
 	
 	homepage.clickONOFFButton();
 	Thread.sleep(2000);

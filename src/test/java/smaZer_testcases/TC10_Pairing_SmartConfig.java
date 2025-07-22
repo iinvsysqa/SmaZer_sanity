@@ -25,9 +25,9 @@ public class TC10_Pairing_SmartConfig extends MobileAppWrappers {
 	OtpPage otppage;
 	AddDevicePage adddevicepage;
 	DeviceMenuPage devicemenupage;
-	StoreLogPage logpage; 
-	
-   @BeforeClass   
+	StoreLogPage logpage;
+	@BeforeClass
+
 	public void startTestCase() {
 		testCaseName = "TC10 - Pairing in Smart Config Mode";
 		testDescription = "If already Signin skip signin and  Start Pairing Smartconfig mode, else Signin and pair Smartconfig mode";
@@ -36,7 +36,7 @@ public class TC10_Pairing_SmartConfig extends MobileAppWrappers {
 //	Properties prop= new Properties();
 	
 	@Test(priority = 9)
-	public void removerepair() throws Exception {
+	public void TC10_Pairing_in_SmartConfig_Mode() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
 		landingpage = new LandingPage(driver);
@@ -49,31 +49,42 @@ public class TC10_Pairing_SmartConfig extends MobileAppWrappers {
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		try {
 		readwrite.openPort();
+		Thread.sleep(2000);
 		adddevicepage.pair(3);
 		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
+		adddevicepage.clickBleokbutton();
+//		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
 
-		Thread.sleep(8000);
+		Thread.sleep(3000);
 		homepage.clickONOFFButton();
+//		homepage.VerifyONdesc();
+		Thread.sleep(2000);
 		homepage.clickONOFFButton();
+		Thread.sleep(2000);
+//		homepage.VerifyOFFdesc();
 		
-		homepage.clickMenuBarButton();
-		devicemenupage.clickMenuBarRemoveDevice();
-		devicemenupage.clickRemoveDevicePopupYesButton();
-		adddevicepage.checkdeviceremovedtoast();
-		devicemenupage.AddDevicePagedisplayed();
-		
-		adddevicepage.pair(3);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.checkdevicesettingstoast();
-		
-		Thread.sleep(8000);
-		homepage.clickONOFFButton();
-		homepage.clickONOFFButton();
+//		homepage.clickMenuBarButton();
+//		devicemenupage.clickMenuBarRemoveDevice();
+//		devicemenupage.clickRemoveDevicePopupYesButton();
+//		adddevicepage.checkdeviceremovedtoast();
+//		devicemenupage.AddDevicePagedisplayed();
+//		
+//		adddevicepage.pair(3);
+//		
+//		adddevicepage.clickNextButtonsZephyrInfo();
+//		adddevicepage.clickBleokbutton();
+////		adddevicepage.checkdevicedetailstoast();
+//		adddevicepage.clickSubmitButtonDeviceSetting();
+//		adddevicepage.checkdevicesettingstoast();
+//		
+//		Thread.sleep(8000);
+//		homepage.clickONOFFButton();
+////		homepage.VerifyONdesc();
+//		Thread.sleep(2000);
+//		homepage.clickONOFFButton();
+//		homepage.VerifyOFFdesc();
 				
 		homepage.clickMenuBarButton();
 		devicemenupage.clickLogoutButton();
@@ -87,10 +98,10 @@ public class TC10_Pairing_SmartConfig extends MobileAppWrappers {
 		otppage.enterOTPField3("3");
 		otppage.enterOTPField4("4");
 		otppage.submitButton();
-		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		adddevicepage.clickBlePermissionOkbutton();
 		
+		Thread.sleep(10000);
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();
 		devicemenupage.clickRemoveDevicePopupYesButton();

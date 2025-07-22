@@ -18,6 +18,7 @@ public class SignInPage extends GenericWrappers {
 
 	@FindBy(xpath = "//*[@resource-id='Launch_SignInText']")
 	private WebElement signInButton;
+	
 	@FindBy(xpath = "//*[@resource-id='SignIn_SignInText']")
 	private WebElement signIn;
 	
