@@ -166,7 +166,7 @@ public class StoreLogPage extends GenericWrappers{
 			// FTP server credentials
 
 			// Local log files
-			String appLogPath = "./sZephyrLOG.txt";
+			String appLogPath = "./SmaZerLOG.txt";
 			String deviceLogPath = "./device.log";
 
 			// FTP paths

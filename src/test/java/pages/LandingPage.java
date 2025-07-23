@@ -12,8 +12,7 @@ public class LandingPage extends GenericWrappers{
 	    
 	 // Locate all elements on the page
 	    
-	    @FindBy(xpath = "//android.widget.TextView[@text='Sign In']")
-	    private WebElement signInButton;
+	  
 	    
 	    @FindBy(xpath = "//*[@resource-id='SignUp_SignUpText']")
 	    private WebElement signUpButton;
@@ -23,6 +22,10 @@ public class LandingPage extends GenericWrappers{
 	
 	    @FindBy(xpath = "//*[@resource-id='Launch_SignUpLink']")
 		private WebElement signUpLink;
+	    @FindBy(xpath = "//*[@resource-id='Launch_SignInText']")
+	    private WebElement launchSignInButton;
+	 @FindBy(xpath = "//*[@resource-id='SignIn_SignInText']")
+		private WebElement signInButton;
 	    //div[text()='Home']//following-sibling::div[1]
 	    
 	    // Constructor
@@ -35,7 +38,7 @@ public class LandingPage extends GenericWrappers{
 	    // Methods to interact with elements
 	    
 	    public void clickSignInButton() {
-	    	clickbyXpath(signInButton, " Sign In Button " );
+	    	clickbyXpath(launchSignInButton, " Sign In Button " );
 	    }
 	    
 	    

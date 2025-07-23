@@ -128,8 +128,12 @@ public class AddDevicePage extends GenericWrappers {
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Please Connect Manually\"]")
 	private WebElement devicewifipop_up;
 
+	
+ @FindBy(xpath = "//*[@resource-id='SignIn_SignInText']")
+	private WebElement signInButton_;
+	
 	@FindBy(xpath = "//*[@resource-id='Launch_SignInText']")
-	private WebElement signInButton;
+	private WebElement launchSignInButton;
 	@FindBy(xpath = "//android.widget.Button[@resource-id=\"com.android.permissioncontroller:id/permission_allow_foreground_only_button\"]")
 	private WebElement locationpermissionpopup;
 	@FindBy(xpath = "//android.widget.Button[@resource-id=\"com.android.permissioncontroller:id/permission_allow_button\"]")
@@ -654,10 +658,10 @@ public class AddDevicePage extends GenericWrappers {
 		 */	
 		
 		try {
-			if(isElementDisplayedCheck(signInButton)) {
+			if(isElementDisplayedCheck(launchSignInButton)) {
 				landingpage.clickSignInButton();
 				loginpage.enterUserName(userName);
-				loginpage.clickSignInButton();
+				loginpage.clickSignIn();
 				otppage.enterOTPField1("1");
 				otppage.enterOTPField2("2");
 				otppage.enterOTPField3("3");
@@ -1117,7 +1121,7 @@ public void removingDevice() throws InterruptedException {
 			devicemenupage.AddDevicePagedisplayed();
 			break;
 		}
-		else if (isElementDisplayed(signInButton,"signin button displayed")) {
+		else if (isElementDisplayed(launchSignInButton,"signin button displayed")) {
 			System.out.println("signin page displayed");
 			break;
 		}

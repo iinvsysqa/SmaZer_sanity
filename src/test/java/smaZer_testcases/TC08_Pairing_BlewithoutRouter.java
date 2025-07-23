@@ -68,7 +68,7 @@ public class TC08_Pairing_BlewithoutRouter extends MobileAppWrappers {
 //		homepage.VerifyONdesc();
 		
 		homepage.clickONOFFButton();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 //		homepage.VerifyOFFdesc();
 		
 		homepage.clickMenuBarButton();

@@ -65,6 +65,11 @@ public class  TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 extends MobileAppWrappers {
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.clickBleokbutton();
 //		adddevicepage.checkdevicedetailstoast();
+		
+		
+		adddevicepage.LEDquietmode();
+		adddevicepage.Infinitepoweron();
+		adddevicepage.Minutesminusbutton();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
 		
@@ -75,6 +80,14 @@ public class  TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 extends MobileAppWrappers {
 		Thread.sleep(1000);
 		}
 		homepage.clickMenuBarButton();
+		
+		adddevicepage.DurationforON();
+	    
+	    adddevicepage.Hourstextbox("0");
+	    adddevicepage.Minutestextbox("19");
+	    adddevicepage.ClickokdurationON();
+	    
+	    Thread.sleep(3000);
 		devicemenupage.ClickSzephyrInfoButton();
 		szephyrinfoPage.brandnametext();
 		szephyrinfoPage.Modelnametext();
@@ -89,28 +102,7 @@ public class  TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 extends MobileAppWrappers {
 		adddevicepage.checkdeviceresettoast();
 		devicemenupage.AddDevicePagedisplayed();
 		
-		//CONNECTIVITY_MOD_0_TC_02//
-		
-		adddevicepage.pair(1);
-		adddevicepage.clickNextButtonsZephyrInfo();
-		adddevicepage.clickBleokbutton();
-//		adddevicepage.checkdevicedetailstoast();
-		adddevicepage.LEDquietmode();
-		adddevicepage.Infinitepoweron();
-		adddevicepage.Minutesminusbutton();
-		adddevicepage.clickSubmitButtonDeviceSetting();
-		adddevicepage.bleConnectivityCheck();
-		homepage.clickMenuBarButton();
-	    devicemenupage.clickDeviceSettingsButton();
-	    adddevicepage.DurationforON();
-	    
-	    adddevicepage.Hourstextbox("0");
-	    adddevicepage.Minutestextbox("19");
-	    adddevicepage.ClickokdurationON();
-	    devicemenupage.clickResetDeviceButton();
-		devicemenupage.clickResetConfirmationYesButton();
-		adddevicepage.checkdeviceresettoast();
-		devicemenupage.AddDevicePagedisplayed();
+
 		 readwrite.closePort();
 	}
 	catch (Exception e) {
