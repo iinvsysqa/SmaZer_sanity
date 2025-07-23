@@ -1022,7 +1022,7 @@ public class AddDevicePage extends GenericWrappers {
 
 	public void checkdevicedetailstoast() {
 expshortWait(sZhephyrInfotoast);
-		verifyTextContainsByXpath(sZhephyrInfotoast, deviceDetailsUpdated,
+		verifyTextContainsByXpath_Toast(sZhephyrInfotoast, deviceDetailsUpdated,
 				"Device details updated successfully! toast");
 	}
 
@@ -1045,7 +1045,7 @@ expshortWait(sZhephyrInfotoast);
 	public void checkdeviceresettoast() {
 		expshortWait(deviceresettoast);
 
-		verifyTextContainsByXpath(deviceresettoast, YourDeviceResetSuccessfully, "  YourDeviceResetSuccessfully toast");
+		verifyTextContainsByXpath_Toast(deviceresettoast, YourDeviceResetSuccessfully, "  YourDeviceResetSuccessfully toast");
 	}
 	public void waitForNextBtn() {
 		if (isElementDisplayednext(sZephyrInfoNextButton, "sZephyr info Next button ")) {
@@ -1057,13 +1057,13 @@ expshortWait(sZhephyrInfotoast);
 	public void checkrouteraddedsuccessfultoast() {
 		expshortWait(routeraddedsuccessfullytoast);
 
-		verifyTextContainsByXpath(routeraddedsuccessfullytoast, RouterAddedSuccessfully,
+		verifyTextContainsByXpath_Toast(routeraddedsuccessfullytoast, RouterAddedSuccessfully,
 				" RouterAddedSuccessfully toast");
 	}
 	public void checkrouterremovedsuccessfultoast() {
 		expshortWait(routeraddedsuccessfullytoast);
 		
-		verifyTextContainsByXpath(routerremovedsuccessfullytoast, RouterRemovedSuccessfully,
+		verifyTextContainsByXpath_Toast(routerremovedsuccessfullytoast, RouterRemovedSuccessfully,
 				" RouterAddedSuccessfully toast");
 	}
 

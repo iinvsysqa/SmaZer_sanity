@@ -3,18 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="smaZer_testcases.TC26_Analytics">
+      <class name="smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03">
         <methods>
-          <include name="startTestCase"/>
           <include name="afterMethod"/>
           <include name="afterTest"/>
-          <include name="TC_26_Analytics_Smartconfig_App_close"/>
+          <include name="startTestCase"/>
           <include name="afterSuite"/>
           <include name="beforeTest"/>
+          <include name="TC18_UI_CONNECTIVITY_MOD_0_TC_01TO03"/>
           <include name="beforeMethod"/>
           <include name="beforeSuite"/>
         </methods>
-      </class> <!-- smaZer_testcases.TC26_Analytics -->
+      </class> <!-- smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

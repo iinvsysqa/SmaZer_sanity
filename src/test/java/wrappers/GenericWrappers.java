@@ -535,6 +535,7 @@ public class GenericWrappers {
 		}
 	}
 	
+	@SuppressWarnings("deprecation")
 	public void killAndReopenApp() {
 		try {
 			if (driver != null) {
@@ -547,6 +548,11 @@ public class GenericWrappers {
 
 				// Reopen the app, it should maintain its previous state (same page)
 				driver.activateApp(packages);
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.ACCESS_FINE_LOCATION");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_SCAN");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_CONNECT");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.CAMERA");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.POST_NOTIFICATIONS");
 				Reporter.reportStep("The app was reopened successfully.", "PASS");
 			}
 		} catch (Exception e) {

@@ -2,28 +2,28 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-22T23:47:43 IST" name="Default suite" finished-at="2025-07-22T23:52:19 IST" duration-ms="275577">
+  <suite started-at="2025-07-23T20:48:48 IST" name="Default suite" finished-at="2025-07-23T20:50:36 IST" duration-ms="108154">
     <groups>
     </groups>
-    <test started-at="2025-07-22T23:47:43 IST" name="Default test" finished-at="2025-07-22T23:52:19 IST" duration-ms="275577">
-      <class name="smaZer_testcases.TC26_Analytics">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:smaZer_testcases.TC26_Analytics@51bd8b5c]" started-at="2025-07-22T23:47:43 IST" name="beforeSuite" finished-at="2025-07-22T23:47:43 IST" duration-ms="304" status="PASS">
+    <test started-at="2025-07-23T20:48:48 IST" name="Default test" finished-at="2025-07-23T20:50:36 IST" duration-ms="108154">
+      <class name="smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:48:48 IST" name="beforeSuite" finished-at="2025-07-23T20:48:48 IST" duration-ms="375" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:smaZer_testcases.TC26_Analytics@51bd8b5c]" started-at="2025-07-22T23:47:43 IST" name="beforeTest" finished-at="2025-07-22T23:47:43 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:48:48 IST" name="beforeTest" finished-at="2025-07-23T20:48:48 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="startTestCase()[pri:0, instance:smaZer_testcases.TC26_Analytics@51bd8b5c]" started-at="2025-07-22T23:47:43 IST" name="startTestCase" finished-at="2025-07-22T23:47:43 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="startTestCase()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:48:48 IST" name="startTestCase" finished-at="2025-07-23T20:48:48 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTestCase -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:smaZer_testcases.TC26_Analytics@51bd8b5c]" started-at="2025-07-22T23:47:43 IST" name="beforeMethod" finished-at="2025-07-22T23:47:43 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:48:48 IST" name="beforeMethod" finished-at="2025-07-23T20:48:48 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC_26_Analytics_Smartconfig_App_close()[pri:25, instance:smaZer_testcases.TC26_Analytics@51bd8b5c]" started-at="2025-07-22T23:47:43 IST" name="TC_26_Analytics_Smartconfig_App_close" finished-at="2025-07-22T23:52:18 IST" duration-ms="274906" status="FAIL">
+        <test-method signature="TC18_UI_CONNECTIVITY_MOD_0_TC_01TO03()[pri:17, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:48:48 IST" name="TC18_UI_CONNECTIVITY_MOD_0_TC_01TO03" finished-at="2025-07-23T20:50:35 IST" duration-ms="107570" status="FAIL">
           <exception class="java.lang.RuntimeException">
             <message>
               <![CDATA[FAILED]]>
@@ -32,8 +32,8 @@
               <![CDATA[java.lang.RuntimeException: FAILED
 at utils.Reporter.reportStep(Reporter.java:59)
 at wrappers.GenericWrappers.fail(GenericWrappers.java:1019)
-at smaZer_testcases.TC26_Analytics.pairBlewithoutRouter(TC26_Analytics.java:75)
-at smaZer_testcases.TC26_Analytics.TC_26_Analytics_Smartconfig_App_close(TC26_Analytics.java:31)
+at smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03.pairBlewithoutRouter(TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03.java:114)
+at smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03.TC18_UI_CONNECTIVITY_MOD_0_TC_01TO03(TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03.java:45)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -65,20 +65,20 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_26_Analytics_Smartconfig_App_close -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:smaZer_testcases.TC26_Analytics@51bd8b5c]" started-at="2025-07-22T23:52:18 IST" name="afterMethod" finished-at="2025-07-22T23:52:19 IST" duration-ms="645" status="PASS">
+        </test-method> <!-- TC18_UI_CONNECTIVITY_MOD_0_TC_01TO03 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:50:36 IST" name="afterMethod" finished-at="2025-07-23T20:50:36 IST" duration-ms="558" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:smaZer_testcases.TC26_Analytics@51bd8b5c]" started-at="2025-07-22T23:52:19 IST" name="afterTest" finished-at="2025-07-22T23:52:19 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:50:36 IST" name="afterTest" finished-at="2025-07-23T20:50:36 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:smaZer_testcases.TC26_Analytics@51bd8b5c]" started-at="2025-07-22T23:52:19 IST" name="afterSuite" finished-at="2025-07-22T23:52:19 IST" duration-ms="190" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:50:36 IST" name="afterSuite" finished-at="2025-07-23T20:50:36 IST" duration-ms="277" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- smaZer_testcases.TC26_Analytics -->
+      </class> <!-- smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

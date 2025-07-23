@@ -80,14 +80,16 @@ public class  TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 extends MobileAppWrappers {
 		Thread.sleep(1000);
 		}
 		homepage.clickMenuBarButton();
-		
+		devicemenupage.clickDeviceSettingsButton();
 		adddevicepage.DurationforON();
 	    
 	    adddevicepage.Hourstextbox("0");
 	    adddevicepage.Minutestextbox("19");
 	    adddevicepage.ClickokdurationON();
+	    szephyrinfoPage.clickbackButton();
 	    
 	    Thread.sleep(3000);
+	    homepage.clickMenuBarButton();
 		devicemenupage.ClickSzephyrInfoButton();
 		szephyrinfoPage.brandnametext();
 		szephyrinfoPage.Modelnametext();
