@@ -1039,7 +1039,7 @@ expshortWait(sZhephyrInfotoast);
 	public void checkdeviceremovedtoast() {
 		expshortWait(deviceremovedtoast);
 
-		verifyTextContainsByXpath(deviceremovedtoast, DeviceRemovedSuccessfully, "  DeviceRemovedSuccessfully toast");
+		verifyTextContainsByXpath_Toast(deviceremovedtoast, DeviceRemovedSuccessfully, "  DeviceRemovedSuccessfully toast");
 	}
 
 	public void checkdeviceresettoast() {
