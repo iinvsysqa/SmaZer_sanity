@@ -1,84 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-23T20:48:48 IST" name="Default suite" finished-at="2025-07-23T20:50:36 IST" duration-ms="108154">
+  <suite started-at="2025-08-05T22:25:21 IST" name="Default suite" finished-at="2025-08-05T22:28:16 IST" duration-ms="175514">
     <groups>
     </groups>
-    <test started-at="2025-07-23T20:48:48 IST" name="Default test" finished-at="2025-07-23T20:50:36 IST" duration-ms="108154">
-      <class name="smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:48:48 IST" name="beforeSuite" finished-at="2025-07-23T20:48:48 IST" duration-ms="375" status="PASS">
+    <test started-at="2025-08-05T22:25:21 IST" name="Default test" finished-at="2025-08-05T22:28:16 IST" duration-ms="175514">
+      <class name="smaZer_testcases.TC33_Ble_Factory_Reset">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:smaZer_testcases.TC33_Ble_Factory_Reset@7b50df34]" started-at="2025-08-05T22:25:21 IST" name="beforeSuite" finished-at="2025-08-05T22:25:21 IST" duration-ms="384" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:48:48 IST" name="beforeTest" finished-at="2025-07-23T20:48:48 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:smaZer_testcases.TC33_Ble_Factory_Reset@7b50df34]" started-at="2025-08-05T22:25:21 IST" name="beforeTest" finished-at="2025-08-05T22:25:21 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="startTestCase()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:48:48 IST" name="startTestCase" finished-at="2025-07-23T20:48:48 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="startTestCase()[pri:0, instance:smaZer_testcases.TC33_Ble_Factory_Reset@7b50df34]" started-at="2025-08-05T22:25:21 IST" name="startTestCase" finished-at="2025-08-05T22:25:21 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTestCase -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:48:48 IST" name="beforeMethod" finished-at="2025-07-23T20:48:48 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:smaZer_testcases.TC33_Ble_Factory_Reset@7b50df34]" started-at="2025-08-05T22:25:21 IST" name="beforeMethod" finished-at="2025-08-05T22:25:21 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC18_UI_CONNECTIVITY_MOD_0_TC_01TO03()[pri:17, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:48:48 IST" name="TC18_UI_CONNECTIVITY_MOD_0_TC_01TO03" finished-at="2025-07-23T20:50:35 IST" duration-ms="107570" status="FAIL">
-          <exception class="java.lang.RuntimeException">
-            <message>
-              <![CDATA[FAILED]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: FAILED
-at utils.Reporter.reportStep(Reporter.java:59)
-at wrappers.GenericWrappers.fail(GenericWrappers.java:1019)
-at smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03.pairBlewithoutRouter(TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03.java:114)
-at smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03.TC18_UI_CONNECTIVITY_MOD_0_TC_01TO03(TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03.java:45)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.RuntimeException -->
+        <test-method signature="TC33_Ble_Without_Router_Factory_Reset()[pri:32, instance:smaZer_testcases.TC33_Ble_Factory_Reset@7b50df34]" started-at="2025-08-05T22:25:21 IST" name="TC33_Ble_Without_Router_Factory_Reset" finished-at="2025-08-05T22:28:16 IST" duration-ms="174912" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC18_UI_CONNECTIVITY_MOD_0_TC_01TO03 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:50:36 IST" name="afterMethod" finished-at="2025-07-23T20:50:36 IST" duration-ms="558" status="PASS">
+        </test-method> <!-- TC33_Ble_Without_Router_Factory_Reset -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:smaZer_testcases.TC33_Ble_Factory_Reset@7b50df34]" started-at="2025-08-05T22:28:16 IST" name="afterMethod" finished-at="2025-08-05T22:28:16 IST" duration-ms="577" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:50:36 IST" name="afterTest" finished-at="2025-07-23T20:50:36 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:smaZer_testcases.TC33_Ble_Factory_Reset@7b50df34]" started-at="2025-08-05T22:28:16 IST" name="afterTest" finished-at="2025-08-05T22:28:16 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03@7b50df34]" started-at="2025-07-23T20:50:36 IST" name="afterSuite" finished-at="2025-07-23T20:50:36 IST" duration-ms="277" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:smaZer_testcases.TC33_Ble_Factory_Reset@7b50df34]" started-at="2025-08-05T22:28:16 IST" name="afterSuite" finished-at="2025-08-05T22:28:17 IST" duration-ms="264" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 -->
+      </class> <!-- smaZer_testcases.TC33_Ble_Factory_Reset -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

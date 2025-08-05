@@ -3,18 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03">
+      <class name="smaZer_testcases.TC33_Ble_Factory_Reset">
         <methods>
+          <include name="startTestCase"/>
+          <include name="TC33_Ble_Without_Router_Factory_Reset"/>
           <include name="afterMethod"/>
           <include name="afterTest"/>
-          <include name="startTestCase"/>
           <include name="afterSuite"/>
           <include name="beforeTest"/>
-          <include name="TC18_UI_CONNECTIVITY_MOD_0_TC_01TO03"/>
           <include name="beforeMethod"/>
           <include name="beforeSuite"/>
         </methods>
-      </class> <!-- smaZer_testcases.TC18_UI_CONNECTIVITY_MOD_0_TC_01_TO_03 -->
+      </class> <!-- smaZer_testcases.TC33_Ble_Factory_Reset -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
