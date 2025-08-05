@@ -38,6 +38,8 @@ public class AddDevicePage extends GenericWrappers {
 	public String userName = loadProp("USERNAME");
 	public String emaId = loadProp("EMAILID");
 	public String wifiPassword = loadProp("WIFIPASSWORD");
+	public String devicewifiPassword = loadProp("DEVICEWIFIPASSWORD");
+	
 	public String deviceDetailsUpdated = loadProp("deviceDetailsUpdated");
 	public String devicesettingsupdatesuccess = loadProp("deviceSettingsUpdateSuccess");
 	public String DeviceRemovedSuccessfully = loadProp("DeviceRemovedSuccessfully");
@@ -792,7 +794,7 @@ public class AddDevicePage extends GenericWrappers {
 				Thread.sleep(1000 * 5 * 1);
 				blepermissionokpopup();
 
-				Thread.sleep(1000 * 10 * 3);
+				Thread.sleep(1000 * 10 * 4);
 
 				enterWiFiPassword(wifiPassword);
 				Thread.sleep(5000);
@@ -905,8 +907,10 @@ public class AddDevicePage extends GenericWrappers {
 			Runtime.getRuntime().exec("adb shell am start -a android.settings.WIFI_SETTINGS");
 
 			Thread.sleep(3000);
+			
 			WebElement element = driver.findElement(MobileBy.AndroidUIAutomator(
-					"new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains("+serialno+"))"));
+				    "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains(\"" + serialno + "\"))"));
+
 			System.out.println(serialno);
 //			wait.until(ExpectedConditions.visibilityOf(element));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -914,7 +918,7 @@ public class AddDevicePage extends GenericWrappers {
 			try {
 				if (isElementDisplayedCheck(enterpasswordwifipge)) {
 					// Enter the WiFi password
-					enterValueByXpathwifipage(enterpasswordwifipge, "Wi-Fi password", wifiPassword);
+					enterValueByXpathwifipage(enterpasswordwifipge, "Wi-Fi password", devicewifiPassword);
 
 					// Click on the connect button
 					WebElement connectButton = driver.findElement(MobileBy.xpath("//android.widget.Button[@text='Connect']")); 

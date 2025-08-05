@@ -33,7 +33,7 @@ public class TC11_Pairing_WifiwithRouter extends MobileAppWrappers {
 	}
 
 
-//	@Test(priority = 10,groups = {"skip"})
+	@Test(priority = 10)
 	public void removerepair() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);
@@ -49,7 +49,7 @@ public class TC11_Pairing_WifiwithRouter extends MobileAppWrappers {
 		readwrite.openPort();
 		
 		adddevicepage.pair(4);
-		adddevicepage.clickNextButtonsZephyrInfo();
+//		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.checkdevicedetailstoast();
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();

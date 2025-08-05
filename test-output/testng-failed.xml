@@ -3,18 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="smaZer_testcases.TC33_Ble_Factory_Reset">
+      <class name="smaZer_testcases.TC11_Pairing_WifiwithRouter">
         <methods>
-          <include name="startTestCase"/>
-          <include name="TC33_Ble_Without_Router_Factory_Reset"/>
           <include name="afterMethod"/>
           <include name="afterTest"/>
+          <include name="removerepair"/>
+          <include name="startTestCase"/>
           <include name="afterSuite"/>
           <include name="beforeTest"/>
           <include name="beforeMethod"/>
           <include name="beforeSuite"/>
         </methods>
-      </class> <!-- smaZer_testcases.TC33_Ble_Factory_Reset -->
+      </class> <!-- smaZer_testcases.TC11_Pairing_WifiwithRouter -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
