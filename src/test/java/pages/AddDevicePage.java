@@ -250,6 +250,8 @@ public class AddDevicePage extends GenericWrappers {
 	@FindBy(xpath = "//android.widget.TextView[@text=\"OK\"]")
 	private WebElement BleOKpopup;
 
+	@FindBy(xpath = "//android.widget.TextView[@text=\"CANCEL\"]")
+	private WebElement BLECANCELpopup;
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Cancel\"]")
 	private WebElement BLEcancelpopup;
 
@@ -520,16 +522,25 @@ public class AddDevicePage extends GenericWrappers {
 	}
 
 	public void clickWifiCancelButton() throws Exception {
-		wait.until(ExpectedConditions.visibilityOf(wifiCancel));
-		clickbyXpath(wifiCancel, "Wificancel button");
-		if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
-			driver.activateApp(packages); // Bring it back
+
+		if (isElementDisplayedCheck(wifiCancel)) {
+			wifiCancel.click();
+			if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
+				driver.activateApp(packages); // Bring it back
+				Thread.sleep(2000);
+			}
+		} else {
+			System.out.println("Wificancel pop-up not displayed");
 		}
+	
+
 	}
 
 	public void clickBleokbutton() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver,10);
 		wait.until(ExpectedConditions.visibilityOf(BleOKpopup));
 		clickbyXpath(BleOKpopup, "Ble okbutton");
+		
 		if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
 			driver.activateApp(packages); // Bring it back
 		}
@@ -809,14 +820,24 @@ public class AddDevicePage extends GenericWrappers {
 					retrypagecheck(mode);
 				}
 				connectwithmobilewifipage();
-				waitForNextBtn();
-				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
-				
-				Runtime.getRuntime().exec("adb shell am force-stop com.android.settings");
-				if(isElementDisplayednext(devicewifipop_upOK,"Could not connect with router popup"))  {
-					
-					clickbyXpath(devicewifipop_upOK, "Cliked on not connected with router pop-up");
+				if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
+					driver.activateApp(packages); // Bring it back
+
 				}
+				turnOnBT();
+				Thread.sleep(5000);
+//				waitForNextBtn();
+				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
+				if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
+					driver.activateApp(packages); // Bring it back
+
+				}
+				Runtime.getRuntime().exec("adb shell am force-stop com.android.settings");
+//				if(isElementDisplayednext(devicewifipop_upOK,"Could not connect with router popup"))  {
+//					
+//					clickbyXpath(devicewifipop_upOK, "Cliked on not connected with router pop-up");
+//				}
+				blepermissionokpopup();
 				
 				break;
 
@@ -828,7 +849,7 @@ public class AddDevicePage extends GenericWrappers {
 				startPairingButton();
 				readwrite.write("factory_reset\r");
 
-			    blepermissioncancelpopup();
+				blepermissionCANCELpopup();
 				Thread.sleep(5000);
 //				locationPopUpPermission();
 //				nearByPermission();
@@ -852,17 +873,23 @@ public class AddDevicePage extends GenericWrappers {
 					retrypagecheck(mode);
 				}
 				connectwithmobilewifipage();
-				
+				if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
+					driver.activateApp(packages); // Bring it back
+
+				}
 				Thread.sleep(5000);
 				Runtime.getRuntime().exec("adb shell am force-stop com.android.settings");
 				if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
 					driver.activateApp(packages); // Bring it back
 
 				}
+				turnOnBT();
+				Thread.sleep(5000);
+				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
 				Thread.sleep(5000);
 				blepermissionokpopup();
-				turnOnBT();
-				waitForNextBtn();
+				
+//				waitForNextBtn();
 				break;
 
 			default:
@@ -943,6 +970,10 @@ public class AddDevicePage extends GenericWrappers {
 //				} 
 				else {
 					System.out.println("Already connected or password is saved.");
+//					if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
+//						driver.activateApp(packages); // Bring it back
+//
+//					}
 				
 				}
 			} catch (NoSuchElementException e) {
@@ -995,7 +1026,7 @@ public class AddDevicePage extends GenericWrappers {
 		
 	}
 	
-	private void blepermissionokpopup() throws Exception {
+	public void blepermissionokpopup() throws Exception {
 		if (isElementDisplayedCheck(BleOKpopup)) {
 			BleOKpopup.click();
 			Thread.sleep(2000);
@@ -1009,6 +1040,17 @@ public class AddDevicePage extends GenericWrappers {
 	private void blepermissioncancelpopup() throws Exception {
 		if (isElementDisplayedCheck(BLEcancelpopup)) {
 			BLEcancelpopup.click();
+			if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
+				driver.activateApp(packages); // Bring it back
+				Thread.sleep(2000);
+			}
+		} else {
+			System.out.println("Alert pop-up not displayed");
+		}
+	}
+	private void blepermissionCANCELpopup() throws Exception {
+		if (isElementDisplayedCheck(BLECANCELpopup)) {
+			BLECANCELpopup.click();
 			if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
 				driver.activateApp(packages); // Bring it back
 				Thread.sleep(2000);

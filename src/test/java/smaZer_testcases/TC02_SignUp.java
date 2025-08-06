@@ -1,10 +1,7 @@
 package smaZer_testcases;
 
-import static org.testng.Assert.fail;
-
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import pages.AddDevicePage;
 import pages.DeviceMenuPage;
 import pages.HomePage;
@@ -13,8 +10,6 @@ import pages.OtpPage;
 import pages.SignInPage;
 import pages.SignUpPage;
 import pages.StoreLogPage;
-import utils.GetAppLog;
-import utils.PassSTComment;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
 

@@ -1,14 +1,7 @@
 package smaZer_testcases;
 
-import static org.testng.Assert.fail;
-
-import java.util.Properties;
-
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import com.google.common.collect.ImmutableMap;
-
 import pages.AddDevicePage;
 import pages.DeviceMenuPage;
 import pages.HomePage;

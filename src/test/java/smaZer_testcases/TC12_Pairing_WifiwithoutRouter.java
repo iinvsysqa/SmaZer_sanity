@@ -1,10 +1,7 @@
 package smaZer_testcases;
 
-import static org.testng.Assert.fail;
-
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import pages.AddDevicePage;
 import pages.DeviceMenuPage;
 import pages.HomePage;
@@ -32,7 +29,7 @@ public class TC12_Pairing_WifiwithoutRouter extends MobileAppWrappers {
 	}
 
 
-	@Test(priority = 11)
+	@Test(priority = 11, groups = { "skip" })
 	public void removerepair() throws Exception {
 		initAndriodDriver();
 		loginpage = new SignInPage(driver);

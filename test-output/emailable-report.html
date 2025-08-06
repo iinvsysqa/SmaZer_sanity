@@ -9,78 +9,15 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">454</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">791,833</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">smaZer_testcases.TC11_Pairing_WifiwithRouter</td><td><a href="#m0">afterMethod</a></td><td rowspan="1">1754417143034</td><td rowspan="1">1</td></tr><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">smaZer_testcases.TC11_Pairing_WifiwithRouter</td><td><a href="#m1">removerepair</a></td><td rowspan="1">1754417142614</td><td rowspan="1">416</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">smaZer_testcases.TC16_WifiWithRouter</td><td><a href="#m0">TC16_WifiWithRouter_CONNECTIVITY</a></td><td rowspan="1">1754493389771</td><td rowspan="1">791218</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">smaZer_testcases.TC11_Pairing_WifiwithRouter#afterMethod</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;io.appium.java_client.android.AndroidDriver.terminateApp(String)&quot; because &quot;wrappers.MobileAppWrappers.driver&quot; is null
-	at wrappers.MobileAppWrappers.afterMethod(MobileAppWrappers.java:104)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
-	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
-	at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:779)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:755)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:819)
-	at org.testng.TestRunner.run(TestRunner.java:619)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-	at org.testng.TestNG.runSuites(TestNG.java:1134)
-	at org.testng.TestNG.run(TestNG.java:1101)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">smaZer_testcases.TC11_Pairing_WifiwithRouter#removerepair</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Error getting device API level. Original error: Error executing adbExec. Original error: &apos;Command &apos;&apos;C:\\Users\\QA Automation\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe&apos; -P 5037 -s 10BDCS1L9Q0012R shell getprop ro.build.version.sdk&apos; exited with code 1&apos;; Command output: adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.
-
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-MN86ODD&apos;, ip: &apos;192.168.15.1&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
-Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Error getting device API level. Original error: Error executing adbExec. Original error: &apos;Command &apos;&apos;C:\\Users\\QA Automation\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe&apos; -P 5037 -s 10BDCS1L9Q0012R shell getprop ro.build.version.sdk&apos; exited with code 1&apos;; Command output: adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.
-
-    at getResponseForW3CError (C:\Users\QA Automation\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\errors.js:1145:9)
-    at asyncHandler (C:\Users\QA Automation\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\protocol.js:485:57)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-MN86ODD&apos;, ip: &apos;192.168.15.1&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
-Driver info: driver.version: AndroidDriver
-	at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:208)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:217)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:336)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at io.appium.java_client.DefaultGenericMobileDriver.&lt;init&gt;(DefaultGenericMobileDriver.java:37)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:88)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:98)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:94)
-	at wrappers.GenericWrappers.initAndriodDriver(GenericWrappers.java:96)
-	at smaZer_testcases.TC11_Pairing_WifiwithRouter.removerepair(TC11_Pairing_WifiwithRouter.java:38)
+<h2>Default test</h2><h3 id="m0">smaZer_testcases.TC16_WifiWithRouter#TC16_WifiWithRouter_CONNECTIVITY</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: FAILED
+	at utils.Reporter.reportStep(Reporter.java:59)
+	at wrappers.GenericWrappers.fail(GenericWrappers.java:1029)
+	at smaZer_testcases.TC16_WifiWithRouter.pairBlewithoutRouter(TC16_WifiWithRouter.java:114)
+	at smaZer_testcases.TC16_WifiWithRouter.TC16_WifiWithRouter_CONNECTIVITY(TC16_WifiWithRouter.java:48)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -107,44 +44,6 @@ Driver info: driver.version: AndroidDriver
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: java.lang.reflect.InvocationTargetException
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:118)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:186)
-	... 41 more
-Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Error getting device API level. Original error: Error executing adbExec. Original error: &apos;Command &apos;&apos;C:\\Users\\QA Automation\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe&apos; -P 5037 -s 10BDCS1L9Q0012R shell getprop ro.build.version.sdk&apos; exited with code 1&apos;; Command output: adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.
-
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-MN86ODD&apos;, ip: &apos;192.168.15.1&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
-Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Error getting device API level. Original error: Error executing adbExec. Original error: &apos;Command &apos;&apos;C:\\Users\\QA Automation\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe&apos; -P 5037 -s 10BDCS1L9Q0012R shell getprop ro.build.version.sdk&apos; exited with code 1&apos;; Command output: adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.
-
-    at getResponseForW3CError (C:\Users\QA Automation\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\errors.js:1145:9)
-    at asyncHandler (C:\Users\QA Automation\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\protocol.js:485:57)
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
-	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
-	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1034)
-	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
-	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	... 43 more
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

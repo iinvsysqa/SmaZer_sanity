@@ -527,9 +527,13 @@ public class GenericWrappers {
 			
 				// Kill the app (terminate it)
 				driver.activateApp(packages);
-				
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.ACCESS_FINE_LOCATION");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_SCAN");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.BLUETOOTH_CONNECT");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.CAMERA");
+				Runtime.getRuntime().exec("adb shell pm grant com.geezer android.permission.POST_NOTIFICATIONS");
 				Reporter.reportStep("The app was opened successfully.", "PASS");
-			
+				
 		} catch (Exception e) {
 			Reporter.reportStep("The app  not opened .", "FAIL");
 		}
