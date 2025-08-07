@@ -5,8 +5,10 @@ import static org.testng.Assert.fail;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.AddDevicePage;
+import pages.Analytics;
 import pages.DeviceMenuPage;
 import pages.HomePage;
+import pages.Schedularpage;
 import pages.StoreLogPage;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
@@ -18,7 +20,9 @@ public class TC22_DeviceSettings extends MobileAppWrappers {
 		AddDevicePage adddevicepage;
 		DeviceMenuPage devicemenupage;
 		StoreLogPage logpage;   
-	 
+		Analytics analytics;
+		Schedularpage schedulepage;
+		
 	 @BeforeClass   
 	public void startTestCase() {
 		testCaseName = "TC22_DeviceSettings_Pairing Time Settings change";
@@ -26,7 +30,7 @@ public class TC22_DeviceSettings extends MobileAppWrappers {
 	}
 	
 
-	@Test(priority = 21,groups = {"skip"})
+	@Test(priority = 21)
 	public void TC22_DeviceSettings_Pairing_Time_Settings_change() throws Exception {
 		initAndriodDriver();
 		pairBlewithoutRouter();
@@ -39,13 +43,15 @@ public class TC22_DeviceSettings extends MobileAppWrappers {
 		homepage = new HomePage(driver);
 		devicemenupage= new DeviceMenuPage(driver);
 		logpage= new StoreLogPage(driver);
+		analytics=new Analytics(driver);
+		schedulepage = new Schedularpage(driver);
 		
 		logReadandWrite readwrite = logReadandWrite.getInstance(loadProp("COM"));
 		
 		try {
 		readwrite.openPort();
 		
-		adddevicepage.pair(5);
+		adddevicepage.pair(4);
 		adddevicepage.clickNextButtonsZephyrInfo();
 		adddevicepage.clickBleokbutton();
 //		adddevicepage.checkdevicedetailstoast();
@@ -56,20 +62,41 @@ public class TC22_DeviceSettings extends MobileAppWrappers {
 		adddevicepage.clickSubmitButtonDeviceSetting();
 		adddevicepage.checkdevicesettingstoast();
 		
-		for(int i=0;i<2;i++) {
-		homepage.clickONOFFButton();
-		Thread.sleep(1000);
-		}
+		
 		
 //Pairing Time Changed Data Should Reflected In Device Settings Page Duration For ON	
 		homepage.clickMenuBarButton();
 		devicemenupage.clickDeviceSettingsButton();
-		devicemenupage.clickDurationForONButton();
-		adddevicepage.Hourstextbox("1");
-	    adddevicepage.Minutestextbox("20");
-	    adddevicepage.ClickokdurationON();
+		
+		devicemenupage.checkDurationforOnDefautvalue_devicesettings();
+		devicemenupage.ReduceDurationminbutton();
+		
+		analytics.navigateAnalyticsPage();
+		analytics.getenergydurationvalue();
+		schedulepage.backToHomepage();
+		
+			homepage.clickONOFFButton();
+			Thread.sleep(1*1000*60);			
+		analytics.navigateAnalyticsPage();
+		analytics.checkenrgyduration(1);//schedule duration value is (1) and this value should be same as no.of schedule kept 
+		schedulepage.backToHomepage();
+		
 //		devicemenupage.clickDeviceSettingsBackButton();
-		devicemenupage.clickDeviceSettingsBackButton();
+		
+//		high voltage 
+//		low voltage
+		homepage.clickMenuBarButton();
+		devicemenupage.clickDeviceSettingsButton();
+		devicemenupage.checkLowVoltDefautvalue_devicesettings();
+		devicemenupage.backnavigation();
+		homepage.clickMenuBarButton();
+		devicemenupage.clickDeviceSettingsButton();
+		devicemenupage.checkHighVoltDefautvalue_devicesettings();
+		devicemenupage.backnavigation();
+		
+		
+		
+		
 		homepage.clickMenuBarButton();
 		devicemenupage.clickMenuBarRemoveDevice();
 		devicemenupage.clickRemoveDevicePopupNoButton();

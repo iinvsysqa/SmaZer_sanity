@@ -9,15 +9,18 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">791,833</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">200,250</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">smaZer_testcases.TC16_WifiWithRouter</td><td><a href="#m0">TC16_WifiWithRouter_CONNECTIVITY</a></td><td rowspan="1">1754493389771</td><td rowspan="1">791218</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">smaZer_testcases.TC22_DeviceSettings</td><td><a href="#m0">TC22_DeviceSettings_Pairing_Time_Settings_change</a></td><td rowspan="1">1754572733499</td><td rowspan="1">199495</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">smaZer_testcases.TC16_WifiWithRouter#TC16_WifiWithRouter_CONNECTIVITY</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: FAILED
+<h2>Default test</h2><h3 id="m0">smaZer_testcases.TC22_DeviceSettings#TC22_DeviceSettings_Pairing_Time_Settings_change</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: FAILED
 	at utils.Reporter.reportStep(Reporter.java:59)
-	at wrappers.GenericWrappers.fail(GenericWrappers.java:1029)
-	at smaZer_testcases.TC16_WifiWithRouter.pairBlewithoutRouter(TC16_WifiWithRouter.java:114)
-	at smaZer_testcases.TC16_WifiWithRouter.TC16_WifiWithRouter_CONNECTIVITY(TC16_WifiWithRouter.java:48)
+	at wrappers.GenericWrappers.clickbyXpath(GenericWrappers.java:229)
+	at pages.StoreLogPage.storeLogToDownloads(StoreLogPage.java:78)
+	at pages.StoreLogPage.takeAppLog(StoreLogPage.java:125)
+	at pages.StoreLogPage.CollectLogOnFailure(StoreLogPage.java:163)
+	at smaZer_testcases.TC22_DeviceSettings.pairBlewithoutRouter(TC22_DeviceSettings.java:110)
+	at smaZer_testcases.TC22_DeviceSettings.TC22_DeviceSettings_Pairing_Time_Settings_change(TC22_DeviceSettings.java:36)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)

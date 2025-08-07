@@ -97,21 +97,15 @@ public class Analytics  extends GenericWrappers {
 	    expshortWaittwenty(enrgyDurationmin);
 
 	    int expectedValue = extractMinutes(oldvalue) + value;
-	    System.out.println("Expected new value: " + expectedValue);
+	    System.out.println("Expected value: " + expectedValue);
 
-	    String currentText = enrgyDurationmin.getText();
+	    String currentText = enrgyDurationmin.getText().trim();
 	    System.out.println("Analytics value after session: " + currentText);
 
-	    int actualMinutes = extractMinutes(currentText);
+	    int actualMinutes = extractRoundedMinutes(currentText);
 
-	    // Check if it's 59 seconds (acceptable for <1min session)
-	    if (currentText.trim().equalsIgnoreCase("59s") && value == 1) {
-	        Reporter.reportStep("Analytics value updated with 59s (less than 1 minute), which is acceptable", "PASS");
-	        bReturn = true;
-	    }
-	    // Normal case comparison
-	    else if (actualMinutes == expectedValue) {
-	        Reporter.reportStep("Analytics value updated after session: " + currentText, "PASS");
+	    if (actualMinutes == expectedValue) {
+	        Reporter.reportStep("Analytics value updated correctly: " + currentText, "PASS");
 	        bReturn = true;
 	    } else {
 	        Reporter.reportStep("Wrong Analytics value updated: " + currentText, "FAIL");
@@ -119,6 +113,36 @@ public class Analytics  extends GenericWrappers {
 
 	    return bReturn;
 	}
+
+	public int extractRoundedMinutes(String durationText) {
+	    int minutes = 0;
+	    int seconds = 0;
+
+	    durationText = durationText.trim().toLowerCase();
+
+	    try {
+	        if (durationText.contains("m")) {
+	            String[] parts = durationText.split("m");
+	            minutes = Integer.parseInt(parts[0].replaceAll("[^0-9]", "").trim());
+
+	            if (parts.length > 1 && parts[1].contains("s")) {
+	                seconds = Integer.parseInt(parts[1].replaceAll("[^0-9]", "").trim());
+	            }
+	        } else if (durationText.contains("s")) {
+	            seconds = Integer.parseInt(durationText.replaceAll("[^0-9]", "").trim());
+	        }
+	    } catch (NumberFormatException e) {
+	        System.out.println("Failed to parse duration: " + durationText);
+	    }
+
+	    // Round up if any seconds are present
+	    if (seconds > 59) {
+	        minutes += 1;
+	    }
+
+	    return minutes;
+	}
+
 
 
 }

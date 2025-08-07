@@ -2,28 +2,31 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-06T20:46:29 IST" name="Default suite" finished-at="2025-08-06T20:59:41 IST" duration-ms="791833">
+  <suite started-at="2025-08-07T18:48:53 IST" name="Default suite" finished-at="2025-08-07T18:52:13 IST" duration-ms="200250">
     <groups>
+      <group name="skip">
+        <method signature="TC22_DeviceSettings.TC22_DeviceSettings_Pairing_Time_Settings_change()[pri:21, instance:smaZer_testcases.TC22_DeviceSettings@7b50df34]" name="TC22_DeviceSettings_Pairing_Time_Settings_change" class="smaZer_testcases.TC22_DeviceSettings"/>
+      </group> <!-- skip -->
     </groups>
-    <test started-at="2025-08-06T20:46:29 IST" name="Default test" finished-at="2025-08-06T20:59:41 IST" duration-ms="791833">
-      <class name="smaZer_testcases.TC16_WifiWithRouter">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:smaZer_testcases.TC16_WifiWithRouter@7b50df34]" started-at="2025-08-06T20:46:29 IST" name="beforeSuite" finished-at="2025-08-06T20:46:29 IST" duration-ms="377" status="PASS">
+    <test started-at="2025-08-07T18:48:53 IST" name="Default test" finished-at="2025-08-07T18:52:13 IST" duration-ms="200250">
+      <class name="smaZer_testcases.TC22_DeviceSettings">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:smaZer_testcases.TC22_DeviceSettings@7b50df34]" started-at="2025-08-07T18:48:53 IST" name="beforeSuite" finished-at="2025-08-07T18:48:53 IST" duration-ms="382" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:smaZer_testcases.TC16_WifiWithRouter@7b50df34]" started-at="2025-08-06T20:46:29 IST" name="beforeTest" finished-at="2025-08-06T20:46:29 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:smaZer_testcases.TC22_DeviceSettings@7b50df34]" started-at="2025-08-07T18:48:53 IST" name="beforeTest" finished-at="2025-08-07T18:48:53 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="startTestCase()[pri:0, instance:smaZer_testcases.TC16_WifiWithRouter@7b50df34]" started-at="2025-08-06T20:46:29 IST" name="startTestCase" finished-at="2025-08-06T20:46:29 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="startTestCase()[pri:0, instance:smaZer_testcases.TC22_DeviceSettings@7b50df34]" started-at="2025-08-07T18:48:53 IST" name="startTestCase" finished-at="2025-08-07T18:48:53 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTestCase -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:smaZer_testcases.TC16_WifiWithRouter@7b50df34]" started-at="2025-08-06T20:46:29 IST" name="beforeMethod" finished-at="2025-08-06T20:46:29 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:smaZer_testcases.TC22_DeviceSettings@7b50df34]" started-at="2025-08-07T18:48:53 IST" name="beforeMethod" finished-at="2025-08-07T18:48:53 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC16_WifiWithRouter_CONNECTIVITY()[pri:15, instance:smaZer_testcases.TC16_WifiWithRouter@7b50df34]" started-at="2025-08-06T20:46:29 IST" name="TC16_WifiWithRouter_CONNECTIVITY" finished-at="2025-08-06T20:59:40 IST" duration-ms="791218" status="FAIL">
+        <test-method signature="TC22_DeviceSettings_Pairing_Time_Settings_change()[pri:21, instance:smaZer_testcases.TC22_DeviceSettings@7b50df34]" started-at="2025-08-07T18:48:53 IST" name="TC22_DeviceSettings_Pairing_Time_Settings_change" finished-at="2025-08-07T18:52:12 IST" duration-ms="199495" status="FAIL">
           <exception class="java.lang.RuntimeException">
             <message>
               <![CDATA[FAILED]]>
@@ -31,9 +34,12 @@
             <full-stacktrace>
               <![CDATA[java.lang.RuntimeException: FAILED
 at utils.Reporter.reportStep(Reporter.java:59)
-at wrappers.GenericWrappers.fail(GenericWrappers.java:1029)
-at smaZer_testcases.TC16_WifiWithRouter.pairBlewithoutRouter(TC16_WifiWithRouter.java:114)
-at smaZer_testcases.TC16_WifiWithRouter.TC16_WifiWithRouter_CONNECTIVITY(TC16_WifiWithRouter.java:48)
+at wrappers.GenericWrappers.clickbyXpath(GenericWrappers.java:229)
+at pages.StoreLogPage.storeLogToDownloads(StoreLogPage.java:78)
+at pages.StoreLogPage.takeAppLog(StoreLogPage.java:125)
+at pages.StoreLogPage.CollectLogOnFailure(StoreLogPage.java:163)
+at smaZer_testcases.TC22_DeviceSettings.pairBlewithoutRouter(TC22_DeviceSettings.java:110)
+at smaZer_testcases.TC22_DeviceSettings.TC22_DeviceSettings_Pairing_Time_Settings_change(TC22_DeviceSettings.java:36)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -65,20 +71,20 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC16_WifiWithRouter_CONNECTIVITY -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:smaZer_testcases.TC16_WifiWithRouter@7b50df34]" started-at="2025-08-06T20:59:40 IST" name="afterMethod" finished-at="2025-08-06T20:59:41 IST" duration-ms="590" status="PASS">
+        </test-method> <!-- TC22_DeviceSettings_Pairing_Time_Settings_change -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:smaZer_testcases.TC22_DeviceSettings@7b50df34]" started-at="2025-08-07T18:52:12 IST" name="afterMethod" finished-at="2025-08-07T18:52:13 IST" duration-ms="724" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:smaZer_testcases.TC16_WifiWithRouter@7b50df34]" started-at="2025-08-06T20:59:41 IST" name="afterTest" finished-at="2025-08-06T20:59:41 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:smaZer_testcases.TC22_DeviceSettings@7b50df34]" started-at="2025-08-07T18:52:13 IST" name="afterTest" finished-at="2025-08-07T18:52:13 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:smaZer_testcases.TC16_WifiWithRouter@7b50df34]" started-at="2025-08-06T20:59:41 IST" name="afterSuite" finished-at="2025-08-06T20:59:41 IST" duration-ms="281" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:smaZer_testcases.TC22_DeviceSettings@7b50df34]" started-at="2025-08-07T18:52:13 IST" name="afterSuite" finished-at="2025-08-07T18:52:14 IST" duration-ms="264" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- smaZer_testcases.TC16_WifiWithRouter -->
+      </class> <!-- smaZer_testcases.TC22_DeviceSettings -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
