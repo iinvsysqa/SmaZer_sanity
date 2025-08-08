@@ -1,7 +1,5 @@
 package smaZer_testcases;
 
-import static org.testng.Assert.fail;
-
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

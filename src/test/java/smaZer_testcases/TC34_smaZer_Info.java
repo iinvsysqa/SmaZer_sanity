@@ -1,8 +1,6 @@
 package smaZer_testcases;
 
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-
 import pages.AddDevicePage;
 import pages.DeviceMenuPage;
 import pages.HomePage;
