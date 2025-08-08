@@ -820,11 +820,8 @@ public class AddDevicePage extends GenericWrappers {
 					retrypagecheck(mode);
 				}
 				connectwithmobilewifipage();
-				if (driver.queryAppState(packages) != ApplicationState.RUNNING_IN_FOREGROUND) {
-					driver.activateApp(packages); // Bring it back
-
-				}
 				turnOnBT();
+				waitForNextBtn();
 				Thread.sleep(5000);
 //				waitForNextBtn();
 				homepage.WifiSwitch(loadProp("WIFINAME"), loadProp("WIFIPASSWORD"));
