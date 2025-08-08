@@ -6,8 +6,6 @@ import java.io.InputStreamReader;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import wrappers.GenericWrappers;
-import wrappers.MobileAppWrappers;
 
 public class Network {
 	
@@ -48,7 +46,8 @@ public class Network {
 
 private static void executeAdbCommand(String command) {
  try {
-     Process process = Runtime.getRuntime().exec(command);
+     @SuppressWarnings("deprecation")
+	 Process process = Runtime.getRuntime().exec(command);
      BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
      String line;
      while ((line = reader.readLine()) != null) {

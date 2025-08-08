@@ -1,14 +1,9 @@
 package smaZer_testcases;
 
-import static org.testng.Assert.fail;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.openqa.selenium.Alert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-
 import pages.Internal_longrun_task;
 import utils.logReadandWrite;
 import wrappers.MobileAppWrappers;
