@@ -89,9 +89,11 @@ public class TC22_DeviceSettings extends MobileAppWrappers {
 		devicemenupage.clickDeviceSettingsButton();
 		devicemenupage.checkLowVoltDefautvalue_devicesettings();
 		devicemenupage.backnavigation();
+		devicemenupage.backnavigation();
 		homepage.clickMenuBarButton();
 		devicemenupage.clickDeviceSettingsButton();
 		devicemenupage.checkHighVoltDefautvalue_devicesettings();
+		devicemenupage.backnavigation();
 		devicemenupage.backnavigation();
 		
 		
