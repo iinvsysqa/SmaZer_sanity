@@ -136,7 +136,7 @@ public class Analytics  extends GenericWrappers {
 	    }
 
 	    // Round up if any seconds are present
-	    if (seconds > 59) {
+	    if (seconds > 58) {
 	        minutes += 1;
 	    }
 
